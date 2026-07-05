@@ -670,10 +670,18 @@ const ROUTES = {
 };
 const TAB_ROUTES = ['rotina','dashboard','pilares','diario','mais'];
 
+/* Guarda a última rota renderizada para só rolar a tela ao topo quando o
+   usuário de fato navega para outra tela — e não sempre que uma ação
+   (marcar missão, adicionar item, etc.) simplesmente redesenha a tela
+   atual com os dados atualizados. Isso evita "pular" para o topo no
+   meio de uma lista longa. */
+let ultimaRotaRenderizada = null;
+
 function router(){
   const hash = (location.hash || '#rotina').replace('#','');
   const [route, param] = hash.split('/');
   const renderFn = ROUTES[route] || renderDashboard;
+  const navegouParaOutraRota = route !== ultimaRotaRenderizada;
   document.getElementById('screen').innerHTML = renderFn(param);
   document.querySelectorAll('.tab-btn').forEach(btn=>{
     const isMais = TAB_ROUTES.includes(route) ? route === 'mais' : true;
@@ -683,7 +691,8 @@ function router(){
   document.getElementById('fabCheckin').style.display = (route==='dashboard') ? 'flex' : 'none';
   // re-run any per-screen post-render bindings
   bindScreenEvents(route);
-  window.scrollTo(0,0);
+  if(navegouParaOutraRota) window.scrollTo(0,0);
+  ultimaRotaRenderizada = route;
 }
 window.addEventListener('hashchange', router);
 document.querySelectorAll('.tab-btn').forEach(btn=>{
@@ -1029,7 +1038,9 @@ function setRotinaView(periodo){ rotinaViewPeriodo = periodo; router(); }
 function updateRotinaItem(periodo, idx, campo, valor){
   STATE.rotina[periodo][idx][campo] = valor;
   saveState();
-  router();
+  // Sem router() aqui de propósito: recriar a tela no meio da edição fecha
+  // o seletor nativo de hora no celular antes do usuário terminar de ajustar
+  // os minutos. O relógio "agora" da Rotina já atualiza sozinho a cada 15s.
 }
 function addRotinaItem(periodo){
   STATE.rotina[periodo].push({hora:nowHHMM(), atividade:'Nova atividade'});
@@ -1342,7 +1353,7 @@ function renderCalendario(){
       <div class="field"><label>Título</label><input type="text" id="evTitulo" placeholder="Ex: Aniversário da vovó"></div>
       <div class="field"><label>Data</label><input type="date" id="evData"></div>
       <div class="field">
-        <label style="display:flex;align-items:center;gap:8px;cursor:pointer;" onclick="document.getElementById('evRecorrente').click()">
+        <label style="display:flex;align-items:center;gap:8px;cursor:pointer;">
           <input type="checkbox" id="evRecorrente" style="width:16px;height:16px;"> Repete todo ano (aniversário, data comemorativa)
         </label>
       </div>
@@ -1484,8 +1495,8 @@ function renderConfig(){
         <div><div style="font-size:13.5px;font-weight:600;">Notificações locais com som</div><div style="font-size:11.5px;color:var(--text-dim);margin-top:2px;">Avisa quando uma atividade da Rotina ou um evento do Calendário começa</div></div>
         <label style="position:relative;display:inline-block;width:44px;height:26px;flex-shrink:0;">
           <input type="checkbox" id="cfgNotif" ${p.notificacoesAtivas?'checked':''} onchange="toggleNotificacoes(this.checked)" style="opacity:0;width:0;height:0;">
-          <span onclick="document.getElementById('cfgNotif').click()" style="position:absolute;inset:0;background:${p.notificacoesAtivas?'var(--gold)':'var(--bg-card-2)'};border-radius:100px;cursor:pointer;transition:.2s;"></span>
-          <span onclick="document.getElementById('cfgNotif').click()" style="position:absolute;width:20px;height:20px;left:${p.notificacoesAtivas?'21px':'3px'};top:3px;background:#0A0B0D;border-radius:50%;transition:.2s;cursor:pointer;"></span>
+          <span style="position:absolute;inset:0;background:${p.notificacoesAtivas?'var(--gold)':'var(--bg-card-2)'};border-radius:100px;cursor:pointer;transition:.2s;"></span>
+          <span style="position:absolute;width:20px;height:20px;left:${p.notificacoesAtivas?'21px':'3px'};top:3px;background:#0A0B0D;border-radius:50%;transition:.2s;cursor:pointer;"></span>
         </label>
       </div>
       <div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--border-soft);">
