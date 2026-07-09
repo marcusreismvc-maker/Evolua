@@ -1,0 +1,2395 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A0B0D">
+<title>Novo Eu — Construa diariamente a pessoa que deseja se tornar</title>
+<!-- Manifest embutido como data URI para manter todo o app em um único arquivo -->
+<link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoiTm92byBFdSDigJQgTGlmZSBPUyIsInNob3J0X25hbWUiOiJOb3ZvIEV1IiwiZGVzY3JpcHRpb24iOiJDb25zdHJ1YSBkaWFyaWFtZW50ZSBhIHBlc3NvYSBxdWUgZGVzZWphIHNlIHRvcm5hci4iLCJzdGFydF91cmwiOiIuLyIsInNjb3BlIjoiLi8iLCJkaXNwbGF5Ijoic3RhbmRhbG9uZSIsIm9yaWVudGF0aW9uIjoicG9ydHJhaXQiLCJiYWNrZ3JvdW5kX2NvbG9yIjoiIzBBMEIwRCIsInRoZW1lX2NvbG9yIjoiIzBBMEIwRCIsImljb25zIjpbXX0=">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   NOVO EU — DESIGN TOKENS
+   Paleta: fundo grafite quase-preto, ouro como cor de evolução/XP,
+   e uma cor de assinatura por pilar (Corpo / Intelecto / Personalidade / Emocional).
+   Tipografia: Space Grotesk (display, ossos angulosos = disciplina),
+   Inter (corpo, legibilidade), JetBrains Mono (números/dados = precisão).
+   ============================================================ */
+:root{
+  color-scheme: dark;
+  --bg: #0A0B0D;
+  --bg-elev: #12141A;
+  --bg-card: #17191F;
+  --bg-card-2: #1D2027;
+  --border: rgba(255,255,255,0.08);
+  --border-soft: rgba(255,255,255,0.05);
+  --text: #F3F2EE;
+  --text-dim: #92959E;
+  --text-faint: #5B5E68;
+
+  --gold: #E8A63D;
+  --gold-soft: rgba(232,166,61,0.15);
+  --corpo: #FF5A4E;
+  --intelecto: #4E9FFF;
+  --personalidade: #B07CFF;
+  --emocional: #FF6FA8;
+  --estresse: #4FD1C5;
+  --success: #35D07F;
+  --danger: #FF5A4E;
+
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --radius-lg: 20px;
+  --radius-md: 14px;
+  --radius-sm: 9px;
+  --nav-h: 68px;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+html,body{height:100%;}
+body{
+  background:
+    radial-gradient(circle at 15% 0%, rgba(232,166,61,0.06), transparent 40%),
+    radial-gradient(circle at 90% 15%, rgba(78,159,255,0.05), transparent 45%),
+    var(--bg);
+  color:var(--text);
+  font-family:var(--font-body);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+button{font-family:inherit;border:none;background:none;color:inherit;cursor:pointer;}
+input,textarea{font-family:inherit;color:inherit;background:none;border:none;outline:none;}
+a{color:inherit;text-decoration:none;}
+::-webkit-scrollbar{display:none;}
+.mono{font-family:var(--font-mono);}
+.display{font-family:var(--font-display);}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;}
+}
+
+/* ---------- App shell ---------- */
+#app{
+  max-width:520px;
+  margin:0 auto;
+  min-height:100vh;
+  position:relative;
+  padding-bottom:calc(var(--nav-h) + 24px);
+}
+
+.topbar{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:22px 20px 8px;
+}
+.topbar .brand{
+  font-family:var(--font-display); font-weight:700; font-size:15px;
+  letter-spacing:0.06em; color:var(--text-dim); text-transform:uppercase;
+}
+.topbar .brand b{color:var(--gold);}
+
+/* ---------- Ticker de mensagens personalizadas ---------- */
+.ticker-wrap{
+  position:relative; overflow:hidden; height:26px;
+  margin:0 20px 6px; border-radius:100px;
+  background:var(--gold-soft);
+}
+.ticker-track{
+  position:absolute; top:0; left:0; height:100%;
+  display:flex; align-items:center; white-space:nowrap;
+  font-size:11.5px; font-weight:600; color:var(--gold);
+  padding:0 14px; letter-spacing:0.01em;
+}
+.ticker-empty{
+  display:flex; align-items:center; justify-content:center; height:100%;
+  font-size:11px; color:var(--text-faint); font-weight:600;
+}
+.avatar-dot{
+  width:34px;height:34px;border-radius:50%;
+  background:linear-gradient(145deg,var(--gold),#8a5f1c);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--font-display); font-weight:700; font-size:14px; color:#0A0B0D;
+}
+
+main{padding:0 20px; animation:fadeUp .35s ease both;}
+@keyframes fadeUp{from{opacity:0; transform:translateY(8px);} to{opacity:1; transform:translateY(0);}}
+
+.screen-title{
+  font-family:var(--font-display); font-size:26px; font-weight:700;
+  margin:6px 0 4px; letter-spacing:-0.01em;
+}
+.screen-sub{color:var(--text-dim); font-size:13.5px; margin-bottom:18px;}
+
+/* ---------- Cards ---------- */
+.card{
+  background:var(--bg-card);
+  border:1px solid var(--border);
+  border-radius:var(--radius-lg);
+  padding:18px;
+  margin-bottom:14px;
+}
+.card-row{display:flex; align-items:center; justify-content:space-between;}
+.pill{
+  display:inline-flex; align-items:center; gap:6px;
+  font-size:11.5px; font-weight:600; letter-spacing:0.03em;
+  padding:5px 10px; border-radius:100px;
+  background:var(--gold-soft); color:var(--gold);
+  text-transform:uppercase;
+}
+
+/* ---------- Evolution Ring (signature element) ---------- */
+.ring-wrap{position:relative; width:172px; height:172px; margin:6px auto 4px;}
+.ring-wrap svg{transform:rotate(-90deg);}
+.ring-bg{fill:none; stroke:var(--border); stroke-width:10;}
+.ring-fg{fill:none; stroke-width:10; stroke-linecap:round; transition:stroke-dashoffset 1s cubic-bezier(.4,0,.2,1);}
+.ring-center{
+  position:absolute; inset:0; display:flex; flex-direction:column;
+  align-items:center; justify-content:center; text-align:center;
+}
+.ring-center .day-num{font-family:var(--font-display); font-size:38px; font-weight:700; line-height:1;}
+.ring-center .day-lbl{font-size:11px; color:var(--text-dim); margin-top:4px; letter-spacing:0.04em; text-transform:uppercase;}
+
+.phase-tag{
+  display:flex; align-items:center; justify-content:center; gap:6px;
+  font-size:12.5px; font-weight:600; margin-top:10px; color:var(--text-dim);
+}
+
+/* ---------- Stat grid ---------- */
+.stat-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:14px;}
+.stat-box{
+  background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius-md);
+  padding:14px;
+}
+.stat-box .v{font-family:var(--font-mono); font-size:20px; font-weight:600;}
+.stat-box .l{font-size:11.5px; color:var(--text-dim); margin-top:2px;}
+
+/* ---------- Section heading ---------- */
+.section-h{
+  display:flex; align-items:center; justify-content:space-between;
+  margin:22px 0 10px;
+}
+.section-h h2{font-family:var(--font-display); font-size:16px; font-weight:600;}
+.section-h .link{font-size:12.5px; color:var(--gold); font-weight:600;}
+
+/* ---------- Pillars ---------- */
+.pillar-row{display:flex; gap:10px; overflow-x:auto; padding-bottom:4px; margin-bottom:4px;}
+.pillar-chip{
+  flex:1 1 0; min-width:76px;
+  background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius-md);
+  padding:12px 10px; text-align:center; cursor:pointer;
+}
+.pillar-chip .ic{font-size:19px; display:block; margin-bottom:6px;}
+.pillar-chip .nm{font-size:11px; color:var(--text-dim); font-weight:600;}
+.pillar-chip .pc{font-family:var(--font-mono); font-size:14px; font-weight:600; margin-top:2px;}
+
+.pillar-detail{padding:18px; border-radius:var(--radius-lg); margin-bottom:14px; border:1px solid var(--border);}
+.pillar-detail .head{display:flex; align-items:center; gap:10px;}
+.pillar-detail .head .ic{font-size:24px;}
+.pillar-detail .head .nm{font-family:var(--font-display); font-weight:600; font-size:17px;}
+.bar-track{height:8px; border-radius:100px; background:var(--bg-elev); margin-top:12px; overflow:hidden;}
+.bar-fill{height:100%; border-radius:100px;}
+
+/* mini bar chart */
+.chartbars{display:flex; align-items:flex-end; gap:5px; height:70px; margin-top:14px;}
+.chartbars .bar{flex:1; border-radius:4px 4px 0 0; min-height:4px; opacity:.85;}
+
+/* ---------- Segmented control ---------- */
+.segmented{display:flex; background:var(--bg-elev); border-radius:100px; padding:4px; margin-bottom:16px;}
+.segmented button{flex:1; padding:9px 0; border-radius:100px; font-size:12.5px; font-weight:600; color:var(--text-dim); transition:.2s;}
+.segmented button.active{background:var(--bg-card-2); color:var(--text);}
+
+/* ---------- Missions (editáveis) ---------- */
+.mission-item{
+  background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius-md);
+  padding:12px 14px; margin-bottom:9px;
+}
+.mission-item.done{opacity:0.6;}
+.mission-item .row-top{display:flex; align-items:center; gap:10px;}
+.check-circle{
+  width:26px; height:26px; border-radius:50%; border:2px solid var(--border);
+  display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:13px;
+  transition:.2s;
+}
+.mission-item.done .check-circle{background:var(--success); border-color:var(--success); color:#0A0B0D;}
+.mission-item .m-name{
+  flex:1; font-size:14px; font-weight:600; background:var(--bg-card-2);
+  border:1px solid var(--border); border-radius:var(--radius-sm); padding:8px 10px; min-width:0;
+}
+.mission-item .m-xp{
+  width:52px; text-align:center; font-family:var(--font-mono); font-size:12.5px; color:var(--gold);
+  background:var(--bg-card-2); border:1px solid var(--border); border-radius:var(--radius-sm); padding:8px 4px; flex-shrink:0;
+}
+.mission-item .del{color:var(--text-faint); font-size:15px; padding:4px 2px; flex-shrink:0;}
+.mission-item .row-meta{font-size:11px; color:var(--text-dim); margin:6px 0 0 36px;}
+.mission-item.done .m-name{text-decoration:line-through;}
+
+/* ---------- Journal ---------- */
+.journal-q{margin-bottom:16px;}
+.journal-q label{display:block; font-size:12.5px; color:var(--text-dim); margin-bottom:6px; font-weight:600;}
+.journal-q textarea{
+  width:100%; background:var(--bg-elev); border:1px solid var(--border); border-radius:var(--radius-sm);
+  padding:11px 12px; font-size:13.5px; min-height:56px; resize:vertical; line-height:1.5;
+}
+.journal-entry{padding:14px; border-bottom:1px solid var(--border-soft);}
+.journal-entry:last-child{border-bottom:none;}
+.journal-entry .dt{font-size:11px; color:var(--text-faint); font-family:var(--font-mono);}
+.journal-entry p{font-size:13px; margin-top:5px; color:var(--text-dim); line-height:1.5;}
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:flex; align-items:center; justify-content:center; gap:8px;
+  padding:14px 18px; border-radius:var(--radius-md); font-weight:600; font-size:14px;
+  width:100%;
+}
+.btn-primary{background:linear-gradient(140deg,#F3BB5C,var(--gold)); color:#221404;}
+.btn-ghost{background:var(--bg-card-2); border:1px solid var(--border); color:var(--text);}
+.btn-sm{padding:9px 14px; font-size:12.5px; width:auto;}
+
+/* ---------- Bottom nav ---------- */
+.tabbar{
+  position:fixed; bottom:0; left:0; right:0;
+  max-width:520px; margin:0 auto;
+  height:var(--nav-h);
+  background:rgba(18,20,26,0.9); backdrop-filter:blur(20px);
+  border-top:1px solid var(--border);
+  display:flex; align-items:center; justify-content:space-around;
+  padding-bottom:env(safe-area-inset-bottom);
+  z-index:50;
+}
+.tab-btn{
+  display:flex; flex-direction:column; align-items:center; gap:3px;
+  color:var(--text-faint); font-size:9.5px; font-weight:600; flex:1; padding:8px 0;
+}
+.tab-btn .ic{font-size:17px; line-height:1;}
+.tab-btn.active{color:var(--gold);}
+
+/* ---------- Rotina ---------- */
+.now-banner{
+  background:linear-gradient(135deg, var(--gold-soft), transparent);
+  border:1px solid var(--gold); border-radius:var(--radius-lg); padding:16px;
+  margin-bottom:16px; text-align:center;
+}
+.now-banner .clock{font-family:var(--font-mono); font-size:26px; font-weight:600; color:var(--gold);}
+.now-banner .atv{font-family:var(--font-display); font-size:16px; font-weight:600; margin-top:4px;}
+.now-banner .lbl{font-size:11px; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.05em; margin-top:2px;}
+.rotina-item{
+  display:flex; align-items:center; gap:10px;
+  background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius-md);
+  padding:10px 12px; margin-bottom:8px;
+}
+.rotina-item.now{border-color:var(--gold); background:var(--gold-soft);}
+.rotina-item input[type=time]{
+  background:var(--bg-card-2); border:1px solid var(--border); border-radius:var(--radius-sm);
+  padding:8px 8px; font-family:var(--font-mono); font-size:12.5px; width:90px; flex-shrink:0;
+}
+.rotina-item input[type=text]{
+  flex:1; background:var(--bg-card-2); border:1px solid var(--border); border-radius:var(--radius-sm);
+  padding:8px 10px; font-size:13px;
+}
+.rotina-item .del{color:var(--text-faint); font-size:16px; padding:4px 6px; flex-shrink:0;}
+.danger-zone{border:1px solid rgba(255,90,78,0.35); background:rgba(255,90,78,0.06);}
+.danger-zone .btn-danger{background:transparent; border:1px solid var(--danger); color:var(--danger);}
+
+/* ---------- FAB ---------- */
+.fab{
+  position:fixed; right:calc(50% - 260px + 20px); bottom:calc(var(--nav-h) + 18px);
+  width:56px; height:56px; border-radius:50%;
+  background:linear-gradient(140deg,#F3BB5C,var(--gold));
+  display:flex; align-items:center; justify-content:center;
+  font-size:24px; color:#221404; box-shadow:0 8px 24px rgba(232,166,61,0.35);
+  z-index:55;
+}
+@media (max-width:560px){ .fab{right:20px;} }
+
+/* ---------- Modal / Sheet ---------- */
+.sheet-overlay{
+  position:fixed; inset:0; background:rgba(0,0,0,0.6); backdrop-filter:blur(4px);
+  z-index:90; display:none; align-items:flex-end; justify-content:center;
+}
+.sheet-overlay.open{display:flex;}
+.sheet{
+  width:100%; max-width:520px; max-height:88vh; overflow-y:auto;
+  background:var(--bg-elev); border-radius:24px 24px 0 0; padding:10px 20px 32px;
+  animation:slideUp .3s cubic-bezier(.3,0,.2,1) both;
+}
+@keyframes slideUp{from{transform:translateY(30px); opacity:0;} to{transform:translateY(0); opacity:1;}}
+.sheet-handle{width:36px; height:4px; background:var(--border); border-radius:100px; margin:8px auto 16px;}
+.sheet h3{font-family:var(--font-display); font-size:19px; font-weight:700; margin-bottom:14px;}
+
+.field{margin-bottom:16px;}
+.field label{display:block; font-size:12.5px; color:var(--text-dim); font-weight:600; margin-bottom:8px;}
+.slider-row{display:flex; align-items:center; gap:12px;}
+input[type=range]{
+  -webkit-appearance:none; flex:1; height:6px; border-radius:100px; background:var(--bg-card-2);
+}
+input[type=range]::-webkit-slider-thumb{
+  -webkit-appearance:none; width:20px; height:20px; border-radius:50%; background:var(--gold);
+  border:3px solid var(--bg-elev); box-shadow:0 0 0 1px var(--border);
+}
+.slider-val{font-family:var(--font-mono); font-weight:600; width:26px; text-align:center;}
+.field input[type=text], .field input[type=number], .field input[type=date], .field input[type=time]{
+  width:100%; background:var(--bg-card-2); border:1px solid var(--border); border-radius:var(--radius-sm);
+  padding:11px 12px; font-size:13.5px; color:var(--text); color-scheme: dark;
+}
+
+/* ---------- Menu list (Config/Mais) ---------- */
+.menu-item{
+  display:flex; align-items:center; gap:12px;
+  background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius-md);
+  padding:14px; margin-bottom:9px;
+}
+.menu-item .ic{width:34px; height:34px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:16px; flex-shrink:0;}
+.menu-item .nm{font-size:14px; font-weight:600;}
+.menu-item .sub{font-size:11.5px; color:var(--text-dim); margin-top:1px;}
+.menu-item .chev{color:var(--text-faint); margin-left:auto;}
+
+/* ---------- Achievement badge ---------- */
+.badge-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:10px;}
+.badge{
+  aspect-ratio:1; border-radius:16px; background:var(--bg-card); border:1px solid var(--border);
+  display:flex; align-items:center; justify-content:center; font-size:22px;
+}
+.badge.locked{opacity:0.25; filter:grayscale(1);}
+
+/* ---------- Toast ---------- */
+.toast{
+  position:fixed; bottom:calc(var(--nav-h) + 20px); left:50%; transform:translateX(-50%) translateY(20px);
+  background:var(--bg-card-2); border:1px solid var(--border); color:var(--text);
+  padding:12px 18px; border-radius:100px; font-size:13px; font-weight:600;
+  opacity:0; transition:.25s; z-index:99; white-space:nowrap; box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+.toast.show{opacity:1; transform:translateX(-50%) translateY(0);}
+
+.motivational{
+  font-family:var(--font-display); font-size:15px; font-weight:600; text-align:center;
+  padding:16px; line-height:1.4; color:var(--text);
+}
+
+.ia-card{
+  border-left:3px solid var(--gold); background:var(--bg-card); border-radius:var(--radius-md);
+  padding:13px 14px; margin-bottom:10px; font-size:13px; line-height:1.5; color:var(--text-dim);
+}
+.ia-card b{color:var(--text);}
+
+.empty-state{text-align:center; padding:36px 10px; color:var(--text-faint);}
+.empty-state .ic{font-size:30px; margin-bottom:10px;}
+.empty-state .t{font-size:13px;}
+
+/* ---------- Print (exportação em PDF via impressão do navegador) ---------- */
+#printArea{display:none;}
+@media print{
+  body *{visibility:hidden;}
+  #printArea, #printArea *{visibility:visible;}
+  #printArea{position:absolute; top:0; left:0; width:100%; padding:24px; color:#000; background:#fff; font-family:Arial,sans-serif;}
+  #printArea h1{font-size:22px;margin-bottom:6px;}
+  #printArea h3{margin-top:18px;margin-bottom:6px;}
+  #printArea table{margin-top:6px;}
+}
+
+/* ---------- Carrossel de motivação (aba Início) ---------- */
+.motiv-carousel{
+  position:relative; width:100%; height:180px; border-radius:var(--radius-lg);
+  overflow:hidden; background:var(--bg-card); border:1px solid var(--border); margin-bottom:8px;
+}
+.motiv-carousel img{
+  position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+  opacity:0; transition:opacity .6s ease;
+}
+.motiv-carousel img.active{opacity:1;}
+.motiv-carousel .dots{position:absolute; bottom:10px; left:0; right:0; display:flex; justify-content:center; gap:5px;}
+.motiv-carousel .dots span{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,0.4);}
+.motiv-carousel .dots span.active{background:#fff; width:14px; border-radius:3px;}
+
+.motiv-thumbs{display:flex; flex-wrap:wrap; gap:10px;}
+.motiv-thumb{position:relative; width:64px; height:64px; border-radius:12px; overflow:hidden; border:1px solid var(--border);}
+.motiv-thumb img{width:100%; height:100%; object-fit:cover;}
+.motiv-thumb-del{
+  position:absolute; top:2px; right:2px; width:18px; height:18px; border-radius:50%;
+  background:rgba(0,0,0,0.6); color:#fff; font-size:10px; display:flex; align-items:center; justify-content:center;
+}
+.motiv-thumb-add{
+  width:64px; height:64px; border-radius:12px; border:1px dashed var(--border);
+  display:flex; align-items:center; justify-content:center; font-size:11px; color:var(--text-dim);
+  cursor:pointer; text-align:center; padding:4px;
+}
+</style>
+</head>
+<body>
+
+<div id="app">
+  <div class="topbar">
+    <div class="brand">NOVO <b>EU</b></div>
+    <div class="avatar-dot" id="avatarDot">M</div>
+  </div>
+  <main id="screen"></main>
+</div>
+
+<button class="fab" id="fabCheckin" title="Check-in">＋</button>
+
+<nav class="tabbar" id="tabbar">
+  <button class="tab-btn" data-route="rotina"><span class="ic">⏱</span>Rotina</button>
+  <button class="tab-btn" data-route="dashboard"><span class="ic">◆</span>Início</button>
+  <button class="tab-btn" data-route="pilares"><span class="ic">▲</span>Pilares</button>
+  <button class="tab-btn" data-route="diario"><span class="ic">✎</span>Diário</button>
+  <button class="tab-btn" data-route="mais"><span class="ic">◎</span>Mais</button>
+</nav>
+
+<div class="sheet-overlay" id="sheetOverlay">
+  <div class="sheet" id="sheetContent"></div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<div id="printArea"></div>
+
+<script>
+/* ============================================================
+   NOVO EU — APP.JS
+   PWA 100% offline, vanilla JS, sem frameworks, sem dependências.
+   Estrutura: STATE (dados mock persistidos em localStorage) +
+   ROUTER (hash-based SPA) + RENDERERS (uma função por tela) +
+   ACTIONS (mutam o STATE e re-renderizam).
+   Esqueleto: todas as telas navegáveis com dados fictícios,
+   prontas para depois plugar a lógica real de cada módulo.
+   ============================================================ */
+
+const STORAGE_KEY = 'novoeu_state_v7';
+
+const PHASES = [
+  {id:'fundacao', nome:'Fundação', emoji:'🌱', from:1, to:20, cor:'#6FCF7B', desc:'Construção da consistência.'},
+  {id:'consolidacao', nome:'Consolidação', emoji:'🔥', from:21, to:50, cor:'#FF8A3D', desc:'Fortalecimento dos hábitos.'},
+  {id:'transformacao', nome:'Transformação', emoji:'⚔️', from:51, to:80, cor:'#8B7CFF', desc:'Aumento do desafio e evolução.'},
+  {id:'identidade', nome:'Identidade', emoji:'👑', from:81, to:100, cor:'#E8A63D', desc:'Consolidação da nova versão do usuário.'},
+];
+
+const FRASES = [
+  "Disciplina vence motivação.",
+  "Você cumpriu sua palavra. Mais um passo.",
+  "Seu futuro está sendo construído agora.",
+  "Você está se tornando quem decidiu ser.",
+  "Pequenas vitórias diárias constroem grandes transformações.",
+  "Continue. O resultado é consequência da consistência.",
+  "Você está criando evidências concretas da pessoa que deseja se tornar.",
+  "Hoje é só mais um tijolo na fundação do seu futuro eu.",
+  "A versão de você de amanhã agradece a de hoje.",
+  "Coragem não é ausência de medo, é ação apesar dele.",
+  "Cada check-in é um voto na pessoa que você está se tornando.",
+  "Evoluir é divertido quando você olha para trás e vê o caminho.",
+];
+
+function pillarMeta(id){
+  return {
+    corpo:{nome:'Corpo', emoji:'💪', cor:'var(--corpo)'},
+    intelecto:{nome:'Intelecto', emoji:'🧠', cor:'var(--intelecto)'},
+    personalidade:{nome:'Personalidade', emoji:'🔥', cor:'var(--personalidade)'},
+    emocional:{nome:'Emocional', emoji:'❤️', cor:'var(--emocional)'},
+    estresse:{nome:'Estresse', emoji:'🧘', cor:'var(--estresse)'},
+  }[id];
+}
+
+const FASE_ZERO = {id:'zero', nome:'Preparação', emoji:'🌱', desc:'Sua jornada está prestes a começar. Faça seu primeiro check-in.', cor:'#6FCF7B'};
+
+function currentPhase(day){
+  if(day < 1) return FASE_ZERO;
+  return PHASES.find(p => day >= p.from && day <= p.to) || PHASES[PHASES.length-1];
+}
+
+/* ---------- Estado inicial: Dia 0, tudo zerado ----------
+   O desafio sempre começa do zero. Estrutura (missões, rotina) já vem
+   pronta para uso; progresso (XP, streaks, histórico) começa vazio. */
+function zeroHistorico(){ return [0,0,0,0,0,0,0]; }
+
+function seedState(nomeExistente){
+  return {
+    perfil:{ nome: nomeExistente || 'Você', metaPeso:74, metaDiaria:3, diasDesafio:100, tema:'escuro', corDestaque:'#E8A63D', notificacoesAtivas:true },
+    motivacao:{
+      imagens:[],
+      frases:['Mais razão e menos emoção', 'Mantenha postura ereta e confiante'],
+    },
+    visaoIdentidade:{
+      declaracao:'',
+      aspiracoes:['Alimentação mais sofisticada', 'Se vestir melhor', 'Frequentar lugares mais luxuosos'],
+    },
+    /* Calendário: datas importantes (aniversários, compromissos etc).
+       recorrenteAnual = true para datas que se repetem todo ano (ex: aniversários). */
+    eventos:[],
+    /* Metas: objetivos pessoais organizados por prazo, cada um com seu
+       próprio "próximo passo" — a ação concreta que leva até ele. */
+    metas:{ curto:[], media:[], longo:[] },
+    /* Controla o avanço automático de dia (ligado ao calendário real do
+       dispositivo) e guarda um retrato das missões de cada dia que já
+       passou, para o Resumo do dia poder mostrar o histórico de verdade. */
+    ultimaDataAbertura: null,
+    historicoMissoes: {},
+    diaAtual: 0,
+    xp: 0,
+    nivel: 1,
+    xpProximoNivel: 300,
+    streakAtual: 0,
+    streakMaxima: 0,
+    peso: null,
+    humorMedio: null,
+    disposicaoMedia: null,
+    pilares:{
+      corpo:{ nota:0, pct:0, xp:0, historico:zeroHistorico() },
+      intelecto:{ nota:0, pct:0, xp:0, historico:zeroHistorico(), campos:{ livroAtual:'', resumo:'', tempoEstudadoMin:0 } },
+      personalidade:{ nota:0, pct:0, xp:0, historico:zeroHistorico() },
+      emocional:{ nota:0, pct:0, xp:0, historico:zeroHistorico() },
+      estresse:{ nota:0, pct:0, xp:0, historico:zeroHistorico() },
+    },
+    missoes:{
+      corpo:[
+        {id:'m1', nome:'Pular corda', xp:10, streak:0, done:false},
+        {id:'m2', nome:'Academia', xp:25, streak:0, done:false},
+        {id:'m3', nome:'Cardio', xp:15, streak:0, done:false},
+        {id:'m4', nome:'Água', xp:10, streak:0, done:false},
+        {id:'m5', nome:'Alimentação', xp:15, streak:0, done:false},
+        {id:'m20', nome:'Dormir', xp:10, streak:0, done:false},
+        {id:'m21', nome:'Registrar peso', xp:10, streak:0, done:false},
+        {id:'m22', nome:'Registrar medidas', xp:10, streak:0, done:false},
+      ],
+      intelecto:[
+        {id:'m6', nome:'Leitura', xp:15, streak:0, done:false},
+        {id:'m7', nome:'Estudo', xp:20, streak:0, done:false},
+        {id:'m8', nome:'Aprender algo', xp:10, streak:0, done:false},
+      ],
+      personalidade:[
+        {id:'m9', nome:'Cumpri minha palavra', xp:20, streak:0, done:false},
+        {id:'m10', nome:'Saí da zona de conforto', xp:25, streak:0, done:false},
+        {id:'m23', nome:'Conversei com confiança', xp:15, streak:0, done:false},
+        {id:'m24', nome:'Mantive postura', xp:10, streak:0, done:false},
+        {id:'m25', nome:'Controlei emoções', xp:15, streak:0, done:false},
+        {id:'m11', nome:'Evitei procrastinação', xp:15, streak:0, done:false},
+        {id:'m12', nome:'Tomei iniciativa', xp:15, streak:0, done:false},
+        {id:'m26', nome:'Resolvi problemas', xp:15, streak:0, done:false},
+        {id:'m27', nome:'Fiz algo que meu eu antigo não faria', xp:25, streak:0, done:false},
+        {id:'m28', nome:'Ajudei alguém', xp:15, streak:0, done:false},
+      ],
+      emocional:[
+        {id:'m13', nome:'Registrar emoções', xp:10, streak:0, done:false},
+        {id:'m29', nome:'Registrar humor', xp:10, streak:0, done:false},
+        {id:'m30', nome:'Registrar disposição', xp:10, streak:0, done:false},
+        {id:'m31', nome:'Ansiedade (autoavaliação)', xp:10, streak:0, done:false},
+        {id:'m14', nome:'Gratidão', xp:10, streak:0, done:false},
+        {id:'m15', nome:'Reflexão', xp:15, streak:0, done:false},
+      ],
+      estresse:[
+        {id:'m16', nome:'Respiração consciente (5min)', xp:10, streak:0, done:false},
+        {id:'m17', nome:'Pausa sem telas', xp:10, streak:0, done:false},
+        {id:'m18', nome:'Avaliei meu nível de estresse', xp:10, streak:0, done:false},
+        {id:'m19', nome:'Momento de silêncio', xp:10, streak:0, done:false},
+      ],
+    },
+    checkins:{},
+    diario:[],
+    conquistas:[
+      {id:'a1', ic:'🔥', nome:'7 dias seguidos', unlocked:false},
+      {id:'a2', ic:'📚', nome:'10 livros lidos', unlocked:false},
+      {id:'a3', ic:'💧', nome:'30 dias hidratado', unlocked:false},
+      {id:'a4', ic:'🏋️', nome:'20 treinos', unlocked:false},
+      {id:'a5', ic:'🧘', nome:'Mente calma', unlocked:false},
+      {id:'a6', ic:'👑', nome:'Fase Identidade', unlocked:false},
+      {id:'a7', ic:'✍️', nome:'15 diários', unlocked:false},
+      {id:'a8', ic:'⚡', nome:'Nível 10', unlocked:false},
+    ],
+    /* Rotina: horários fixos do dia, editáveis, com listas distintas para
+       dias de semana e fim de semana. A tela "Rotina" identifica em tempo
+       real qual item está em andamento comparando com o relógio do dispositivo. */
+    rotina:{
+      semana:[
+        {hora:'07:00', atividade:'Acordar'},
+        {hora:'07:05', atividade:'Escovar os dentes'},
+        {hora:'07:10', atividade:'Lanchar'},
+        {hora:'07:30', atividade:'Ir para a escola/trabalho'},
+        {hora:'12:00', atividade:'Almoçar'},
+        {hora:'18:30', atividade:'Treino'},
+        {hora:'20:00', atividade:'Jantar'},
+        {hora:'21:30', atividade:'Leitura / estudo'},
+        {hora:'22:30', atividade:'Dormir'},
+      ],
+      fimDeSemana:[
+        {hora:'08:30', atividade:'Acordar'},
+        {hora:'08:40', atividade:'Escovar os dentes'},
+        {hora:'09:00', atividade:'Café da manhã'},
+        {hora:'10:00', atividade:'Tempo livre / família'},
+        {hora:'13:00', atividade:'Almoçar'},
+        {hora:'16:00', atividade:'Treino ou caminhada'},
+        {hora:'20:00', atividade:'Jantar'},
+        {hora:'23:00', atividade:'Dormir'},
+      ],
+    },
+  };
+}
+
+/* saveTimer precisa existir antes de STATE = loadState(), pois o primeiro
+   carregamento pode chamar saveState() imediatamente (usuário novo, sem
+   dados salvos ainda) — declarar depois causava erro de referência. */
+let saveTimer = null;
+let STATE = loadState();
+
+function loadState(){
+  try{
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if(raw) return JSON.parse(raw);
+  }catch(e){ console.warn('Falha ao ler estado local, recriando mock.', e); }
+  const fresh = seedState();
+  saveState(fresh);
+  return fresh;
+}
+/* saveState grava no localStorage de forma adiada (setTimeout 0): a tela
+   atualiza primeiro, e a escrita em disco (mais pesada, principalmente
+   quando há imagens) acontece logo depois, sem travar a interação.
+   Chamadas repetidas em sequência são agrupadas numa só escrita. */
+function saveState(s = STATE){
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(()=>{
+    try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(s)); }
+    catch(e){ console.warn('Falha ao salvar estado local — os dados continuam válidos em memória.', e); }
+  }, 0);
+}
+
+/* ---------- Toast helper ---------- */
+let toastTimer;
+function toast(msg){
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(()=> t.classList.remove('show'), 2200);
+}
+
+/* ---------- Router ---------- */
+const ROUTES = {
+  dashboard: renderDashboard,
+  pilares: renderPilares,
+  diario: renderDiario,
+  rotina: renderRotina,
+  visao: renderVisao,
+  calendario: renderCalendario,
+  metas: renderMetas,
+  mais: renderMais,
+  graficos: renderGraficos,
+  relatorios: renderRelatorios,
+  resumodia: renderResumoDia,
+  ia: renderIA,
+  config: renderConfig,
+  backup: renderBackup,
+};
+const TAB_ROUTES = ['rotina','dashboard','pilares','diario','mais'];
+
+/* Guarda a última rota renderizada para só rolar a tela ao topo quando o
+   usuário de fato navega para outra tela — e não sempre que uma ação
+   (marcar missão, adicionar item, etc.) simplesmente redesenha a tela
+   atual com os dados atualizados. Isso evita "pular" para o topo no
+   meio de uma lista longa. */
+let ultimaRotaRenderizada = null;
+
+function router(){
+  const hash = (location.hash || '#rotina').replace('#','');
+  const [route, param] = hash.split('/');
+  const renderFn = ROUTES[route] || renderDashboard;
+  const navegouParaOutraRota = route !== ultimaRotaRenderizada;
+  document.getElementById('screen').innerHTML = renderFn(param);
+  document.querySelectorAll('.tab-btn').forEach(btn=>{
+    const isMais = TAB_ROUTES.includes(route) ? route === 'mais' : true;
+    const activeRoute = TAB_ROUTES.includes(route) ? route : 'mais';
+    btn.classList.toggle('active', btn.dataset.route === activeRoute);
+  });
+  document.getElementById('fabCheckin').style.display = (route==='dashboard') ? 'flex' : 'none';
+  // re-run any per-screen post-render bindings
+  bindScreenEvents(route);
+  if(navegouParaOutraRota) window.scrollTo(0,0);
+  ultimaRotaRenderizada = route;
+}
+window.addEventListener('hashchange', router);
+document.querySelectorAll('.tab-btn').forEach(btn=>{
+  btn.addEventListener('click', ()=> location.hash = '#'+btn.dataset.route);
+});
+
+/* ============================================================
+   RENDERERS — cada função devolve o HTML de uma tela
+   ============================================================ */
+
+function ringSvg(pctDay, colorHex, size=172, stroke=10){
+  const r = (size/2) - stroke;
+  const c = 2*Math.PI*r;
+  const offset = c - (pctDay/100)*c;
+  return `
+    <div class="ring-wrap" style="width:${size}px;height:${size}px;">
+      <svg width="${size}" height="${size}">
+        <circle class="ring-bg" cx="${size/2}" cy="${size/2}" r="${r}"></circle>
+        <circle class="ring-fg" cx="${size/2}" cy="${size/2}" r="${r}"
+          stroke="${colorHex}" stroke-dasharray="${c}" stroke-dashoffset="${offset}"></circle>
+      </svg>
+      <div class="ring-center"><slot></slot></div>
+    </div>`;
+}
+
+function fmtNum(v, suffix=''){ return (v===null || v===undefined) ? '—' : `${v}${suffix}`; }
+
+function renderDashboard(){
+  const s = STATE;
+  const phase = currentPhase(s.diaAtual);
+  const pctDay = Math.round((s.diaAtual/s.perfil.diasDesafio)*100);
+  const frase = FRASES[s.diaAtual % FRASES.length];
+  const hora = new Date().getHours();
+  const saudacao = hora < 12 ? 'Bom dia' : hora < 18 ? 'Boa tarde' : 'Boa noite';
+  const diasRestantes = s.perfil.diasDesafio - s.diaAtual;
+  const xpPct = Math.round((s.xp / s.xpProximoNivel)*100);
+  const subtitulo = s.diaAtual < 1
+    ? `Pronto para começar · fase ${phase.emoji} ${phase.nome}`
+    : `Dia ${s.diaAtual} de ${s.perfil.diasDesafio} · fase ${phase.emoji} ${phase.nome}`;
+
+  return `
+    <h1 class="screen-title">${saudacao}, ${s.perfil.nome}.</h1>
+    <p class="screen-sub">${subtitulo}</p>
+
+    ${renderHorizonteHTML()}
+    ${renderFocoHojeHTML()}
+    ${renderProximoEventoHTML()}
+    ${renderProximoPassoHTML()}
+
+    ${renderMotivCarouselHTML()}
+    <div class="ticker-wrap" id="fraseTickerWrap">
+      ${s.motivacao.frases.length
+        ? `<div class="ticker-track" id="fraseTickerTrack"></div>`
+        : `<div class="ticker-empty">Adicione frases em Configurações → Motivação</div>`}
+    </div>
+
+    <div class="card" style="text-align:center;">
+      ${ringSvg(pctDay, phase.cor)}
+      <div style="position:relative;top:-118px;pointer-events:none;">
+        <div class="ring-center">
+          <div class="day-num display">${s.diaAtual}</div>
+          <div class="day-lbl">de ${s.perfil.diasDesafio} dias</div>
+        </div>
+      </div>
+      <div class="phase-tag"><span>${phase.emoji}</span> ${phase.desc}</div>
+      <div class="motivational">"${frase}"</div>
+    </div>
+
+    <div class="stat-grid">
+      <div class="stat-box"><div class="v mono" style="color:var(--gold)">🔥 ${s.streakAtual}</div><div class="l">Sequência atual</div></div>
+      <div class="stat-box"><div class="v mono">${s.streakMaxima}</div><div class="l">Sequência máxima</div></div>
+      <div class="stat-box"><div class="v mono">${fmtNum(s.peso,'kg')}</div><div class="l">Peso atual · meta ${s.perfil.metaPeso}kg</div></div>
+      <div class="stat-box"><div class="v mono">${diasRestantes}</div><div class="l">Dias restantes</div></div>
+      <div class="stat-box"><div class="v mono">${fmtNum(s.humorMedio,'/10')}</div><div class="l">Humor médio</div></div>
+      <div class="stat-box"><div class="v mono">${fmtNum(s.disposicaoMedia,'/10')}</div><div class="l">Disposição média</div></div>
+    </div>
+
+    <div class="card">
+      <div class="card-row">
+        <span class="pill">Nível ${s.nivel}</span>
+        <span class="mono" style="font-size:12px;color:var(--text-dim)">${s.xp} / ${s.xpProximoNivel} XP</span>
+      </div>
+      <div class="bar-track"><div class="bar-fill" style="width:${xpPct}%;background:linear-gradient(90deg,#F3BB5C,var(--gold));"></div></div>
+    </div>
+
+    <div class="section-h"><h2>Pilares</h2><a class="link" href="#pilares">ver tudo</a></div>
+    ${renderPillarRow()}
+
+    <div class="section-h"><h2>Conquistas recentes</h2><a class="link" href="#mais">ver tudo</a></div>
+    <div class="badge-grid">
+      ${s.conquistas.slice(0,4).map(a=>`<div class="badge ${a.unlocked?'':'locked'}" title="${a.nome}">${a.ic}</div>`).join('')}
+    </div>
+  `;
+}
+
+/* ---------- Horizonte: quem a pessoa está se tornando ---------- */
+function renderHorizonteHTML(){
+  const v = STATE.visaoIdentidade;
+  const texto = (v.declaracao && v.declaracao.trim())
+    ? v.declaracao.trim()
+    : (v.aspiracoes.length ? v.aspiracoes[STATE.diaAtual % v.aspiracoes.length] : '');
+  if(!texto) return '';
+  return `
+    <div class="card" style="border-left:3px solid var(--personalidade);cursor:pointer;" onclick="location.hash='#visao'">
+      <div style="font-size:11px;color:var(--text-dim);text-transform:uppercase;letter-spacing:.05em;font-weight:600;">👑 Quem você está se tornando</div>
+      <div style="font-size:14.5px;font-weight:600;margin-top:4px;line-height:1.4;">${texto}</div>
+    </div>`;
+}
+
+/* ---------- Próximo evento do calendário ---------- */
+function renderProximoEventoHTML(){
+  const eventos = STATE.eventos
+    .map(e => ({ ...e, _proxima: proximaOcorrencia(e) }))
+    .filter(e => e._proxima !== null)
+    .sort((a,b)=> a._proxima - b._proxima);
+  if(!eventos.length) return '';
+  const e = eventos[0];
+  const dias = diasAte(e._proxima);
+  const quando = dias===0 ? 'Hoje' : dias===1 ? 'Amanhã' : `Em ${dias} dias`;
+  return `
+    <div class="card" style="border-left:3px solid var(--corpo);cursor:pointer;" onclick="location.hash='#calendario'">
+      <div style="font-size:11px;color:var(--text-dim);text-transform:uppercase;letter-spacing:.05em;font-weight:600;">${e.recorrenteAnual?'🎂':'📌'} Próximo evento</div>
+      <div style="font-size:14.5px;font-weight:600;margin-top:4px;">${e.titulo} · <span style="color:var(--corpo);">${quando}</span></div>
+    </div>`;
+}
+
+/* ---------- Foco de hoje (objetivo definido no check-in da manhã) ---------- */
+/* ---------- Próximo passo (metas curto/médio/longo prazo) ---------- */
+function renderProximoPassoHTML(){
+  const ordem = [['curto','curto prazo'], ['media','médio prazo'], ['longo','longo prazo']];
+  for(const [chave, rotulo] of ordem){
+    const meta = STATE.metas[chave].find(m => !m.concluida && m.titulo && m.titulo.trim());
+    if(meta){
+      return `
+        <div class="card" style="border-left:3px solid var(--intelecto);cursor:pointer;" onclick="location.hash='#metas'">
+          <div style="font-size:11px;color:var(--text-dim);text-transform:uppercase;letter-spacing:.05em;font-weight:600;">🎯 Meta de ${rotulo}</div>
+          <div style="font-size:14.5px;font-weight:600;margin-top:4px;">${meta.titulo}</div>
+          ${meta.proximoPasso && meta.proximoPasso.trim() ? `<div style="font-size:12.5px;color:var(--text-dim);margin-top:4px;">→ Próximo passo: ${meta.proximoPasso}</div>` : ''}
+          ${prazoStatusHTML(meta.prazoData)}
+        </div>`;
+    }
+  }
+  return '';
+}
+
+function renderFocoHojeHTML(){
+  const s = STATE;
+  const dia = s.checkins[s.diaAtual];
+  if(!dia || !dia.manha || !dia.manha.objetivo) return '';
+  const status = dia.objetivoCumprido;
+  let statusHTML;
+  if(status === true) statusHTML = `<span style="color:var(--success);font-weight:700;">✅ Cumprido</span>`;
+  else if(status === false) statusHTML = `<span style="color:var(--text-dim);">Não foi hoje — tenta de novo amanhã.</span>`;
+  else statusHTML = `<span style="color:var(--text-dim);">Responda no check-in da noite se você cumpriu.</span>`;
+  return `
+    <div class="card" style="border-left:3px solid var(--gold);">
+      <div style="font-size:11px;color:var(--text-dim);text-transform:uppercase;letter-spacing:.05em;font-weight:600;">🎯 Foco de hoje</div>
+      <div style="font-size:15px;font-weight:600;margin:4px 0 6px;">${dia.manha.objetivo}</div>
+      <div style="font-size:12px;">${statusHTML}</div>
+    </div>`;
+}
+
+function renderPillarRow(){
+  const s = STATE;
+  return `<div class="pillar-row">
+    ${Object.entries(s.pilares).map(([id,p])=>{
+      const m = pillarMeta(id);
+      return `<div class="pillar-chip" onclick="location.hash='#pilares/${id}'">
+        <span class="ic">${m.emoji}</span>
+        <div class="nm">${m.nome}</div>
+        <div class="pc mono" style="color:${m.cor}">${p.pct}%</div>
+      </div>`;
+    }).join('')}
+  </div>`;
+}
+
+function renderPilares(param){
+  const s = STATE;
+  const activeId = param && s.pilares[param] ? param : 'corpo';
+  const ids = Object.keys(s.pilares);
+  return `
+    <h1 class="screen-title">Pilares</h1>
+    <p class="screen-sub">Corpo, Intelecto, Personalidade, Emocional e Estresse — as dimensões do Novo Eu.</p>
+
+    <div class="segmented">
+      ${ids.map(id=>`<button class="${id===activeId?'active':''}" onclick="location.hash='#pilares/${id}'">${pillarMeta(id).emoji} ${pillarMeta(id).nome}</button>`).join('')}
+    </div>
+
+    ${ids.map(id=>{
+      if(id!==activeId) return '';
+      const p = s.pilares[id]; const m = pillarMeta(id);
+      return `
+      <div class="pillar-detail" style="border-color:${m.cor}33; background:linear-gradient(145deg, ${m.cor}14, var(--bg-card));">
+        <div class="head">
+          <span class="ic">${m.emoji}</span>
+          <div>
+            <div class="nm">${m.nome}</div>
+            <div style="font-size:12px;color:var(--text-dim)">Nota ${p.nota}/10 · ${p.xp} XP acumulado</div>
+          </div>
+        </div>
+        <div class="bar-track"><div class="bar-fill" style="width:${p.pct}%;background:${m.cor};"></div></div>
+        <div class="chartbars">
+          ${p.historico.map(v=>`<div class="bar" style="height:${v}%;background:${m.cor};"></div>`).join('')}
+        </div>
+        <div style="font-size:11px;color:var(--text-faint);margin-top:8px;">Histórico das últimas 7 semanas</div>
+      </div>`;
+    }).join('')}
+
+    ${activeId==='intelecto' ? renderIntelectoCampos(s.pilares.intelecto.campos) : ''}
+
+    ${renderMissionListHTML(activeId)}
+  `;
+}
+
+function renderIntelectoCampos(campos){
+  return `
+    <div class="section-h"><h2>Leitura em andamento</h2></div>
+    <div class="card">
+      <div class="field"><label>Livro atual</label><input type="text" id="campoLivroAtual" value="${campos.livroAtual}" placeholder="Ex: Hábitos Atômicos" onchange="updatePillarCampo('livroAtual', this.value)"></div>
+      <div class="field"><label>Resumo</label><input type="text" id="campoResumo" value="${campos.resumo}" placeholder="O que você está tirando dessa leitura?" onchange="updatePillarCampo('resumo', this.value)"></div>
+      <div class="field" style="margin-bottom:0;"><label>Tempo estudado hoje (min)</label><input type="number" id="campoTempo" value="${campos.tempoEstudadoMin}" onchange="updatePillarCampo('tempoEstudadoMin', parseInt(this.value)||0)"></div>
+    </div>
+  `;
+}
+
+function updatePillarCampo(campo, valor){
+  STATE.pilares.intelecto.campos[campo] = valor;
+  saveState();
+  toast('Salvo ✓');
+}
+
+/* ---------- Missões: lista completa e editável, embutida no pilar ----------
+   Cada missão pode ser marcada como concluída, ter nome/XP editados
+   e ser removida. O usuário também pode criar novas missões próprias. */
+function renderMissionListHTML(pilarId){
+  const lista = STATE.missoes[pilarId];
+  const done = lista.filter(m=>m.done).length;
+  return `
+    <div class="section-h"><h2>Missões · ${done}/${lista.length} hoje</h2></div>
+    <div class="bar-track" style="margin-bottom:12px;"><div class="bar-fill" style="width:${lista.length?Math.round(done/lista.length*100):0}%;background:var(--success);"></div></div>
+    ${lista.map(m=>missionRowHTML(m, pilarId)).join('') || `<div class="empty-state"><div class="t">Nenhuma missão ainda.</div></div>`}
+    <button class="btn btn-ghost" onclick="addMission('${pilarId}')">+ Adicionar missão</button>
+  `;
+}
+
+function missionRowHTML(m, pilarId){
+  const meta = pillarMeta(pilarId);
+  return `
+    <div class="mission-item ${m.done?'done':''}">
+      <div class="row-top">
+        <button class="check-circle" style="${m.done?`background:${meta.cor};border-color:${meta.cor};`:''}" onclick="toggleMission('${pilarId}','${m.id}')">${m.done?'✓':''}</button>
+        <input type="text" class="m-name" value="${m.nome}" onchange="updateMissionField('${pilarId}','${m.id}','nome',this.value)">
+        <input type="number" class="m-xp" value="${m.xp}" onchange="updateMissionField('${pilarId}','${m.id}','xp',parseInt(this.value)||0)">
+        <button class="del" onclick="removeMission('${pilarId}','${m.id}')">✕</button>
+      </div>
+      <div class="row-meta">🔥 ${m.streak} dias em sequência</div>
+    </div>`;
+}
+
+function newMissionId(){ return 'm_' + Date.now().toString(36) + Math.random().toString(36).slice(2,6); }
+
+function addMission(pilarId){
+  STATE.missoes[pilarId].push({ id:newMissionId(), nome:'Nova missão', xp:10, streak:0, done:false });
+  saveState();
+  router();
+}
+function updateMissionField(pilarId, missionId, campo, valor){
+  const m = STATE.missoes[pilarId].find(x=>x.id===missionId);
+  if(!m) return;
+  m[campo] = valor;
+  saveState();
+  router();
+}
+function removeMission(pilarId, missionId){
+  confirmarAcao('Remover esta missão?', ()=>{
+    STATE.missoes[pilarId] = STATE.missoes[pilarId].filter(x=>x.id!==missionId);
+    saveState();
+    router();
+    toast('Missão removida');
+  });
+}
+
+function renderDiario(){
+  const s = STATE;
+  return `
+    <h1 class="screen-title">Diário</h1>
+    <p class="screen-sub">Reflita sobre o dia ${s.diaAtual}.</p>
+
+    <div class="card">
+      <div class="journal-q"><label>Qual foi minha maior vitória?</label><textarea id="jVitoria" placeholder="Escreva aqui..."></textarea></div>
+      <div class="journal-q"><label>O que aprendi?</label><textarea id="jAprendi" placeholder="Escreva aqui..."></textarea></div>
+      <div class="journal-q"><label>O que preciso melhorar?</label><textarea id="jMelhorar" placeholder="Escreva aqui..."></textarea></div>
+      <div class="journal-q"><label>Pelo que sou grato?</label><textarea id="jGratidao" placeholder="Escreva aqui..."></textarea></div>
+      <div class="journal-q"><label>Como me senti hoje?</label><textarea id="jSentimento" placeholder="Escreva aqui..."></textarea></div>
+      <button class="btn btn-primary" onclick="saveJournal()">Salvar entrada de hoje</button>
+    </div>
+
+    <div class="section-h"><h2>Entradas anteriores</h2></div>
+    ${s.diario.length ? s.diario.map(j=>`
+      <div class="card">
+        <div class="pill" style="margin-bottom:10px;">Dia ${j.dia} · ${j.data}</div>
+        <p style="font-size:13px;line-height:1.8;color:var(--text-dim);">
+          <b style="color:var(--text)">Maior vitória:</b> ${j.vitoria || '—'}<br>
+          <b style="color:var(--text)">Aprendi:</b> ${j.aprendi || '—'}<br>
+          <b style="color:var(--text)">Preciso melhorar:</b> ${j.melhorar || '—'}<br>
+          <b style="color:var(--text)">Grato por:</b> ${j.gratidao || '—'}<br>
+          <b style="color:var(--text)">Como me senti:</b> ${j.sentimento || '—'}
+        </p>
+      </div>
+    `).join('') : `<div class="empty-state"><div class="ic">✎</div><div class="t">Nenhuma entrada ainda. Escreva a primeira acima.</div></div>`}
+  `;
+}
+
+/* ---------- Rotina ---------- */
+let rotinaViewPeriodo = (new Date().getDay()===0 || new Date().getDay()===6) ? 'fimDeSemana' : 'semana';
+let rotinaInterval = null;
+
+function pad2(n){ return String(n).padStart(2,'0'); }
+function nowHHMM(){ const d = new Date(); return `${pad2(d.getHours())}:${pad2(d.getMinutes())}`; }
+
+/* ---------- Avanço automático de dia ----------
+   O desafio é ligado ao calendário real do dispositivo: se o app é
+   reaberto num dia diferente do último acesso, o "Dia X" avança sozinho
+   (um dia por vez, mesmo que o app tenha ficado fechado por vários dias).
+   Antes de resetar as missões do dia, guarda um retrato delas no
+   histórico — é o que permite o Resumo do dia mostrar de verdade o que
+   aconteceu num dia passado. */
+function hojeStr(){
+  const d = new Date();
+  return `${d.getFullYear()}-${pad2(d.getMonth()+1)}-${pad2(d.getDate())}`;
+}
+
+function avancarUmDia(){
+  const snapshot = {};
+  Object.entries(STATE.missoes).forEach(([pilarId, lista])=>{
+    snapshot[pilarId] = lista.map(m => ({ nome:m.nome, xp:m.xp, done:m.done }));
+  });
+  if(!STATE.historicoMissoes) STATE.historicoMissoes = {};
+  STATE.historicoMissoes[STATE.diaAtual] = snapshot;
+
+  const algumaConcluida = Object.values(snapshot).flat().some(m=>m.done);
+  STATE.streakAtual = algumaConcluida ? STATE.streakAtual + 1 : 0;
+  STATE.streakMaxima = Math.max(STATE.streakMaxima, STATE.streakAtual);
+
+  Object.values(STATE.missoes).forEach(lista=>{
+    lista.forEach(m=>{
+      if(!m.done) m.streak = 0;
+      m.done = false;
+    });
+  });
+
+  if(STATE.diaAtual < STATE.perfil.diasDesafio) STATE.diaAtual++;
+}
+
+function avancarDiaSeNecessario(){
+  try{
+    const hoje = hojeStr();
+    if(!STATE.ultimaDataAbertura){ STATE.ultimaDataAbertura = hoje; saveState(); return; }
+    if(STATE.ultimaDataAbertura === hoje) return;
+    const anterior = new Date(STATE.ultimaDataAbertura + 'T00:00:00');
+    const atual = new Date(hoje + 'T00:00:00');
+    const diffDias = Math.round((atual - anterior) / 86400000);
+    if(diffDias > 0){
+      for(let i=0; i<diffDias; i++) avancarUmDia();
+    }
+    STATE.ultimaDataAbertura = hoje;
+    saveState();
+  }catch(e){ console.warn('Não foi possível avançar o dia automaticamente.', e); }
+}
+function isWeekendToday(){ const d = new Date().getDay(); return d===0 || d===6; }
+
+function itemAtivoAgora(lista){
+  if(!lista.length) return null;
+  const ordenada = [...lista].sort((a,b)=> a.hora.localeCompare(b.hora));
+  const agora = nowHHMM();
+  let atual = null;
+  for(const item of ordenada){ if(item.hora <= agora) atual = item; }
+  return atual || ordenada[ordenada.length-1];
+}
+
+function renderRotina(){
+  const s = STATE;
+  const lista = s.rotina[rotinaViewPeriodo];
+  const ativo = itemAtivoAgora(lista);
+  const hojeEhFimDeSemana = isWeekendToday();
+
+  return `
+    <h1 class="screen-title">Rotina</h1>
+    <p class="screen-sub">Sua agenda diária, minuto a minuto.</p>
+
+    <div class="now-banner">
+      <div class="clock mono" id="rotinaClock">${nowHHMM()}</div>
+      <div class="atv" id="rotinaAtiva">${ativo ? ativo.atividade : 'Nenhum item cadastrado'}</div>
+      <div class="lbl">Agora · ${hojeEhFimDeSemana ? 'fim de semana' : 'dia de semana'}</div>
+    </div>
+
+    <div class="segmented">
+      <button class="${rotinaViewPeriodo==='semana'?'active':''}" onclick="setRotinaView('semana')">Dias de semana</button>
+      <button class="${rotinaViewPeriodo==='fimDeSemana'?'active':''}" onclick="setRotinaView('fimDeSemana')">Fim de semana</button>
+    </div>
+
+    <div id="rotinaLista">
+      ${lista.map((item, idx)=>`
+        <div class="rotina-item ${ativo===item?'now':''}">
+          <input type="time" value="${item.hora}" onchange="updateRotinaItem('${rotinaViewPeriodo}',${idx},'hora',this.value)">
+          <input type="text" value="${item.atividade}" placeholder="Atividade" onchange="updateRotinaItem('${rotinaViewPeriodo}',${idx},'atividade',this.value)">
+          <button class="del" onclick="removeRotinaItem('${rotinaViewPeriodo}',${idx})">✕</button>
+        </div>`).join('') || `<div class="empty-state"><div class="ic">⏱</div><div class="t">Nenhum item ainda. Adicione o primeiro abaixo.</div></div>`}
+    </div>
+
+    <button class="btn btn-ghost" onclick="addRotinaItem('${rotinaViewPeriodo}')">+ Adicionar item (vai para o final da lista)</button>
+  `;
+}
+
+function setRotinaView(periodo){ rotinaViewPeriodo = periodo; router(); }
+
+function updateRotinaItem(periodo, idx, campo, valor){
+  STATE.rotina[periodo][idx][campo] = valor;
+  saveState();
+  // Sem router() aqui de propósito: recriar a tela no meio da edição fecha
+  // o seletor nativo de hora no celular antes do usuário terminar de ajustar
+  // os minutos. O relógio "agora" da Rotina já atualiza sozinho a cada 15s.
+}
+function addRotinaItem(periodo){
+  STATE.rotina[periodo].push({hora:nowHHMM(), atividade:'Nova atividade'});
+  saveState();
+  router();
+}
+function removeRotinaItem(periodo, idx){
+  STATE.rotina[periodo].splice(idx,1);
+  saveState();
+  router();
+  toast('Item removido');
+}
+
+function startRotinaClock(){
+  stopRotinaClock();
+  rotinaInterval = setInterval(()=>{
+    const clockEl = document.getElementById('rotinaClock');
+    if(!clockEl){ stopRotinaClock(); return; }
+    clockEl.textContent = nowHHMM();
+    const ativo = itemAtivoAgora(STATE.rotina[rotinaViewPeriodo]);
+    const atvEl = document.getElementById('rotinaAtiva');
+    if(atvEl) atvEl.textContent = ativo ? ativo.atividade : 'Nenhum item cadastrado';
+  }, 15000);
+}
+function stopRotinaClock(){ if(rotinaInterval){ clearInterval(rotinaInterval); rotinaInterval=null; } }
+
+/* ---------- Carrossel de imagens motivacionais (Início) ---------- */
+function renderMotivCarouselHTML(){
+  const imgs = STATE.motivacao.imagens;
+  if(!imgs.length){
+    return `<div class="motiv-carousel">
+      <div class="empty-state" style="padding:0;">
+        <div class="ic">🖼️</div><div class="t">Adicione fotos motivacionais em Configurações → Motivação</div>
+      </div>
+    </div>`;
+  }
+  return `<div class="motiv-carousel" id="motivCarousel">
+    ${imgs.map((src,i)=>`<img src="${src}" class="${i===0?'active':''}">`).join('')}
+    ${imgs.length>1 ? `<div class="dots">${imgs.map((_,i)=>`<span class="${i===0?'active':''}"></span>`).join('')}</div>` : ''}
+  </div>`;
+}
+
+let motivCarouselIndex = 0;
+let motivCarouselInterval = null;
+function startMotivCarousel(){
+  stopMotivCarousel();
+  if(STATE.motivacao.imagens.length < 2) return;
+  motivCarouselIndex = 0;
+  motivCarouselInterval = setInterval(()=>{
+    const wrap = document.getElementById('motivCarousel');
+    if(!wrap){ stopMotivCarousel(); return; }
+    const imgEls = wrap.querySelectorAll('img');
+    const dots = wrap.querySelectorAll('.dots span');
+    if(!imgEls.length) return;
+    imgEls[motivCarouselIndex]?.classList.remove('active');
+    dots[motivCarouselIndex]?.classList.remove('active');
+    motivCarouselIndex = (motivCarouselIndex+1) % imgEls.length;
+    imgEls[motivCarouselIndex]?.classList.add('active');
+    dots[motivCarouselIndex]?.classList.add('active');
+  }, 4000);
+}
+function stopMotivCarousel(){ if(motivCarouselInterval){ clearInterval(motivCarouselInterval); motivCarouselInterval=null; } }
+
+/* ---------- Letreiro de frases motivacionais (Início) ----------
+   Intercala as frases cadastradas pelo usuário. Se a frase não couber
+   na largura da tela, ela percorre como um letreiro (marquee); se couber,
+   fica parada por alguns segundos antes de trocar para a próxima. */
+let fraseTickerIndex = 0;
+let fraseTickerTimer = null;
+function startFraseTicker(){
+  stopFraseTicker();
+  if(!STATE.motivacao.frases.length) return;
+  fraseTickerIndex = 0;
+  playFraseTicker();
+}
+function stopFraseTicker(){ if(fraseTickerTimer){ clearTimeout(fraseTickerTimer); fraseTickerTimer=null; } }
+function playFraseTicker(){
+  const frases = STATE.motivacao.frases;
+  if(!frases.length) return;
+  const wrap = document.getElementById('fraseTickerWrap');
+  const track = document.getElementById('fraseTickerTrack');
+  if(!wrap || !track) return; // usuário saiu da tela
+  const msg = frases[fraseTickerIndex % frases.length];
+  track.textContent = msg;
+  track.style.transition = 'none';
+  track.style.position = 'relative';
+  track.style.left = '0px';
+  void track.offsetWidth; // força reflow antes de medir
+  requestAnimationFrame(()=>{
+    const wrapWidth = wrap.clientWidth;
+    const textWidth = track.scrollWidth;
+    if(textWidth > wrapWidth - 28){
+      const distancia = wrapWidth + textWidth;
+      const duracao = Math.max(3500, distancia * 18);
+      track.style.position = 'absolute';
+      track.style.left = wrapWidth + 'px';
+      void track.offsetWidth;
+      track.style.transition = `left ${duracao}ms linear`;
+      requestAnimationFrame(()=>{ track.style.left = (-textWidth) + 'px'; });
+      fraseTickerTimer = setTimeout(avancarFraseTicker, duracao + 500);
+    } else {
+      track.style.position = 'relative';
+      track.style.left = '0px';
+      fraseTickerTimer = setTimeout(avancarFraseTicker, 4500);
+    }
+  });
+}
+function avancarFraseTicker(){ fraseTickerIndex++; playFraseTicker(); }
+
+function renderMais(){
+  const s = STATE;
+  return `
+    <h1 class="screen-title">Mais</h1>
+    <p class="screen-sub">Relatórios, IA local, conquistas e configurações.</p>
+
+    <div class="menu-item" onclick="location.hash='#visao'">
+      <div class="ic" style="background:${'#B07CFF'}22;color:var(--personalidade);">👑</div>
+      <div><div class="nm">Quem eu estou me tornando</div><div class="sub">Sua visão e aspirações de identidade</div></div>
+      <div class="chev">›</div>
+    </div>
+    <div class="menu-item" onclick="location.hash='#calendario'">
+      <div class="ic" style="background:#FF5A4E22;color:var(--corpo);">📅</div>
+      <div><div class="nm">Calendário</div><div class="sub">Datas importantes — aniversários e compromissos</div></div>
+      <div class="chev">›</div>
+    </div>
+    <div class="menu-item" onclick="location.hash='#metas'">
+      <div class="ic" style="background:#4E9FFF22;color:var(--intelecto);">🎯</div>
+      <div><div class="nm">Metas</div><div class="sub">Curto, médio e longo prazo — e o próximo passo de cada uma</div></div>
+      <div class="chev">›</div>
+    </div>
+    <div class="menu-item" onclick="location.hash='#graficos'">
+      <div class="ic" style="background:#4E9FFF22;color:#4E9FFF;">📊</div>
+      <div><div class="nm">Gráficos</div><div class="sub">Peso, humor, disposição, XP e mais</div></div>
+      <div class="chev">›</div>
+    </div>
+    <div class="menu-item" onclick="location.hash='#relatorios'">
+      <div class="ic" style="background:#35D07F22;color:#35D07F;">🧾</div>
+      <div><div class="nm">Relatórios</div><div class="sub">Diário, semanal, mensal e dos 100 dias</div></div>
+      <div class="chev">›</div>
+    </div>
+    <div class="menu-item" onclick="location.hash='#ia'">
+      <div class="ic" style="background:${'#E8A63D'}22;color:var(--gold);">✦</div>
+      <div><div class="nm">Novo Eu Inteligência</div><div class="sub">Análises locais baseadas em regras</div></div>
+      <div class="chev">›</div>
+    </div>
+
+    <div class="section-h"><h2>Conquistas</h2></div>
+    <div class="badge-grid" style="margin-bottom:8px;">
+      ${s.conquistas.map(a=>`<div class="badge ${a.unlocked?'':'locked'}" title="${a.nome}">${a.ic}</div>`).join('')}
+    </div>
+
+    <div class="section-h"><h2>Sistema</h2></div>
+    <div class="menu-item" onclick="location.hash='#config'">
+      <div class="ic" style="background:#92959E22;color:var(--text-dim);">⚙︎</div>
+      <div><div class="nm">Configurações</div><div class="sub">Perfil, metas, tema, notificações</div></div>
+      <div class="chev">›</div>
+    </div>
+    <div class="menu-item" onclick="location.hash='#backup'">
+      <div class="ic" style="background:#92959E22;color:var(--text-dim);">⤓</div>
+      <div><div class="nm">Backup & Exportação</div><div class="sub">JSON, CSV, TXT, PDF — tudo local</div></div>
+      <div class="chev">›</div>
+    </div>
+  `;
+}
+
+function sparkline(values, color, height=90){
+  const max = Math.max(...values), min = Math.min(...values);
+  return `<div class="chartbars" style="height:${height}px;">
+    ${values.map(v=>{
+      const pct = max===min ? 60 : 10 + ((v-min)/(max-min))*90;
+      return `<div class="bar" style="height:${pct}%;background:${color};"></div>`;
+    }).join('')}
+  </div>`;
+}
+
+function renderGraficos(){
+  const s = STATE;
+  const mockWeek = (base, spread)=> Array.from({length:8},(_,i)=> Math.max(1, Math.round(base + (Math.sin(i+base)*spread))));
+  const charts = [
+    {t:'Peso (kg)', d: mockWeek(78,3), c:'var(--corpo)'},
+    {t:'Humor médio', d: mockWeek(7,2), c:'var(--emocional)'},
+    {t:'Disposição', d: mockWeek(7,3), c:'var(--intelecto)'},
+    {t:'Treinos por semana', d: mockWeek(5,2), c:'var(--corpo)'},
+    {t:'Horas de estudo', d: mockWeek(6,2), c:'var(--intelecto)'},
+    {t:'XP acumulado', d: mockWeek(300,80), c:'var(--gold)'},
+    {t:'Dias perfeitos', d: mockWeek(4,2), c:'var(--success)'},
+    {t:'Sequência', d: mockWeek(8,4), c:'var(--personalidade)'},
+  ];
+  return `
+    <h1 class="screen-title">Gráficos</h1>
+    <p class="screen-sub">Evolução semanal, mensal e geral da sua jornada.</p>
+    <div class="segmented">
+      <button class="active">Semanal</button>
+      <button>Mensal</button>
+      <button>Geral</button>
+    </div>
+    ${charts.map(c=>`
+      <div class="card">
+        <div class="card-row"><span style="font-size:13px;font-weight:600;">${c.t}</span><span class="mono" style="font-size:11px;color:var(--text-dim);">últimas 8 semanas</span></div>
+        ${sparkline(c.d, c.c)}
+      </div>
+    `).join('')}
+  `;
+}
+
+function renderRelatorios(){
+  const s = STATE;
+  const tipos = [
+    {id:'diario', nome:'Resumo diário', desc:`Veja check-ins e diário de qualquer dia`, rota:`#resumodia/${s.diaAtual}`},
+    {id:'semanal', nome:'Resumo semanal', desc:'Padrões dos últimos 7 dias'},
+    {id:'mensal', nome:'Resumo mensal', desc:'Evolução dos últimos 30 dias'},
+    {id:'geral', nome:'Resumo geral', desc:'Desde o dia 1 até hoje'},
+    {id:'100dias', nome:'Relatório dos 100 dias', desc:'Disponível ao concluir o desafio', locked: s.diaAtual < 100},
+  ];
+  return `
+    <h1 class="screen-title">Relatórios</h1>
+    <p class="screen-sub">Análise automática de padrões a partir dos seus dados.</p>
+    ${tipos.map(t=>`
+      <div class="menu-item" style="${t.locked?'opacity:.5;':''}" onclick="${t.locked?'':(t.rota?`location.hash='${t.rota}'`:`gerarRelatorio('${t.id}')`)}">
+        <div class="ic" style="background:#35D07F22;color:#35D07F;">🧾</div>
+        <div><div class="nm">${t.nome}</div><div class="sub">${t.desc}</div></div>
+        <div class="chev">${t.locked?'🔒':'›'}</div>
+      </div>
+    `).join('')}
+    <div id="reportOutput"></div>
+  `;
+}
+
+/* ---------- Quem eu estou me tornando (visão de identidade) ----------
+   O horizonte de longo prazo do usuário: uma declaração livre de quem
+   ele está se tornando, mais uma lista de aspirações concretas
+   (alimentação, estilo, lugares, hábitos etc.) totalmente editável. */
+function renderVisao(){
+  const v = STATE.visaoIdentidade;
+  return `
+    <h1 class="screen-title">Quem eu estou me tornando</h1>
+    <p class="screen-sub">Seu horizonte — a versão de você que orienta as escolhas de hoje.</p>
+
+    <div class="card">
+      <label style="display:block;font-size:12.5px;color:var(--text-dim);font-weight:600;margin-bottom:8px;">Sua visão, em poucas frases</label>
+      <textarea id="visaoDeclaracao" style="width:100%;min-height:90px;background:var(--bg-elev);border:1px solid var(--border);border-radius:var(--radius-sm);padding:11px 12px;font-size:13.5px;line-height:1.5;color:var(--text);" placeholder="Ex: Estou me tornando alguém disciplinado, elegante e presente — que cuida do corpo, da mente e das relações.">${v.declaracao}</textarea>
+      <button class="btn btn-primary" style="margin-top:10px;" onclick="saveVisaoDeclaracao()">Salvar visão</button>
+    </div>
+
+    <div class="section-h"><h2>Aspirações</h2></div>
+    <p style="font-size:12px;color:var(--text-dim);margin:-6px 0 12px;">Áreas concretas que você quer elevar — alimentação, estilo, lugares que frequenta, hábitos, carreira...</p>
+    <div class="card">
+      ${v.aspiracoes.map((a,i)=>`
+        <div class="rotina-item">
+          <input type="text" value="${a}" onchange="updateAspiracao(${i}, this.value)">
+          <button class="del" onclick="removeAspiracao(${i})">✕</button>
+        </div>`).join('') || `<div class="empty-state" style="padding:16px;"><div class="t">Nenhuma aspiração ainda.</div></div>`}
+      <button class="btn btn-ghost" onclick="addAspiracao()">+ Adicionar aspiração</button>
+    </div>
+  `;
+}
+
+function saveVisaoDeclaracao(){
+  STATE.visaoIdentidade.declaracao = document.getElementById('visaoDeclaracao').value;
+  saveState();
+  toast('Visão salva ✓');
+  router();
+}
+function addAspiracao(){
+  STATE.visaoIdentidade.aspiracoes.push('Nova aspiração');
+  saveState();
+  router();
+}
+function updateAspiracao(idx, valor){
+  STATE.visaoIdentidade.aspiracoes[idx] = valor;
+  saveState();
+  router();
+}
+function removeAspiracao(idx){
+  STATE.visaoIdentidade.aspiracoes.splice(idx,1);
+  saveState();
+  router();
+  toast('Aspiração removida');
+}
+
+/* ---------- Calendário: datas importantes ----------
+   Eventos podem ser únicos ou recorrentes todo ano (ideal para aniversários).
+   O app calcula sozinho a próxima ocorrência e dispara notificação local
+   (com som) na data e hora escolhidas — sem precisar de servidor. */
+function proximaOcorrencia(evento){
+  const hoje = new Date(); hoje.setHours(0,0,0,0);
+  const [y,m,d] = evento.data.split('-').map(Number);
+  if(!y || !m || !d) return null;
+  if(evento.recorrenteAnual){
+    let candidato = new Date(hoje.getFullYear(), m-1, d);
+    if(candidato < hoje) candidato = new Date(hoje.getFullYear()+1, m-1, d);
+    return candidato;
+  }
+  const data = new Date(y, m-1, d);
+  return data < hoje ? null : data; // evento único que já passou não aparece mais
+}
+
+function diasAte(data){
+  const hoje = new Date(); hoje.setHours(0,0,0,0);
+  return Math.round((data - hoje) / 86400000);
+}
+
+/* Mostra "faltam X dias" / "atrasada" a partir de uma data-limite 'YYYY-MM-DD'.
+   Usado pelas Metas para contar os dias restantes até o prazo definido. */
+function prazoStatusHTML(prazoData){
+  if(!prazoData) return '';
+  const [y,m,d] = prazoData.split('-').map(Number);
+  if(!y || !m || !d) return '';
+  const alvo = new Date(y, m-1, d);
+  const dias = diasAte(alvo);
+  const dataFmt = alvo.toLocaleDateString('pt-BR');
+  let texto, cor;
+  if(dias < 0){ texto = `Atrasada — o prazo era ${dataFmt}`; cor = 'var(--corpo)'; }
+  else if(dias === 0){ texto = `O prazo é hoje (${dataFmt})`; cor = 'var(--gold)'; }
+  else if(dias === 1){ texto = `Falta 1 dia (até ${dataFmt})`; cor = 'var(--gold)'; }
+  else { texto = `Faltam ${dias} dias (até ${dataFmt})`; cor = dias<=14 ? 'var(--gold)' : 'var(--text-dim)'; }
+  return `<div style="font-size:11px;color:${cor};margin-top:4px;font-weight:600;">⏳ ${texto}</div>`;
+}
+
+let novoEventoRecorrente = false;
+
+function renderCalendario(){
+  const eventos = STATE.eventos
+    .map(e => ({ ...e, _proxima: proximaOcorrencia(e) }))
+    .filter(e => e._proxima !== null)
+    .sort((a,b)=> a._proxima - b._proxima);
+  const passados = STATE.eventos.filter(e => !e.recorrenteAnual && proximaOcorrencia(e) === null);
+
+  return `
+    <h1 class="screen-title">Calendário</h1>
+    <p class="screen-sub">Datas importantes que o Novo Eu lembra por você.</p>
+
+    <div class="card">
+      <div class="field"><label>Título</label><input type="text" id="evTitulo" placeholder="Ex: Aniversário da vovó"></div>
+      <div class="field"><label>Data</label><input type="date" id="evData"></div>
+      <div class="field">
+        <label style="display:flex;align-items:center;gap:8px;cursor:pointer;">
+          <input type="checkbox" id="evRecorrente" ${novoEventoRecorrente?'checked':''} onchange="novoEventoRecorrente = this.checked" style="width:16px;height:16px;"> Repete todo ano (aniversário, data comemorativa)
+        </label>
+      </div>
+      <div class="field"><label>Horário do lembrete</label><input type="time" id="evHora" value="09:00"></div>
+      <div class="field" style="margin-bottom:0;"><label>Nota (opcional)</label><input type="text" id="evNotas" placeholder="Ex: Comprar presente, ligar cedo"></div>
+    </div>
+    <button class="btn btn-primary" style="margin:-6px 0 14px;" onclick="addEvento()">+ Adicionar evento</button>
+
+    <div class="section-h"><h2>Próximos</h2></div>
+    ${eventos.length ? eventos.map(e=>{
+      const dias = diasAte(e._proxima);
+      const quando = dias===0 ? 'Hoje' : dias===1 ? 'Amanhã' : `Em ${dias} dias`;
+      return `
+      <div class="card" style="border-left:3px solid var(--corpo);">
+        <div class="card-row">
+          <div>
+            <div style="font-weight:600;font-size:14px;">${e.recorrenteAnual?'🎂':'📌'} ${e.titulo}</div>
+            <div style="font-size:11.5px;color:var(--text-dim);margin-top:2px;">${e._proxima.toLocaleDateString('pt-BR')} · ${e.hora} ${e.notas?('· '+e.notas):''}</div>
+          </div>
+          <div style="text-align:right;flex-shrink:0;">
+            <div class="pill" style="margin-bottom:6px;">${quando}</div><br>
+            <button class="del" onclick="removeEvento('${e.id}')">✕</button>
+          </div>
+        </div>
+      </div>`;
+    }).join('') : `<div class="empty-state"><div class="ic">📅</div><div class="t">Nenhum evento cadastrado ainda.</div></div>`}
+
+    ${passados.length ? `
+      <div class="section-h"><h2>Eventos passados</h2></div>
+      ${passados.map(e=>`
+        <div class="menu-item">
+          <div><div class="nm">${e.titulo}</div><div class="sub">${e.data.split('-').reverse().join('/')}</div></div>
+          <button class="del" style="margin-left:auto;" onclick="removeEvento('${e.id}')">✕</button>
+        </div>`).join('')}
+    ` : ''}
+  `;
+}
+
+function addEvento(){
+  const titulo = document.getElementById('evTitulo').value.trim();
+  const data = document.getElementById('evData').value;
+  if(!titulo || !data){ toast('Preencha título e data.'); return; }
+  STATE.eventos.push({
+    id: newMissionId(),
+    titulo,
+    data,
+    recorrenteAnual: novoEventoRecorrente,
+    hora: document.getElementById('evHora').value || '09:00',
+    notas: document.getElementById('evNotas').value.trim(),
+  });
+  novoEventoRecorrente = false;
+  saveState();
+  toast('Evento adicionado ✓');
+  router();
+}
+function removeEvento(id){
+  confirmarAcao('Remover este evento?', ()=>{
+    STATE.eventos = STATE.eventos.filter(e=>e.id!==id);
+    saveState();
+    router();
+    toast('Evento removido');
+  });
+}
+
+/* ---------- Metas: curto, médio e longo prazo ----------
+   Cada meta tem um título e um "próximo passo" — a ação concreta que
+   leva até ela. O usuário define e edita tudo livremente. */
+let metaViewPrazo = 'curto';
+const METAS_PRAZOS = [
+  {id:'curto', nome:'Curto prazo', desc:'Próximas semanas'},
+  {id:'media', nome:'Médio prazo', desc:'Próximos meses'},
+  {id:'longo', nome:'Longo prazo', desc:'Próximos anos'},
+];
+
+function renderMetas(){
+  const ativo = METAS_PRAZOS.find(p=>p.id===metaViewPrazo);
+  const lista = STATE.metas[metaViewPrazo];
+  return `
+    <h1 class="screen-title">Metas</h1>
+    <p class="screen-sub">Seus objetivos por prazo — e o próximo passo concreto de cada um.</p>
+
+    <div class="segmented">
+      ${METAS_PRAZOS.map(p=>`<button class="${p.id===metaViewPrazo?'active':''}" onclick="setMetaView('${p.id}')">${p.nome}</button>`).join('')}
+    </div>
+    <p style="font-size:12px;color:var(--text-dim);margin:-6px 0 12px;">${ativo.desc}</p>
+
+    <div class="card">
+      ${lista.map((m,idx)=>metaRowHTML(m, metaViewPrazo, idx)).join('') || `<div class="empty-state" style="padding:16px;"><div class="t">Nenhuma meta ainda neste prazo.</div></div>`}
+      <button class="btn btn-ghost" onclick="addMeta('${metaViewPrazo}')">+ Adicionar meta</button>
+    </div>
+  `;
+}
+
+function metaRowHTML(m, prazo, idx){
+  return `
+    <div class="mission-item ${m.concluida?'done':''}" style="margin-bottom:12px;">
+      <div class="row-top">
+        <button class="check-circle" style="${m.concluida?'background:var(--success);border-color:var(--success);':''}" onclick="toggleMetaConcluida('${prazo}',${idx})">${m.concluida?'✓':''}</button>
+        <input type="text" class="m-name" value="${m.titulo}" placeholder="Qual é a meta?" onchange="updateMetaField('${prazo}',${idx},'titulo',this.value)">
+        <button class="del" onclick="removeMeta('${prazo}',${idx})">✕</button>
+      </div>
+      <div style="margin:8px 0 0 36px;">
+        <label style="display:block;font-size:10.5px;color:var(--text-faint);margin-bottom:4px;">Próximo passo</label>
+        <input type="text" value="${m.proximoPasso||''}" placeholder="Qual a próxima ação concreta?"
+          style="width:calc(100% - 36px);background:var(--bg-card-2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:8px 10px;font-size:12.5px;color:var(--text);"
+          onchange="updateMetaField('${prazo}',${idx},'proximoPasso',this.value)">
+      </div>
+      <div style="margin:8px 0 0 36px;">
+        <label style="display:block;font-size:10.5px;color:var(--text-faint);margin-bottom:4px;">Prazo para concluir (opcional)</label>
+        <input type="date" value="${m.prazoData||''}"
+          style="background:var(--bg-card-2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:8px 10px;font-size:12.5px;color:var(--text);color-scheme:dark;"
+          onchange="updateMetaField('${prazo}',${idx},'prazoData',this.value)">
+        ${prazoStatusHTML(m.prazoData)}
+      </div>
+    </div>`;
+}
+
+function setMetaView(prazo){ metaViewPrazo = prazo; router(); }
+function addMeta(prazo){
+  STATE.metas[prazo].push({ id:newMissionId(), titulo:'Nova meta', proximoPasso:'', prazoData:'', concluida:false });
+  saveState();
+  router();
+}
+function updateMetaField(prazo, idx, campo, valor){
+  STATE.metas[prazo][idx][campo] = valor;
+  saveState();
+  // Sem router(): evita interromper a digitação, igual à Rotina.
+}
+function toggleMetaConcluida(prazo, idx){
+  STATE.metas[prazo][idx].concluida = !STATE.metas[prazo][idx].concluida;
+  saveState();
+  router();
+}
+function removeMeta(prazo, idx){
+  confirmarAcao('Remover esta meta?', ()=>{
+    STATE.metas[prazo].splice(idx,1);
+    saveState();
+    router();
+    toast('Meta removida');
+  });
+}
+
+function renderIA(){
+  const s = STATE;
+  // Rule-engine: gera comentários a partir dos dados reais registrados no dispositivo
+  const insights = [];
+  const corpoStreak = s.missoes.corpo.reduce((m,x)=>Math.max(m,x.streak),0);
+  if(corpoStreak >= 5) insights.push(`<b>Consistência física.</b> Você mantém uma missão de Corpo ativa há ${corpoStreak} dias. Excelente consistência — continue fortalecendo esse hábito.`);
+  if(s.disposicaoMedia !== null && s.disposicaoMedia < 7.5) insights.push(`<b>Energia em atenção.</b> Sua disposição média está em ${s.disposicaoMedia}/10. Observe seu sono, alimentação e recuperação nos próximos dias.`);
+  if(s.pilares.personalidade.pct >= 85) insights.push(`<b>Grande evolução em Personalidade.</b> Você está criando evidências concretas da pessoa que deseja se tornar.`);
+  if(s.streakAtual >= 10) insights.push(`<b>Sequência sólida.</b> ${s.streakAtual} dias seguidos de engajamento — sua identidade de disciplina está se consolidando.`);
+  insights.push(`<b>Fase atual.</b> Você está na fase ${currentPhase(s.diaAtual).emoji} ${currentPhase(s.diaAtual).nome}. ${currentPhase(s.diaAtual).desc}`);
+  if(insights.length === 1) insights.unshift(`<b>Comece a registrar.</b> Faça check-ins e conclua missões para que as análises fiquem mais precisas.`);
+
+  return `
+    <h1 class="screen-title">Novo Eu Inteligência</h1>
+    <p class="screen-sub">Motor de regras local — analisa seus dados diretamente no dispositivo, sem internet e sem servidores.</p>
+    ${insights.map(i=>`<div class="ia-card">${i}</div>`).join('')}
+  `;
+}
+
+function renderConfig(){
+  const s = STATE;
+  const p = s.perfil;
+  const cores = ['#E8A63D','#4E9FFF','#B07CFF','#FF5A4E','#35D07F','#4FD1C5'];
+  return `
+    <h1 class="screen-title">Configurações</h1>
+    <p class="screen-sub">Tudo salvo localmente no seu dispositivo.</p>
+
+    <div class="card">
+      <div class="field"><label>Nome</label><input type="text" id="cfgNome" value="${p.nome}"></div>
+      <div class="field"><label>Peso atual (kg)</label><input type="number" step="0.1" id="cfgPesoAtual" value="${s.peso===null?'':s.peso}" placeholder="Ex: 78.4"></div>
+      <div class="field"><label>Meta de peso (kg)</label><input type="number" step="0.1" id="cfgMetaPeso" value="${p.metaPeso}"></div>
+      <div class="field"><label>Meta diária de missões</label><input type="number" id="cfgMetaDiaria" value="${p.metaDiaria}"></div>
+      <div class="field" style="margin-bottom:0;"><label>Dias do desafio</label><input type="number" id="cfgDias" value="${p.diasDesafio}"></div>
+    </div>
+    <button class="btn btn-primary" style="margin:-6px 0 14px;" onclick="saveConfig()">Salvar alterações</button>
+
+    <div class="section-h"><h2>Motivação (Início)</h2></div>
+    <p style="font-size:12px;color:var(--text-dim);margin:-6px 0 12px;">As imagens e frases abaixo aparecem em carrossel no topo da aba Início.</p>
+    <div class="card">
+      <label style="display:block;font-size:12.5px;color:var(--text-dim);font-weight:600;margin-bottom:8px;">Imagens</label>
+      <div class="motiv-thumbs">
+        ${s.motivacao.imagens.map((src,i)=>`
+          <div class="motiv-thumb">
+            <img src="${src}">
+            <button class="motiv-thumb-del" onclick="removeMotivImagem(${i})">✕</button>
+          </div>`).join('')}
+        <label class="motiv-thumb-add">
+          + Foto
+          <input type="file" accept="image/*" multiple style="display:none;" onchange="handleMotivImagesUpload(event)">
+        </label>
+      </div>
+
+      <label style="display:block;font-size:12.5px;color:var(--text-dim);font-weight:600;margin:18px 0 8px;">Frases</label>
+      ${s.motivacao.frases.map((f,i)=>`
+        <div class="rotina-item">
+          <input type="text" value="${f}" onchange="updateMotivFrase(${i}, this.value)">
+          <button class="del" onclick="removeMotivFrase(${i})">✕</button>
+        </div>`).join('') || `<div class="empty-state" style="padding:16px;"><div class="t">Nenhuma frase ainda.</div></div>`}
+      <button class="btn btn-ghost" onclick="addMotivFrase()">+ Adicionar frase</button>
+    </div>
+
+    <div class="section-h"><h2>Aparência</h2></div>
+    <div class="card">
+      <div class="field"><label>Tema</label>
+        <div class="segmented"><button class="active">Escuro</button></div>
+      </div>
+      <div class="field" style="margin-bottom:0;"><label>Cor de destaque</label>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          ${cores.map(c=>`<button onclick="setCorDestaque('${c}')" style="width:30px;height:30px;border-radius:50%;background:${c};border:2px solid ${c===p.corDestaque?'#fff':'transparent'};cursor:pointer;"></button>`).join('')}
+        </div>
+      </div>
+    </div>
+
+    <div class="section-h"><h2>Notificações</h2></div>
+    <div class="card">
+      <div class="card-row">
+        <div><div style="font-size:13.5px;font-weight:600;">Notificações locais com som</div><div style="font-size:11.5px;color:var(--text-dim);margin-top:2px;">Avisa quando uma atividade da Rotina ou um evento do Calendário começa</div></div>
+        <label style="position:relative;display:inline-block;width:44px;height:26px;flex-shrink:0;">
+          <input type="checkbox" id="cfgNotif" ${p.notificacoesAtivas?'checked':''} onchange="toggleNotificacoes(this.checked)" style="opacity:0;width:0;height:0;">
+          <span style="position:absolute;inset:0;background:${p.notificacoesAtivas?'var(--gold)':'var(--bg-card-2)'};border-radius:100px;cursor:pointer;transition:.2s;"></span>
+          <span style="position:absolute;width:20px;height:20px;left:${p.notificacoesAtivas?'21px':'3px'};top:3px;background:#0A0B0D;border-radius:50%;transition:.2s;cursor:pointer;"></span>
+        </label>
+      </div>
+      <div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--border-soft);">
+        <div style="font-size:11.5px;color:var(--text-dim);">Permissão do navegador para avisos do sistema (estilo push, 100% local)</div>
+        <div style="font-size:13px;font-weight:600;margin-top:4px;" id="notifPermStatus">${notifPermissionLabel()}</div>
+        <button class="btn btn-ghost" style="margin-top:10px;" onclick="requestNotificationPermission()">Ativar avisos do sistema</button>
+      </div>
+      <button class="btn btn-ghost" style="margin-top:10px;" onclick="playBeep(); toast('🔊 Som de teste tocado')">Testar som</button>
+    </div>
+
+    <div class="section-h"><h2>Zona de risco</h2></div>
+    <div class="card danger-zone">
+      <div style="font-size:13px;font-weight:600;margin-bottom:4px;">Reiniciar desafio</div>
+      <p style="font-size:12px;color:var(--text-dim);line-height:1.5;margin-bottom:12px;">
+        Zera todo o progresso (dia, XP, streaks, missões, check-ins, diário e conquistas) e volta para o Dia 0.
+        Suas configurações de nome e metas são mantidas. Esta ação não pode ser desfeita.
+      </p>
+      <button class="btn btn-danger" onclick="resetChallenge()">Reiniciar e voltar ao Dia 0</button>
+    </div>
+  `;
+}
+
+function saveConfig(){
+  STATE.perfil.nome = document.getElementById('cfgNome').value || STATE.perfil.nome;
+  const pesoVal = document.getElementById('cfgPesoAtual').value;
+  STATE.peso = pesoVal === '' ? null : parseFloat(pesoVal);
+  STATE.perfil.metaPeso = parseFloat(document.getElementById('cfgMetaPeso').value) || STATE.perfil.metaPeso;
+  STATE.perfil.metaDiaria = parseInt(document.getElementById('cfgMetaDiaria').value) || STATE.perfil.metaDiaria;
+  STATE.perfil.diasDesafio = parseInt(document.getElementById('cfgDias').value) || STATE.perfil.diasDesafio;
+  saveState();
+  document.getElementById('avatarDot').textContent = STATE.perfil.nome[0].toUpperCase();
+  toast('Configurações salvas ✓');
+  router();
+}
+
+function setCorDestaque(cor){
+  STATE.perfil.corDestaque = cor;
+  document.documentElement.style.setProperty('--gold', cor);
+  saveState();
+  router();
+}
+
+/* ---------- Recorte de imagem (crop) ----------
+   Antes de salvar, mostra a foto dentro de uma moldura com o MESMO
+   tamanho exato do carrossel do Início (mesma largura útil da tela e
+   180px de altura) — arrastar e usar o zoom mostra exatamente como ela
+   vai aparecer, sem surpresas depois. Processa uma imagem de cada vez
+   quando várias são selecionadas juntas. */
+let cropQueue = [];
+let cropAdicionadas = 0;
+let cropState = null;
+
+function handleMotivImagesUpload(evt){
+  const files = Array.from(evt.target.files || []);
+  if(!files.length) return;
+  cropQueue = files;
+  cropAdicionadas = 0;
+  abrirProximoCrop();
+}
+
+function abrirProximoCrop(){
+  if(!cropQueue.length){
+    closeSheet();
+    if(cropAdicionadas > 0){ saveState(); toast(`${cropAdicionadas} imagem(ns) adicionada(s) ✓`); }
+    router();
+    return;
+  }
+  const file = cropQueue.shift();
+  let url;
+  try{ url = URL.createObjectURL(file); }
+  catch(e){ console.warn('Não foi possível abrir esta imagem, pulando.', e); abrirProximoCrop(); return; }
+
+  document.getElementById('sheetContent').innerHTML = `
+    <div class="sheet-handle"></div>
+    <h3>Ajustar imagem</h3>
+    <p style="font-size:12px;color:var(--text-dim);margin:-6px 0 14px;">Arraste para posicionar. Esta moldura tem o mesmo tamanho do carrossel do Início — é exatamente isso que vai aparecer.</p>
+    <div id="cropFrame" style="position:relative;width:100%;height:180px;overflow:hidden;border-radius:var(--radius-lg);background:#000;touch-action:none;cursor:grab;">
+      <img id="cropImg" src="${url}" draggable="false" style="position:absolute;left:0;top:0;transform-origin:top left;user-select:none;pointer-events:none;">
+    </div>
+    <div class="field" style="margin-top:16px;margin-bottom:4px;">
+      <label>Zoom</label>
+      <div class="slider-row"><input type="range" id="cropZoom" min="100" max="300" value="100"><span class="slider-val mono" id="cropZoomV">1.0x</span></div>
+    </div>
+    <div style="display:flex;gap:10px;margin-top:12px;">
+      <button class="btn btn-ghost" style="flex:1;" onclick="cancelarCrop()">Pular</button>
+      <button class="btn btn-primary" style="flex:1;" onclick="confirmarCrop()">Usar esta foto</button>
+    </div>
+  `;
+  document.getElementById('sheetOverlay').classList.add('open');
+
+  const img = document.getElementById('cropImg');
+  img.onload = () => {
+    const frame = document.getElementById('cropFrame');
+    const frameW = frame.clientWidth, frameH = frame.clientHeight;
+    const naturalW = img.naturalWidth, naturalH = img.naturalHeight;
+    const scale0 = Math.max(frameW/naturalW, frameH/naturalH); // "cover" mínimo, sem sobrar espaço vazio
+    cropState = {
+      url, naturalW, naturalH, frameW, frameH, scale0, zoom: 1,
+      panX: (frameW - naturalW*scale0)/2,
+      panY: (frameH - naturalH*scale0)/2,
+    };
+    aplicarTransformCrop();
+    ativarArrastarCrop();
+  };
+  img.onerror = () => { toast('Não foi possível carregar esta imagem — pulando.'); abrirProximoCrop(); };
+}
+
+function aplicarTransformCrop(){
+  const img = document.getElementById('cropImg');
+  if(!img || !cropState) return;
+  const scale = cropState.scale0 * cropState.zoom;
+  img.style.width = (cropState.naturalW*scale) + 'px';
+  img.style.height = (cropState.naturalH*scale) + 'px';
+  img.style.transform = `translate(${cropState.panX}px, ${cropState.panY}px)`;
+}
+
+function clampPanCrop(){
+  const scale = cropState.scale0 * cropState.zoom;
+  const dispW = cropState.naturalW*scale, dispH = cropState.naturalH*scale;
+  const minX = cropState.frameW - dispW, minY = cropState.frameH - dispH;
+  cropState.panX = Math.min(0, Math.max(minX, cropState.panX));
+  cropState.panY = Math.min(0, Math.max(minY, cropState.panY));
+}
+
+function ativarArrastarCrop(){
+  const frame = document.getElementById('cropFrame');
+  if(!frame) return;
+  let arrastando = false, iniX = 0, iniY = 0, panXIni = 0, panYIni = 0;
+  const pegarPonto = (e) => e.touches ? e.touches[0] : e;
+  const onDown = (e) => {
+    if(!cropState) return;
+    arrastando = true;
+    const p = pegarPonto(e);
+    iniX = p.clientX; iniY = p.clientY;
+    panXIni = cropState.panX; panYIni = cropState.panY;
+    frame.style.cursor = 'grabbing';
+  };
+  const onMove = (e) => {
+    if(!arrastando || !cropState) return;
+    const p = pegarPonto(e);
+    cropState.panX = panXIni + (p.clientX - iniX);
+    cropState.panY = panYIni + (p.clientY - iniY);
+    clampPanCrop();
+    aplicarTransformCrop();
+    if(e.cancelable) e.preventDefault();
+  };
+  const onUp = () => { arrastando = false; if(frame) frame.style.cursor = 'grab'; };
+
+  frame.addEventListener('mousedown', onDown);
+  frame.addEventListener('touchstart', onDown, {passive:true});
+  window.addEventListener('mousemove', onMove);
+  window.addEventListener('touchmove', onMove, {passive:false});
+  window.addEventListener('mouseup', onUp);
+  window.addEventListener('touchend', onUp);
+
+  const zoomSlider = document.getElementById('cropZoom');
+  if(zoomSlider){
+    zoomSlider.oninput = () => {
+      if(!cropState) return;
+      cropState.zoom = zoomSlider.value / 100;
+      const label = document.getElementById('cropZoomV');
+      if(label) label.textContent = cropState.zoom.toFixed(1) + 'x';
+      clampPanCrop();
+      aplicarTransformCrop();
+    };
+  }
+}
+
+function cancelarCrop(){
+  try{ if(cropState && cropState.url) URL.revokeObjectURL(cropState.url); }catch(e){}
+  cropState = null;
+  abrirProximoCrop();
+}
+
+function confirmarCrop(){
+  if(!cropState){ abrirProximoCrop(); return; }
+  try{
+    const outputH = 450; // resolução final — leve o bastante para não travar o app
+    const scaleFactor = outputH / cropState.frameH;
+    const outputW = Math.round(cropState.frameW * scaleFactor);
+    const scale = cropState.scale0 * cropState.zoom;
+    const dispW = cropState.naturalW*scale, dispH = cropState.naturalH*scale;
+
+    const canvas = document.createElement('canvas');
+    canvas.width = outputW; canvas.height = outputH;
+    const ctx = canvas.getContext('2d');
+    const img = document.getElementById('cropImg');
+    ctx.drawImage(img,
+      cropState.panX*scaleFactor, cropState.panY*scaleFactor,
+      dispW*scaleFactor, dispH*scaleFactor
+    );
+    const dataUrl = canvas.toDataURL('image/jpeg', 0.78);
+    STATE.motivacao.imagens.push(dataUrl);
+    cropAdicionadas++;
+  }catch(e){
+    console.warn('Falha ao recortar imagem, pulando.', e);
+    toast('Não foi possível processar esta imagem.');
+  }
+  try{ if(cropState && cropState.url) URL.revokeObjectURL(cropState.url); }catch(e){}
+  cropState = null;
+  abrirProximoCrop();
+}
+
+function removeMotivImagem(idx){
+  STATE.motivacao.imagens.splice(idx,1);
+  saveState(); router(); toast('Imagem removida');
+}
+function addMotivFrase(){
+  STATE.motivacao.frases.push('Nova frase motivacional');
+  saveState(); router();
+}
+function updateMotivFrase(idx, valor){
+  STATE.motivacao.frases[idx] = valor;
+  saveState(); router();
+}
+function removeMotivFrase(idx){
+  STATE.motivacao.frases.splice(idx,1);
+  saveState(); router(); toast('Frase removida');
+}
+
+function notifPermissionLabel(){
+  try{
+    if(!('Notification' in window)) return '🔕 Não suportado neste navegador (os avisos sonoros e na tela continuam ativos)';
+    if(Notification.permission === 'granted') return '✅ Ativado — você recebe avisos do sistema';
+    if(Notification.permission === 'denied') return '🚫 Bloqueado pelo navegador — ative manualmente nas permissões do site';
+    return '⏳ Ainda não ativado';
+  }catch(e){ return '🔕 Indisponível neste navegador'; }
+}
+
+function requestNotificationPermission(){
+  try{
+    if(!('Notification' in window)){ toast('Este navegador não suporta avisos do sistema.'); return; }
+    Notification.requestPermission().then(()=>{
+      const el = document.getElementById('notifPermStatus');
+      if(el) el.textContent = notifPermissionLabel();
+      toast('Preferência de notificação atualizada ✓');
+    }).catch(()=>{ toast('Não foi possível solicitar permissão.'); });
+  }catch(e){ console.warn('Permissão de notificação indisponível.', e); toast('Avisos do sistema indisponíveis — o app continua funcionando normalmente.'); }
+}
+
+function toggleNotificacoes(ativo){
+  STATE.perfil.notificacoesAtivas = ativo;
+  saveState();
+  try{
+    if(ativo && 'Notification' in window && Notification.permission === 'default') requestNotificationPermission();
+  }catch(e){ console.warn('Permissão de notificação indisponível.', e); }
+  router();
+}
+
+function resetChallenge(){
+  confirmarAcao('Isso vai zerar todo o seu progresso e voltar ao Dia 0. Suas configurações de nome e metas são mantidas. Deseja continuar?', ()=>{
+    const nomeAtual = STATE.perfil.nome;
+    STATE = seedState(nomeAtual);
+    saveState();
+    toast('Desafio reiniciado — bem-vindo ao Dia 0 ✓');
+    location.hash = '#dashboard';
+    router();
+  });
+}
+
+function renderBackup(){
+  return `
+    <h1 class="screen-title">Backup & Exportação</h1>
+    <p class="screen-sub">Seus dados nunca saem do dispositivo, exceto quando você exporta manualmente.</p>
+
+    <div class="section-h"><h2>Exportar</h2></div>
+    <div class="card" style="display:flex;flex-direction:column;gap:10px;">
+      <button class="btn btn-ghost" onclick="exportData('json')">⤓ Exportar JSON</button>
+      <button class="btn btn-ghost" onclick="exportData('csv')">⤓ Exportar CSV</button>
+      <button class="btn btn-ghost" onclick="exportData('txt')">⤓ Exportar TXT</button>
+      <button class="btn btn-ghost" onclick="exportData('pdf')">⤓ Exportar PDF</button>
+    </div>
+
+    <div class="section-h"><h2>Backup completo</h2></div>
+    <div class="card" style="display:flex;flex-direction:column;gap:10px;">
+      <button class="btn btn-primary" onclick="exportData('json')">Exportar backup</button>
+      <label class="btn btn-ghost" style="cursor:pointer;">
+        Importar backup
+        <input type="file" accept="application/json" style="display:none;" onchange="importBackup(event)">
+      </label>
+    </div>
+  `;
+}
+
+/* ============================================================
+   ACTIONS
+   ============================================================ */
+function toggleMission(pilarId, missionId){
+  const list = STATE.missoes[pilarId];
+  const m = list.find(x=>x.id===missionId);
+  m.done = !m.done;
+  m.streak = m.done ? m.streak+1 : Math.max(0, m.streak-1);
+  STATE.xp += m.done ? m.xp : -m.xp;
+  saveState();
+  toast(m.done ? `Missão concluída! +${m.xp}xp` : 'Missão desmarcada');
+  router();
+}
+
+function saveJournal(){
+  const get = id => document.getElementById(id).value.trim();
+  const vitoria = get('jVitoria');
+  if(!vitoria){ toast('Escreva pelo menos sua maior vitória.'); return; }
+  STATE.diario.unshift({
+    dia: STATE.diaAtual,
+    data: new Date().toLocaleDateString('pt-BR'),
+    vitoria, aprendi:get('jAprendi'), melhorar:get('jMelhorar'),
+    gratidao:get('jGratidao'), sentimento:get('jSentimento')||'—',
+  });
+  saveState();
+  toast('Entrada salva no diário ✓');
+  router();
+}
+
+/* ---------- Resumo do dia: ver de verdade o que foi registrado ----------
+   Mostra check-ins (manhã/tarde/noite), a entrada do diário e as missões
+   de um dia específico, com navegação para dia anterior/seguinte —
+   assim dá pra "ver como foi ontem" de fato, não só um texto genérico. */
+function renderResumoDia(param){
+  const s = STATE;
+  const dia = (param !== undefined && param !== null && param !== '') ? parseInt(param) : s.diaAtual;
+  const checkins = s.checkins[dia];
+  const diario = s.diario.find(j => j.dia === dia);
+  const missoesSnapshot = (dia === s.diaAtual) ? s.missoes : ((s.historicoMissoes && s.historicoMissoes[dia]) || null);
+  const podeVoltar = dia > 0;
+  const podeAvancar = dia < s.diaAtual;
+  const semNadaRegistrado = !checkins && !diario;
+
+  const linhaCheckin = (emoji, titulo, campos) => `
+    <div class="card">
+      <div class="pill" style="margin-bottom:10px;">${emoji} ${titulo}</div>
+      <p style="font-size:13px;line-height:1.85;color:var(--text-dim);">
+        ${campos.map(([label,valor])=>`<b style="color:var(--text)">${label}:</b> ${valor===undefined||valor===null||valor===''?'—':valor}`).join('<br>')}
+      </p>
+    </div>`;
+
+  return `
+    <h1 class="screen-title">Resumo do dia</h1>
+    <p class="screen-sub">Dia ${dia} de ${s.perfil.diasDesafio}${dia===s.diaAtual?' · hoje':''}</p>
+
+    <div class="segmented">
+      <button ${podeVoltar?`onclick="location.hash='#resumodia/${dia-1}'"`:'disabled style="opacity:.35"'}>‹ Dia anterior</button>
+      <button ${podeAvancar?`onclick="location.hash='#resumodia/${dia+1}'"`:'disabled style="opacity:.35"'}>Próximo dia ›</button>
+    </div>
+
+    ${semNadaRegistrado ? `<div class="empty-state"><div class="ic">📭</div><div class="t">Nenhum registro neste dia.</div></div>` : ''}
+
+    ${checkins?.manha ? linhaCheckin('☀️','Manhã', [
+      ['Humor', checkins.manha.humor+'/10'],
+      ['Disposição', checkins.manha.disposicao+'/10'],
+      ['Horas dormidas', checkins.manha.horasSono],
+      ['Como dormiu', checkins.manha.comoDormiu],
+      ['Objetivo do dia', checkins.manha.objetivo],
+    ].concat(checkins.objetivoCumprido!==undefined && checkins.objetivoCumprido!==null ? [['Cumpriu o objetivo?', checkins.objetivoCumprido?'✅ Sim':'Não foi dessa vez']] : [])) : ''}
+
+    ${checkins?.tarde ? linhaCheckin('🌤️','Tarde', [
+      ['Humor', checkins.tarde.humor+'/10'],
+      ['Disposição', checkins.tarde.disposicao+'/10'],
+      ['Observações', checkins.tarde.observacoes],
+    ]) : ''}
+
+    ${checkins?.noite ? linhaCheckin('🌙','Noite', [
+      ['Humor', checkins.noite.humor+'/10'],
+      ['Disposição', checkins.noite.disposicao+'/10'],
+      ['Resumo do dia', checkins.noite.resumo],
+    ]) : ''}
+
+    ${diario ? `
+      <div class="card">
+        <div class="pill" style="margin-bottom:10px;">✎ Diário</div>
+        <p style="font-size:13px;line-height:1.85;color:var(--text-dim);">
+          <b style="color:var(--text)">Maior vitória:</b> ${diario.vitoria || '—'}<br>
+          <b style="color:var(--text)">Aprendi:</b> ${diario.aprendi || '—'}<br>
+          <b style="color:var(--text)">Preciso melhorar:</b> ${diario.melhorar || '—'}<br>
+          <b style="color:var(--text)">Grato por:</b> ${diario.gratidao || '—'}<br>
+          <b style="color:var(--text)">Como me senti:</b> ${diario.sentimento || '—'}
+        </p>
+      </div>` : ''}
+
+    ${missoesSnapshot ? `
+      <div class="section-h"><h2>Missões</h2></div>
+      <div class="card">
+        ${Object.entries(missoesSnapshot).map(([pilarId, lista])=>{
+          const meta = pillarMeta(pilarId);
+          const feitas = lista.filter(m=>m.done).length;
+          return `<p style="font-size:12.5px;color:var(--text-dim);margin-bottom:6px;">${meta.emoji} ${meta.nome}: <b style="color:var(--text)">${feitas}/${lista.length}</b> concluídas</p>`;
+        }).join('')}
+      </div>` : ''}
+  `;
+}
+
+function gerarRelatorio(tipo){
+  const s = STATE;
+  const nomes = {diario:'Resumo diário', semanal:'Resumo semanal', mensal:'Resumo mensal', geral:'Resumo geral'};
+  const texto = `
+    <div class="card" style="margin-top:10px;border-left:3px solid var(--success);">
+      <div style="font-weight:700;font-family:var(--font-display);margin-bottom:8px;">${nomes[tipo]} — Dia ${s.diaAtual}</div>
+      <p style="font-size:13px;color:var(--text-dim);line-height:1.6;">
+        Sequência atual de ${s.streakAtual} dias. Humor médio de ${s.humorMedio}/10 e disposição média de ${s.disposicaoMedia}/10.
+        O pilar mais forte no período foi <b style="color:var(--text)">${pillarMeta(Object.entries(s.pilares).sort((a,b)=>b[1].pct-a[1].pct)[0][0]).nome}</b>,
+        enquanto <b style="color:var(--text)">${pillarMeta(Object.entries(s.pilares).sort((a,b)=>a[1].pct-b[1].pct)[0][0]).nome}</b> ainda pede atenção.
+        Treinos frequentes e boa hidratação seguem como hábitos mais consistentes.
+      </p>
+    </div>`;
+  document.getElementById('reportOutput').innerHTML = texto;
+  toast('Relatório gerado (dados de exemplo)');
+}
+
+function exportData(fmt){
+  if(fmt==='pdf'){ exportPDF(); return; }
+  let blob, filename;
+  if(fmt==='json'){
+    blob = new Blob([JSON.stringify(STATE,null,2)], {type:'application/json'});
+    filename = `novoeu_backup_dia${STATE.diaAtual}.json`;
+  } else if(fmt==='csv'){
+    const rows = [['pilar','nota','pct','xp']];
+    Object.entries(STATE.pilares).forEach(([id,p])=> rows.push([id,p.nota,p.pct,p.xp]));
+    blob = new Blob([rows.map(r=>r.join(',')).join('\n')], {type:'text/csv'});
+    filename = `novoeu_pilares_dia${STATE.diaAtual}.csv`;
+  } else {
+    const txt = `NOVO EU — Relatório TXT\nDia ${STATE.diaAtual}\nXP: ${STATE.xp}\nSequência: ${STATE.streakAtual}\nPeso: ${fmtNum(STATE.peso,'kg')}`;
+    blob = new Blob([txt], {type:'text/plain'});
+    filename = `novoeu_dia${STATE.diaAtual}.txt`;
+  }
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = filename; a.click();
+  URL.revokeObjectURL(url);
+  toast('Exportação concluída ✓');
+}
+
+/* Exportação em PDF: usa a função nativa de impressão do navegador
+   (Salvar como PDF), sem nenhuma biblioteca externa. Monta um relatório
+   limpo em #printArea, que é a única coisa visível durante a impressão
+   (ver regra @media print no CSS). */
+function exportPDF(){
+  const s = STATE;
+  const fase = currentPhase(s.diaAtual);
+  const linhasPilares = Object.entries(s.pilares).map(([id,p])=>{
+    const m = pillarMeta(id);
+    return `<tr><td>${m.emoji} ${m.nome}</td><td>${p.nota}/10</td><td>${p.pct}%</td><td>${p.xp} XP</td></tr>`;
+  }).join('');
+  const missoesHoje = Object.entries(s.missoes).flatMap(([id,lista])=> lista.map(m=>({...m, pilar:pillarMeta(id).nome})));
+  const concluidas = missoesHoje.filter(m=>m.done);
+  document.getElementById('printArea').innerHTML = `
+    <h1 style="font-family:'Space Grotesk',sans-serif;">Novo Eu — Relatório</h1>
+    <p><b>${s.perfil.nome}</b> · Dia ${s.diaAtual} de ${s.perfil.diasDesafio} · Fase ${fase.nome} · Gerado em ${new Date().toLocaleString('pt-BR')}</p>
+    <h3>Resumo</h3>
+    <p>XP: ${s.xp} · Nível: ${s.nivel} · Sequência atual: ${s.streakAtual} dias · Sequência máxima: ${s.streakMaxima} dias · Peso: ${fmtNum(s.peso,'kg')}</p>
+    <h3>Pilares</h3>
+    <table border="1" cellpadding="6" cellspacing="0" style="border-collapse:collapse;width:100%;">
+      <tr><th>Pilar</th><th>Nota</th><th>%</th><th>XP</th></tr>
+      ${linhasPilares}
+    </table>
+    <h3>Missões concluídas hoje (${concluidas.length}/${missoesHoje.length})</h3>
+    <ul>${concluidas.map(m=>`<li>${m.nome} (${m.pilar}) — +${m.xp}xp</li>`).join('') || '<li>Nenhuma ainda hoje.</li>'}</ul>
+  `;
+  window.print();
+}
+
+function importBackup(evt){
+  const file = evt.target.files[0];
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    try{
+      const data = JSON.parse(e.target.result);
+      STATE = data; saveState();
+      toast('Backup importado ✓');
+      router();
+    }catch(err){ toast('Arquivo inválido.'); }
+  };
+  reader.readAsText(file);
+}
+
+/* ---------- Check-in sheet ---------- */
+function openCheckin(){
+  const s = STATE;
+  const dayData = s.checkins[s.diaAtual] || {manha:null, tarde:null, noite:null};
+  const marca = (p) => dayData[p] ? ' ✓' : '';
+  document.getElementById('sheetContent').innerHTML = `
+    <div class="sheet-handle"></div>
+    <h3>Check-in · Dia ${s.diaAtual}</h3>
+    <div class="segmented" id="ckSeg">
+      <button class="active" data-p="manha">Manhã${marca('manha')}</button>
+      <button data-p="tarde">Tarde${marca('tarde')}</button>
+      <button data-p="noite">Noite${marca('noite')}</button>
+    </div>
+    <div id="ckForm"></div>
+  `;
+  document.querySelectorAll('#ckSeg button').forEach(b=>{
+    b.onclick = ()=>{ document.querySelectorAll('#ckSeg button').forEach(x=>x.classList.remove('active')); b.classList.add('active'); renderCheckinForm(b.dataset.p); };
+  });
+  renderCheckinForm('manha');
+  document.getElementById('sheetOverlay').classList.add('open');
+}
+function closeSheet(){ document.getElementById('sheetOverlay').classList.remove('open'); }
+
+/* Confirmação própria do app, em vez do confirm() nativo do navegador.
+   O confirm() nativo é conhecido por ser bloqueado ou ignorado
+   silenciosamente em alguns navegadores/modos de PWA (especialmente no
+   iPhone quando o app é adicionado à tela de início) — o que fazia
+   botões de excluir parecerem não funcionar. */
+function confirmarAcao(mensagem, aoConfirmar){
+  document.getElementById('sheetContent').innerHTML = `
+    <div class="sheet-handle"></div>
+    <h3>Tem certeza?</h3>
+    <p style="font-size:13.5px;color:var(--text-dim);line-height:1.5;margin-bottom:20px;">${mensagem}</p>
+    <div style="display:flex;gap:10px;">
+      <button class="btn btn-ghost" style="flex:1;" onclick="closeSheet()">Cancelar</button>
+      <button class="btn" style="flex:1;background:transparent;border:1px solid var(--danger);color:var(--danger);" id="confirmarAcaoBtn">Remover</button>
+    </div>
+  `;
+  document.getElementById('confirmarAcaoBtn').onclick = () => { closeSheet(); aoConfirmar(); };
+  document.getElementById('sheetOverlay').classList.add('open');
+}
+
+function renderCheckinForm(periodo){
+  const s = STATE;
+  const dia = s.checkins[s.diaAtual];
+  const objetivo = dia?.manha?.objetivo;
+  const objetivoCumprido = dia?.objetivoCumprido;
+  const salvo = dia?.[periodo] || {}; // valores já salvos para este período, se houver
+  const humorSalvo = salvo.humor ?? 7;
+  const dispSalvo = salvo.disposicao ?? 7;
+  const esc = (v) => (v===undefined || v===null) ? '' : String(v).replace(/"/g,'&quot;');
+  const map = {
+    manha: `
+      <div class="field"><label>Humor</label><div class="slider-row"><input type="range" id="ckHumor" min="1" max="10" value="${humorSalvo}"><span class="slider-val mono" id="ckHumorV">${humorSalvo}</span></div></div>
+      <div class="field"><label>Disposição</label><div class="slider-row"><input type="range" id="ckDisp" min="1" max="10" value="${dispSalvo}"><span class="slider-val mono" id="ckDispV">${dispSalvo}</span></div></div>
+      <div class="field"><label>Horas dormidas</label><input type="number" id="ckSono" placeholder="ex: 7.5" value="${esc(salvo.horasSono)}"></div>
+      <div class="field"><label>Como dormiu</label><input type="text" id="ckComoDormiu" placeholder="ex: Bem, tranquilo" value="${esc(salvo.comoDormiu)}"></div>
+      <div class="field"><label>Objetivo do dia</label><input type="text" id="ckObjetivo" placeholder="Qual seu foco hoje?" value="${esc(salvo.objetivo)}"></div>
+    `,
+    tarde: `
+      <div class="field"><label>Humor</label><div class="slider-row"><input type="range" id="ckHumor" min="1" max="10" value="${humorSalvo}"><span class="slider-val mono" id="ckHumorV">${humorSalvo}</span></div></div>
+      <div class="field"><label>Disposição</label><div class="slider-row"><input type="range" id="ckDisp" min="1" max="10" value="${dispSalvo}"><span class="slider-val mono" id="ckDispV">${dispSalvo}</span></div></div>
+      <div class="field"><label>Observações</label><input type="text" id="ckObs" placeholder="Como está o dia até agora?" value="${esc(salvo.observacoes)}"></div>
+    `,
+    noite: `
+      <div class="field"><label>Humor</label><div class="slider-row"><input type="range" id="ckHumor" min="1" max="10" value="${humorSalvo}"><span class="slider-val mono" id="ckHumorV">${humorSalvo}</span></div></div>
+      <div class="field"><label>Disposição</label><div class="slider-row"><input type="range" id="ckDisp" min="1" max="10" value="${dispSalvo}"><span class="slider-val mono" id="ckDispV">${dispSalvo}</span></div></div>
+      <div class="field"><label>Resumo do dia</label><input type="text" id="ckResumo" placeholder="Como foi o seu dia?" value="${esc(salvo.resumo)}"></div>
+      ${objetivo ? `
+      <div class="field">
+        <label>Cumpriu o objetivo: "${objetivo}"?</label>
+        <input type="hidden" id="ckObjetivoCumprido" value="${objetivoCumprido===true?'sim':objetivoCumprido===false?'nao':''}">
+        <div class="segmented" id="ckObjSeg">
+          <button type="button" class="${objetivoCumprido===true?'active':''}" onclick="setCkObjetivo('sim', this)">Cumpri ✓</button>
+          <button type="button" class="${objetivoCumprido===false?'active':''}" onclick="setCkObjetivo('nao', this)">Não cumpri</button>
+        </div>
+      </div>` : ''}
+    `
+  };
+  document.getElementById('ckForm').innerHTML = map[periodo] + `<button class="btn btn-primary" onclick="saveCheckin('${periodo}')">Salvar ${periodo}</button>`;
+  const hSlider = document.getElementById('ckHumor'), dSlider = document.getElementById('ckDisp');
+  hSlider.oninput = ()=> document.getElementById('ckHumorV').textContent = hSlider.value;
+  dSlider.oninput = ()=> document.getElementById('ckDispV').textContent = dSlider.value;
+}
+
+function setCkObjetivo(valor, btn){
+  document.getElementById('ckObjetivoCumprido').value = valor;
+  document.querySelectorAll('#ckObjSeg button').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+function saveCheckin(periodo){
+  const s = STATE;
+  if(!s.checkins[s.diaAtual]) s.checkins[s.diaAtual] = {manha:null,tarde:null,noite:null};
+  const get = id => document.getElementById(id)?.value;
+  const base = { humor: +get('ckHumor'), disposicao: +get('ckDisp') };
+  if(periodo==='manha') Object.assign(base, {horasSono:get('ckSono'), comoDormiu:get('ckComoDormiu'), objetivo:get('ckObjetivo')});
+  if(periodo==='tarde') Object.assign(base, {observacoes:get('ckObs')});
+  if(periodo==='noite') Object.assign(base, {resumo:get('ckResumo')});
+  s.checkins[s.diaAtual][periodo] = base;
+
+  if(periodo==='noite'){
+    const objVal = get('ckObjetivoCumprido');
+    if(objVal === 'sim' || objVal === 'nao'){
+      const jaTinhaPontuado = s.checkins[s.diaAtual].objetivoCumprido === true;
+      s.checkins[s.diaAtual].objetivoCumprido = (objVal === 'sim');
+      if(objVal === 'sim' && !jaTinhaPontuado){ s.xp += 20; }
+    }
+  }
+
+  saveState();
+  closeSheet();
+  toast(`Check-in de ${periodo} salvo ✓`);
+  router();
+}
+
+document.getElementById('fabCheckin').addEventListener('click', openCheckin);
+document.getElementById('sheetOverlay').addEventListener('click', e=>{ if(e.target.id==='sheetOverlay') closeSheet(); });
+
+/* ---------- Per-screen bindings placeholder (extensível) ---------- */
+function bindScreenEvents(route){
+  document.getElementById('avatarDot').textContent = (STATE.perfil.nome[0]||'M').toUpperCase();
+  if(route === 'rotina') startRotinaClock(); else stopRotinaClock();
+  if(route === 'dashboard'){ startMotivCarousel(); startFraseTicker(); }
+  else { stopMotivCarousel(); stopFraseTicker(); }
+  if(route === 'calendario'){
+    // O Safari no iPhone às vezes "restaura" o estado de um checkbox recriado
+    // dinamicamente como se fosse o mesmo campo de antes. Forçamos desmarcado
+    // sempre que esta tela é (re)desenhada, para o novo evento nunca herdar
+    // "repete todo ano" de um evento anterior. A variável novoEventoRecorrente
+    // é a fonte real da verdade (não o DOM), então isso é só reforço visual.
+    novoEventoRecorrente = false;
+    try{
+      const cb = document.getElementById('evRecorrente');
+      if(cb) cb.checked = false;
+    }catch(e){ console.warn('Não foi possível resetar o checkbox de recorrência.', e); }
+  }
+}
+
+/* ---------- Som (Web Audio, sintetizado — sem arquivo externo) ----------
+   Sempre protegido por try/catch: se o áudio falhar por qualquer motivo
+   (política do navegador, ausência de suporte, etc.), o app continua
+   funcionando normalmente — o som nunca pode travar a plataforma. */
+function playBeep(){
+  try{
+    const Ctx = window.AudioContext || window.webkitAudioContext;
+    if(!Ctx) return;
+    const ctx = new Ctx();
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.type = 'sine';
+    osc.frequency.value = 880;
+    gain.gain.setValueAtTime(0.0001, ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.2, ctx.currentTime + 0.01);
+    gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 0.5);
+    osc.connect(gain); gain.connect(ctx.destination);
+    osc.start();
+    osc.stop(ctx.currentTime + 0.5);
+    osc.onended = () => ctx.close().catch(()=>{});
+  }catch(e){ console.warn('Áudio indisponível — seguindo sem som.', e); }
+}
+
+/* ---------- Vigia da Rotina: notificações locais com som ----------
+   Roda em segundo plano (independente da tela aberta) comparando o
+   relógio do dispositivo com os horários cadastrados na Rotina. */
+const rotinaNotificados = new Set();
+function checkRotinaNotifications(){
+  try{
+    if(!STATE.perfil.notificacoesAtivas) return;
+    const periodo = isWeekendToday() ? 'fimDeSemana' : 'semana';
+    const agora = nowHHMM();
+    const chave = `${new Date().toDateString()}-${periodo}-${agora}`;
+    if(rotinaNotificados.has(chave)) return;
+    const item = STATE.rotina[periodo].find(i => i.hora === agora);
+    if(!item) return;
+    rotinaNotificados.add(chave);
+    playBeep();
+    toast(`⏰ Hora de: ${item.atividade}`);
+    if('Notification' in window && Notification.permission === 'granted'){
+      try{ new Notification('Novo Eu', { body: item.atividade }); }catch(e){}
+    }
+  }catch(e){ console.warn('Vigia de rotina falhou, seguindo normalmente.', e); }
+}
+setInterval(checkRotinaNotifications, 20000);
+
+/* ---------- Vigia do Calendário: lembra de eventos importantes ----------
+   Compara a data/hora reais do dispositivo com os eventos cadastrados
+   (incluindo recorrência anual, ideal para aniversários). Notifica uma
+   única vez por dia por evento, mesmo com múltiplas checagens. */
+const eventosNotificados = new Set();
+function checkEventNotifications(){
+  try{
+    if(!STATE.perfil.notificacoesAtivas) return;
+    const agora = nowHHMM();
+    const hojeStr = new Date().toDateString();
+    STATE.eventos.forEach(e=>{
+      const proxima = proximaOcorrencia(e);
+      if(!proxima) return;
+      const dias = diasAte(proxima);
+      if(dias !== 0) return; // só notifica no dia do evento
+      if((e.hora || '09:00') !== agora) return;
+      const chave = `${e.id}-${hojeStr}`;
+      if(eventosNotificados.has(chave)) return;
+      eventosNotificados.add(chave);
+      playBeep();
+      toast(`📅 Hoje: ${e.titulo}`);
+      if('Notification' in window && Notification.permission === 'granted'){
+        try{ new Notification('Novo Eu — Calendário', { body: e.titulo }); }catch(err){}
+      }
+    });
+  }catch(e){ console.warn('Vigia de calendário falhou, seguindo normalmente.', e); }
+}
+setInterval(checkEventNotifications, 20000);
+
+/* ---------- Offline ----------
+   Este build é um único arquivo HTML (CSS + JS embutidos) por decisão de projeto.
+   Um Service Worker precisa ser um arquivo separado por exigência dos navegadores,
+   então não é registrado aqui — o app já funciona offline após aberto, pois todos
+   os dados vivem em localStorage e nenhum asset externo é obrigatório (as fontes
+   do Google Fonts ficam cacheadas pelo navegador após o primeiro carregamento).
+   As notificações usam a Notification API do navegador (local, sem servidor) —
+   funcionam em segundo plano enquanto a aba estiver aberta; se o navegador for
+   fechado por completo, elas retomam assim que o app for reaberto naquele dia. */
+
+/* ---------- Boot ---------- */
+document.documentElement.style.setProperty('--gold', STATE.perfil.corDestaque || '#E8A63D');
+avancarDiaSeNecessario();
+router();
+checkRotinaNotifications();
+checkEventNotifications();
+</script>
+</body>
+</html>
