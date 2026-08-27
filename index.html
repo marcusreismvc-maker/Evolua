@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>EVOLVE</title>
+<meta name="description" content="Você define quem quer se tornar. O sistema acompanha se suas ações estão levando você até lá.">
+<meta name="theme-color" content="#0A0A0B">
+<link rel="manifest" href="data:application/manifest+json;base64,eyJuYW1lIjogIkVWT0xWRSDigJQgU2lzdGVtYSBQZXNzb2FsIGRlIEV2b2x1w6fDo28iLCAic2hvcnRfbmFtZSI6ICJFVk9MVkUiLCAiZGVzY3JpcHRpb24iOiAiVm9jw6ogZGVmaW5lIHF1ZW0gcXVlciBzZSB0b3JuYXIuIE8gc2lzdGVtYSBhY29tcGFuaGEgc2Ugc3VhcyBhw6fDtWVzIGVzdMOjbyBsZXZhbmRvIHZvY8OqIGF0w6kgbMOhLiIsICJzdGFydF91cmwiOiAiLiIsICJzY29wZSI6ICIuIiwgImRpc3BsYXkiOiAic3RhbmRhbG9uZSIsICJvcmllbnRhdGlvbiI6ICJwb3J0cmFpdC1wcmltYXJ5IiwgImJhY2tncm91bmRfY29sb3IiOiAiIzBBMEEwQiIsICJ0aGVtZV9jb2xvciI6ICIjMEEwQTBCIiwgImljb25zIjogW3sic3JjIjogImRhdGE6aW1hZ2UvcG5nO2Jhc2U2NCxpVkJPUncwS0dnb0FBQUFOU1VoRVVnQUFBTUFBQUFEQUNBSUFBQURkdnZ0UUFBQUNwMGxFUVZSNG5PM2N3WEhVTUFCQVVjTEFjUk9hb0FwcW9OclVRQlUwa2NtVkN6VkVYNVljKzcyN0pjM3FqM1o5MEQ0OUhpOWZZTlRYM1F2Z2N4TVFpWUJJQkVRaUlCSUJrUWlJUkVBa0FpSVJFSW1BU0FSRUlpQVNBWkVJaUVSQUpBSWlFUkNKZ0VnRVJDSWdFZ0dSQ0loRVFDUUNJaEVRaVlCSUJFUWlJQklCa1FpSVJFQWtBaUlSRUltQVNBUkVJaUFTQVpFSWlFUkFKQUlpRVJDSmdFZ0VSQ0lnRWdHUkNJaEVRQ1FDSWhFUWlZQklCRVFpSUJJQmtRaUlSRUFrQWlJUkVJbUFTQVJFSWlBU0FaRUlpRVJBSkFJaUVSQ0pnRWdFUlBKdDl3THU0djMzajdFSG4xL2ZacTVqTmlmUUNzUDF4R2NYRU5EaGVnRm5ia2hBeDVxMTk2ZHRTRUFIbXJ2cjUyeElRQ1FDSWhFUWlZQklCRVFpSUJJQmtRaUlSRUFrQWlJUkVJbUFTQVJFSWlBU0FaRUlpRVJBSkFJaUVSQ0pnRWdFUkNJZ2tudGRiYjdxL2VLTmJuUUNYZmgrOFVaM0NlamE5NHMzdWtWQWw3OWZ2TkgxQTdyRC9lS05yaDhRaHhJUWlZQklCRVFpSUJJQmtRaUlSRUFrQWlJUkVJbUFTQVJFSWlBU0FaRUlpRVJBSkFJaUVSQ0pnRWdFUkNJZ0VnR1JDSWhrdzkzNHY3LytqVDM0ODgvM3VTdWhXMzBDRGRjVG4rVWdTd1BxQldqb2JOWUZOR3Z2TlhRcWl3S2F1K3NhT2c5dllTUUNJaEVRaVlCSUJFUWlJQklCa1FpSVJFQWtBaUlSRUltQVNBUkVJaUFTQVpFSWlFUkFKQUlpRVJDSmdFZ0VSQ0lnRWdHUkNJaEVRQ1FDSWxrVTBOeC9adm5RYU0rdmJ4T24vdEJvRzZkZVp0MEpOS3VoZ1hGbWZmUUQ0MnljZW8ybFgyRzlvZUVSK2dZTWo3Qng2Z1ZXL3dZcURjWCt5amJFTGR3NDlkR2VIbytYM1d2Z0UvTVdSaUlnRWdHUkNJaEVRQ1FDSWhFUWlZQklCRVFpSUJJQmtRaUlSRUFrQWlJUkVJbUFTQVJFSWlBU0FaRUlpRVJBSkFJaUVSQ0pnRWdFUkNJZ0VnR1JDSWhFUUNRQ0loRVFpWUJJL2dOOGdWTFhnYnpRYWdBQUFBQkpSVTVFcmtKZ2dnPT0iLCAic2l6ZXMiOiAiMTkyeDE5MiIsICJ0eXBlIjogImltYWdlL3BuZyIsICJwdXJwb3NlIjogImFueSJ9LCB7InNyYyI6ICJkYXRhOmltYWdlL3BuZztiYXNlNjQsaVZCT1J3MEtHZ29BQUFBTlNVaEVVZ0FBQWdBQUFBSUFDQUlBQUFCN0drT3RBQUFKRUVsRVFWUjRuTzNad1UyYlN4U0FVZk5FbGc0MGtTcFNBOVZTUTZwSUU0aHRObG1BSXV2SndZWVkvelB6bmRNQTkxcnkvUWI1WnIrLzJ3SFE4OS9XQXdDd0RRRUFpQklBZ0NnQkFJZ1NBSUFvQVFDSUVnQ0FLQUVBaUJJQWdDZ0JBSWdTQUlBb0FRQ0lFZ0NBS0FFQWlCSUFnQ2dCQUlnU0FJQW9BUUNJRWdDQUtBRUFpQklBZ0NnQkFJZ1NBSUFvQVFDSUVnQ0FLQUVBaUJJQWdDZ0JBSWdTQUlBb0FRQ0lFZ0NBS0FFQWlCSUFnQ2dCQUlnU0FJQW9BUUNJRWdDQUtBRUFpQklBZ0NnQkFJZ1NBSUFvQVFDSUVnQ0FLQUVBaUJJQWdDZ0JBSWdTQUlBb0FRQ0lFZ0NBS0FFQWlCSUFnQ2dCQUlnU0FJQW9BUUNJRWdDQUtBRUFpQklBZ0NnQkFJZ1NBSUFvQVFDSUVnQ0FLQUVBaUJJQWdDZ0JBSWdTQUlBb0FRQ0lFZ0NBS0FFQWlCSUFnQ2dCQUlnU0FJQW9BUUNJRWdDQUtBRUFpQklBZ0NnQkFJZ1NBSUFvQVFDSUVnQ0FLQUVBaUJJQWdDZ0JBSWdTQUlBb0FRQ0lFZ0NBS0FFQWlCSUFnQ2dCQUlnU0FJQW9BUUNJRWdDQUtBRUFpQklBZ0NnQkFJZ1NBSUFvQVFDSUVnQ0FLQUVBaUJJQWdDZ0JBSWdTQUlBb0FRQ0lFZ0NBS0FFQWlCSUFnQ2dCQUlnU0FJQW9BUUNJRWdDQUtBRUFpQklBZ0NnQkFJZ1NBSUFvQVFDSUVnQ0FLQUVBaUJJQWdDZ0JBSWdTQUlBb0FRQ0lFZ0NBS0FFQWlCSUFnQ2dCQUlnU0FJQW9BUUNJRWdDQUtBRUFpQklBZ0NnQkFJZ1NBSUFvQVFDSUVnQ0FLQUVBaUJJQWdDZ0JBSWdTQUlBb0FRQ0lFZ0NBS0FFQWlCSUFnQ2dCQUlnU0FJQW9BUUNJRWdDQUtBRUFpQklBZ0NnQkFJZ1NBSUFvQVFDSUVnQ0FLQUVBaUJJQWdDZ0JBSWdTQUlBb0FRQ0lFZ0NBS0FFQWlCSUFnQ2dCQUlnU0FJQW9BUUNJRWdDQUtBRUFpQklBZ0NnQkFJZ1NBSUFvQVFDSUVnQ0FLQUVBaUJJQWdDZ0JBSWdTQUlBb0FRQ0lFZ0NBS0FFQWlCSUFnQ2dCQUlnU0FJQW9BUUNJRWdDQUtBRUFpQklBZ0tqYnJRY0FMdXo1NFg3ckVWNTlmWHphZWdUZWNyUGYzMjA5QTNBWjQ1eitRekl3TEFHQUZZeDUrZy9Kd0lBRUFPWTIvdWsvSkFORDhTTXdUR3l1NjcrYmNPQzFDUURNYXRKak91bllTeElBbU5MVVozVHE0VmNpQURDZkJRN29BaXNzUUFBQW9nUUFKclBNMjNtWlJlWWxBQUJSQWdBeldlelZ2Tmc2MHhFQWdDZ0JnR2tzK1Y1ZWNxbFpDQUJBbEFBQVJBa0FRSlFBQUVRSkFFQ1VBQUJFQ1FCQWxBQUFSQWtBUUpRQUFFUUpBRUNVQUFCRUNRQkFsQUFBUkFrQVFKUUFBRVFKQUVDVUFBQkVDUUJBbEFBQVJBa0FRSlFBQUVRSkFFQ1VBQUJFQ1FCQWxBQUFSQWtBUUpRQUFFUUpBRUNVQUFCRUNRQkFsQUFBUkFrQVFKUUFBRVFKQUVDVUFBQkVDUUJBbEFBQVJBa0FRSlFBQUVRSkFFQ1VBQUJFQ1FCQWxBQUFSQWtBUUpRQUFFUUpBRUNVQUFCRUNRQkFsQUFBUkFrQVFKUUFBRVFKQUVDVUFBQkVDUUJBbEFBQVJBa0FRSlFBQUVUZGJqMEE3SGE3M2ZQRC9kWWp2UHI2K0xUMUNIQWxBc0RHeGpuOUwxN21rUUVLQklETmpIYjZEOGtBQlFMQUJrWSsvWWRrZ0xYNUVaaHJtK1g2L3pIZHdIQW1BZUNxSmoybWs0NE5ieE1Bcm1mcU16cjE4SENVQUhBbEN4elFCVmFBUXdJQUVDVUFYTU15YitkbEZvR2RBQUJrQ1FDZmJyRlg4MkxyVUNZQUFGRUN3T2RhOHIyODVGSUVDUUJBbEFBQVJBa0FRSlFBQUVRSkFFQ1VBQUJFQ1FCQWxBQUFSQWtBUUpRQUFFUUpBRUNVQUFCRUNRQkFsQUFBUkFrQVFKUUFBRVFKQUVDVUFBQkVDUUJBbEFBQVJBa0FRSlFBQUVRSkFFQ1VBQUJFQ1FCQWxBQUFSQWtBUUpRQUFFUUpBRUNVQUFCRUNRQkFsQUFBUkFrQVFKUUFBRVFKQUVDVUFBQkVDUUJBbEFBQVJBa0FRSlFBQUVRSkFFQ1VBQUJFQ1FCQWxBQUFSQWtBUUpRQUFFUUpBRUNVQUFCRUNRQkFsQUFBUkFrQVFKUUFBRVFKQUVDVUFBQkVDUUJBbEFBQVJBa0FRSlFBQUVRSkFFRFU3ZFlEVE96bjkxOWJqL0RxMjQ4dlc0OEF6RWNBUG1LYzAvL2laUjRaQU41RkFONW50Tk4vU0FhQWR4R0FjNDE4K2cvSkFIQW1Qd0tmWlpici84ZDBBd1BYSndDblRYcE1KeDBidUJvQk9HSHFNenIxOE1CbkU0QzNMSEJBRjFnQitDUUNBQkFsQUgrMXpOdDVtVVdBeXhJQWdDZ0JPRzZ4Vi9OaTZ3QVhJUUFBVVFKd3hKTHY1U1dYQXY2RkFBQkVDUUJBbEFBQVJBa0FRSlFBQUVRSkFFQ1VBQUJFQ1FCQWxBQUFSQWtBUUpRQUFFUUpBRUNVQUFCRUNRQkFsQUFBUkFrQVFKUUFBRVFKQUVDVUFBQkVDUUJBbEFBQVJBa0FRSlFBQUVRSkFFQ1VBQUJFQ1FCQWxBQUFSQWtBUUpRQUFFUUpBRUNVQUFCRUNRQkFsQUFBUkFrQVFKUUFBRVFKQUVDVUFBQkVDUUJBbEFBQVJBa0FRSlFBQUVRSkFFQ1VBQUJFQ1FCQWxBQUFSQWtBUUpRQUFFUUpBRUNVQUFCRUNRQkFsQUFBUkFrQVFKUUFBRVFKQUVDVUFBQkVDUUJBbEFBQVJBa0FRSlFBQUVRSkFFQ1VBQUJFQ1FCQWxBQUFSQWtBUUpRQUFFUUp3QkhmZm56WmVvVEwyMnFwcjQ5UG0vemRUN1hWVWo1TUxrc0FBS0lFNExqRi9nbllkcDNGbm5qYnJ1UEQ1SUlFQUNCS0FQNXFtWDhDUmxoa21ZZmVDSXVNTU1ORkxMUEl2QVFBSUVvQTNqTEMyL2tmamJQQ0FzKzljVllZWjVJUFcyQ0ZCUWpBQ2VNYzBBOFliZmlwdi9PakRUL2FQTzh5OWZBckVZRFRSanVqWnhwejdFbS8rV09PUGVaVUowMDY5cElFNEN4akh0TTNqRHp3ZE4vL2tRY2VlYmFqcGh0NGJUZjcvZDNXTTh6azUvZGZXNDl3d3Npbi8zK2VIKzYzSHVHRWlhNlZENU1QRUlDUEdETURFNTMrUTJOZXJrbXZsUStUZHhHQWp4c25BNU9lL2tQalhLNEZycFVQa3pNSkFFQ1VINEVCb2dRQUlFb0FBS0lFQUNCS0FBQ2lCQUFnU2dBQW9nUUFJRW9BQUtJRUFDQktBQUNpQkFBZ1NnQUFvZ1FBSUVvQUFLSUVBQ0JLQUFDaUJBQWdTZ0FBb2dRQUlFb0FBS0lFQUNCS0FBQ2lCQUFnU2dBQW9nUUFJRW9BQUtJRUFDQktBQUNpQkFBZ1NnQUFvZ1FBSUVvQUFLSUVBQ0JLQUFDaUJBQWdTZ0FBb2dRQUlFb0FBS0lFQUNCS0FBQ2lCQUFnU2dBQW9nUUFJRW9BQUtJRUFDQktBQUNpQkFBZ1NnQUFvZ1FBSUVvQUFLSUVBQ0JLQUFDaUJBQWdTZ0FBb2dRQUlFb0FBS0lFQUNCS0FBQ2lCQUFnU2dBQW9nUUFJRW9BQUtJRUFDQktBQUNpQkFBZ1NnQUFvZ1FBSUVvQUFLSUVBQ0JLQUFDaUJBQWdTZ0FBb2dRQUlFb0FBS0lFQUNCS0FBQ2lCQUFnU2dBQW9nUUFJRW9BQUtJRUFDQktBQUNpQkFBZ1NnQUFvZ1FBSUVvQUFLSUVBQ0JLQUFDaUJBQWc2amZmUjh4ek1RSWlxd0FBQUFCSlJVNUVya0pnZ2c9PSIsICJzaXplcyI6ICI1MTJ4NTEyIiwgInR5cGUiOiAiaW1hZ2UvcG5nIiwgInB1cnBvc2UiOiAiYW55In0sIHsic3JjIjogImRhdGE6aW1hZ2UvcG5nO2Jhc2U2NCxpVkJPUncwS0dnb0FBQUFOU1VoRVVnQUFBZ0FBQUFJQUNBSUFBQUI3R2tPdEFBQUlvVWxFUVZSNG5PM1l3VTFjU1JSQVVSamhaUU5KT0FySFFMVEU0Q2ljQkdMcnpTd3NzZWtSWXFDN2ZqM2Zjd0xvZXZxTGQ3dnE5blI2dUFHZzU1K2pCd0RnR0FJQUVDVUFBRkVDQUJBbEFBQlJBZ0FRSlFBQVVRSUFFQ1VBQUZFQ0FCQWxBQUJSQWdBUUpRQUFVUUlBRUNVQUFGRUNBQkFsQUFCUkFnQVFKUUFBVVFJQUVDVUFBRkVDQUJBbEFBQlJBZ0FRSlFBQVVRSUFFQ1VBQUZFQ0FCQWxBQUJSQWdBUUpRQUFVUUlBRUNVQUFGRUNBQkFsQUFCUkFnQVFKUUFBVVFJQUVDVUFBRkVDQUJBbEFBQlJBZ0FRSlFBQVVRSUFFQ1VBQUZFQ0FCQWxBQUJSQWdBUUpRQUFVUUlBRUNVQUFGRUNBQkFsQUFCUkFnQVFKUUFBVVFJQUVDVUFBRkVDQUJBbEFBQlJBZ0FRSlFBQVVRSUFFQ1VBQUZFQ0FCQWxBQUJSQWdBUUpRQUFVUUlBRUNVQUFGRUNBQkFsQUFCUkFnQVFKUUFBVVFJQUVDVUFBRkVDQUJBbEFBQlJBZ0FRSlFBQVVRSUFFQ1VBQUZFQ0FCQWxBQUJSQWdBUUpRQUFVUUlBRUNVQUFGRUNBQkFsQUFCUkFnQVFKUUFBVVFJQUVDVUFBRkVDQUJBbEFBQlJBZ0FRSlFBQVVRSUFFQ1VBQUZFQ0FCQWxBQUJSQWdBUUpRQUFVUUlBRUNVQUFGRUNBQkFsQUFCUkFnQVFKUUFBVVFJQUVDVUFBRkVDQUJBbEFBQlJBZ0FRSlFBQVVRSUFFQ1VBQUZFQ0FCQWxBQUJSQWdBUUpRQUFVUUlBRUNVQUFGRUNBQkFsQUFCUkFnQVFKUUFBVVFJQUVDVUFBRkVDQUJBbEFBQlJBZ0FRSlFBQVVRSUFFQ1VBQUZFQ0FCQWxBQUJSQWdBUUpRQUFVUUlBRUNVQUFGRUNBQkFsQUFCUkFnQVFKUUFBVVFJQUVDVUFBRkVDQUJBbEFBQlJBZ0FRSlFBQVVRSUFFQ1VBQUZFQ0FCQWxBQUJSQWdBUUpRQUFVUUlBRUNVQUFGRUNBQkFsQUFCUkFnQVFKUUFBVVFJQUVDVUFBRkVDQUJBbEFBQlJBZ0FRSlFBQVVRSUFFQ1VBQUZFQ0FCQWxBQUJSQWdBUUpRQUFVUUlBRUNVQUFGRUNBQkFsQUFCUkFnQVFKUUFBVVFJQUVDVUFBRkVDQUJBbEFBQlJBZ0FRSlFBQVVRSUFFQ1VBQUZFQ0FCQWxBQUJSQWdBUUpRQUFVUUlBRUNVQUFGRUNBQkFsQUFCUkFnQVFKUUFBVVFJQUVDVUFBRkVDQUJBbEFBQlJBZ0FRSlFBQVVRSUFFQ1VBQUZFQ0FCQWxBQUJSQWdBUUpRQUFVUUlBRUNVQUFGRUNBQkFsQUFCUkFnQVFKUUFBVVFJQUVDVUFBRkYzUnc4QVhNenIwK09hZys2Zlg5WWN4Rlhkbms0UFI4OEFmTW15dlg5T0NVYnpCQVN6SGJqOUR6K2RMM0lEZ0ttMldyNnVBaE81QWNCSVcyMy9tLzNtNFNNRUFPYlpjOXZ1T1JYdkVBQ0FLQUdBWVhiK283M3piSndUQUpoay93MjcvNFM4RVFDQUtBRUFpQklBR0dQSzY4cVVPUkVBZ0NnQkFJZ1NBSUFvQVFDSUVnQ0FLQUVBaUJJQWdDZ0JBSWdTQUlBb0FRQ0lFZ0NBS0FFQWlCSUFnQ2dCQUlnU0FJQW9BUUNJRWdDQUtBRUFpQklBZ0NnQkFJZ1NBSUFvQVFDSUVnQ0FLQUVBaUJJQWdDZ0JBSWdTQUlBb0FRQ0lFZ0NBS0FFQWlCSUFnQ2dCQUlnU0FJQW9BUUNJdWp0NkFMaVkxNmZITlFmZFA3K3NPUWl1U2dBWWI5bmVQejlSQ1JqTkV4Q3pyZC8rKzV3T1grUUd3RlNiTE44L1k3Z0tNSkViQUNOdHN2M2Y3RFlQZklRQU1NK2UyM2JQcWVBZEFnQVFKUUFNcy9NZjdaMW5nM01Dd0NUN2I5ajlKNFEzQWdBUUpRQUFVUUxBR0ZOZVY2Yk1DUUlBRUNVQUFGRUNBQkFsQUFCUkFnQVFKUUFBVVFJQUVDVUFBRkVDQUJBbEFBQlJBZ0FRSlFBQVVRSUFFQ1VBQUZFQ0FCQWxBQUJSQWdBUUpRQUFVUUlBRUNVQUFGRUNBQkFsQUFCUkFnQVFKUUFBVVFJQUVDVUFBRkVDQUJBbEFBQlJBZ0FRSlFBQVVRSUFFQ1VBQUZFQ0FCQjFkL1FBWE15dkg3L1hIUFQ5NTdjMUJ3RlhKUURqTGR2NzV5Y3FBWXptQ1dpMjlkdC9uOU9CTDNJRG1HcVQ1ZnRuREZjQm1NZ05ZS1JOdHYrYjNlWUJQa0lBNXRsejIrNDVGZkFPQVFDSUVvQmhkdjZqdmZOc3dEa0JtR1QvRGJ2L2hNQWJBUUNJRWdDQUtBRVlZOHJyeXBRNUFRRUFpQklBZ0NnQkFJZ1NBSUFvQVFDSUVnQ0FLQUVBaUJJQWdDZ0JBSWdTQUlBb0FRQ0lFZ0NBS0FFQWlCSUFnQ2dCQUlnU0FJQW9BUUNJRWdDQUtBRUFpQklBZ0NnQkFJZ1NBSUFvQVFDSUVnQ0FLQUVBaUJJQWdDZ0JBSWdTQUlBb0FRQ0lFZ0NBS0FFQWlCSUFnQ2dCQUlnU0FJQW9BUUNJRWdDQUtBRVk0L3ZQYjBlUDhDSFhtL1ArK2VWS3YzeFoxNXZURitDeUJBQWdTZ0FBb2dSZ2t2MWZnYTQ5NGY1dkM5ZWUwQmZnZ2dSZ21KMGJzR2EybmZmTG10bDhBUzVGQUFDaUJHQ2VQUzhCSzZmYTgyL215cWw4QVM1Q0FFYmFyUUhyNTlsdDE2eWZ4eGZnNjI1UHA0ZWpaK0R6ZnYzNGZld0FoNmZvOWVueDJBRU9YM3krQUovbUJqRGJzZnYzOE8xL2MvVDIyV0gzK1FKOG1odkEzMlBaYldDSHZmK2ZsdjBYM25icitRTDhMd0lBRU9VSkNDQktBQUNpQkFBZ1NnQUFvZ1FBSUVvQUFLSUVBQ0JLQUFDaUJBQWdTZ0FBb2dRQUlFb0FBS0lFQUNCS0FBQ2lCQUFnU2dBQW9nUUFJRW9BQUtJRUFDQktBQUNpQkFBZ1NnQUFvZ1FBSUVvQUFLSUVBQ0JLQUFDaUJBQWdTZ0FBb2dRQUlFb0FBS0lFQUNCS0FBQ2lCQUFnU2dBQW9nUUFJRW9BQUtJRUFDQktBQUNpQkFBZ1NnQUFvZ1FBSUVvQUFLSUVBQ0JLQUFDaUJBQWdTZ0FBb2dRQUlFb0FBS0lFQUNCS0FBQ2lCQUFnU2dBQW9nUUFJRW9BQUtJRUFDQktBQUNpQkFBZ1NnQUFvZ1FBSUVvQUFLSUVBQ0JLQUFDaUJBQWdTZ0FBb2dRQUlFb0FBS0lFQUNCS0FBQ2lCQUFnU2dBQW9nUUFJRW9BQUtJRUFDQktBQUNpQkFBZ1NnQUFvZ1FBSUVvQUFLSUVBQ0JLQUFDaUJBQWdTZ0FBb2dRQUlFb0FBS0lFQUNCS0FBQ2lCQUFnU2dBQW9nUUFJRW9BQUtJRUFDQktBQUNpQkFBZ1NnQUFvZ1FBSUVvQUFLSUVBQ0JLQUFDaUJBQWdTZ0FBb2dRQUlFb0FBS0lFQUNCS0FBQ2lCQUFnU2dBQW9nUUFJRW9BQUtJRUFDQktBQUNpQkFBZ1NnQUFvZ1FBSUVvQUFLSUVBQ0JLQUFDaUJBQWdTZ0FBb2dRQUlFb0FBS0lFQUNCS0FBQ2lCQUFnU2dBQW9nUUFJRW9BQUtJRUFDQktBQUNpQkFBZ1NnQUFvZ1FBSUVvQUFLSUVBQ0JLQUFDaUJBQWdTZ0FBb2dRQUlFb0FBS0lFQUNCS0FBQ2lCQUFnNmwrc0hhUy94Vzd3a0FBQUFBQkpSVTVFcmtKZ2dnPT0iLCAic2l6ZXMiOiAiNTEyeDUxMiIsICJ0eXBlIjogImltYWdlL3BuZyIsICJwdXJwb3NlIjogIm1hc2thYmxlIn1dfQ==">
+<link rel="icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAAAIABhAQAAFgAAAIlQTkcNChoKAAAADUlIRFIAAAAQAAAAEAgCAAAAkJFoNgAAAShJREFUeJy1kjFOHFEQRF/9P7M7C1obiZVGwqFJ4AoETi055RLkXIBTcBMCrkBCRAChcxsLDezs8LscYFhAKxCBK2zVU3epWtPpZz6i9CH3fwCyyHoxqd5wG/4MFqxXegcQBNTie1v3wdnv+7dOMhRzW7z7KZ98m57urbfjNARaCRhqMWv0cH0U+qASfrVBkMUo0Q0+2pmc/9g43G6uF04JsXT/yyAo5qaQhc2XiTbG2mqSWaFKMJjNmuPtksXBReoKNv2j/RWWJAbTjrzfxn4bs5FtJCqWKZ83UT2MboNfA1nMC32AmIf7AChm4SWjp+f7OrHEZafZWFtr6WcX14N3p3kIX3WxApgHQJO4N4vwOCmLu2JBk1c1vZYBwtRiVMnGj08Rz4L/BcJNcbF1EjJ0AAAAAElFTkSuQmCC" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAACIElEQVR4nO2WPW8UMRCGn9frbD4ulw9OQkjpQocQFRQpECU1Rf4EP4W/QYn4A3R0SCjQIiEhJIhIEchpdSSX3bWH4vaSS+KQzYUUSJlqd2TPM2N7Xlvd7jLXae5ao98AbgD/B8BPPVOQqfk2CPavAcEoKmMU19H1Sg6bEhCN+Yzn63OruRCfivBqu5oRZ8uYBuDFXmWba/mLRx1qQ1DbVr/4PAjzmeJJSFvA2foXvOrK6tK8kJjPiKltaAUQBCMCkKmZEw0vEF4Y6eitAILDSNez4AUUlZWxTVbtAE4cBLvXzV5vLK54SXzbj8/eDQaFpQ/NZQGCMvBgKVtf8RxGxGrP3+1kX/pB7QgJQKZmS49WtTRibdFwQG31OcvdFtCvx7HFim/qcMJAICVO1CUABpu349ocwPaQN7+uKlbHACcGNRvL9vJ+GBfA0w96u3usOVcCCCIseoaRogZY8ix6Eu0/HWBko+SPhGv0O4mw8W/SeQHAwKvpW0Bj0kjFgmHgJ5wRgjW67VNKdwIwiv6zIsKtGYDS2K1wjp1DE+S5ELGy3dLk+DE0J2Zz4RgexL3SvHSWocmXnaAyHi7ZndyAnVJbhTIRjMc935sV8H0/vt8L3mHwpOeXc5n4Oogf+yF3iSJ06uko+B2aJcpEJ2vmDGqzkdPRyXTK6R0LWSL9BABwE518pJGTt+Pfnacs0cnJockr97x7+ES6Fw+5ml074A/zJtq82m2X+gAAAABJRU5ErkJggg==">
+<link rel="icon" type="image/png" sizes="16x16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAABKElEQVR4nLWSMU4cURBEX/0/szsLWhuJlUbCoUngCgROLTnlEuRcgFNwEwKuQEJEAKFzGwsN7OzwuxxgWEArEIErbNVTd6la0+lnPqL0Ifd/ALLIejGp3nAb/gwWrFd6BxAE1OJ7W/fB2e/7t04yFHNbvPspn3ybnu6tt+M0BFoJGGoxa/RwfRT6oBJ+tUGQxSjRDT7amZz/2Djcbq4XTgmxdP/LICjmppCFzZeJNsbaapJZoUowmM2a4+2SxcFF6go2/aP9FZYkBtOOvN/GfhuzkW0kKpYpnzdRPYxug18DWcwLfYCYh/sAKGbhJaOn5/s6scRlp9lYW2vpZxfXg3eneQhfdbECmAdAk7g3i/A4KYu7YkGTVzW9lgHC1GJUycaPTxHPgv8Fwk1xsXUSMnQAAAAASUVORK5CYII=">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAIAAADdvvtQAAACp0lEQVR4nO3cwXHUMABAUcLAcROaoApqoNrUQBU0kcmVCzVEX5Yc+727Jc3qj3Z90D49Hi9fYNTX3QvgcxMQiYBIBEQiIBIBkQiIREAkAiIREImASAREIiASAZEIiERAJAIiERCJgEgERCIgEgGRCIhEQCQCIhEQiYBIBEQiIBIBkQiIREAkAiIREImASAREIiASAZEIiERAJAIiERCJgEgERCIgEgGRCIhEQCQCIhEQiYBIBEQiIBIBkQiIREAkAiIREImASAREIiASAZEIiERAJAIiERCJgEgERPJt9wLu4v33j7EHn1/fZq5jNifQCsP1xGcXENDhegFnbkhAx5q196dtSEAHmrvr52xIQCQCIhEQiYBIBEQiIBIBkQiIREAkAiIREImASAREIiASAZEIiERAJAIiERCJgEgERCIgkntdbb7q/eKNbnQCXfh+8UZ3Ceja94s3ukVAl79fvNH1A7rD/eKNrh8QhxIQiYBIBEQiIBIBkQiIREAkAiIREImASAREIiASAZEIiERAJAIiERCJgEgERCIgEgGRCIhkw934v7/+jT3488/3uSuhW30CDdcTn+UgSwPqBWjobNYFNGvvNXQqiwKau+saOg9vYSQCIhEQiYBIBEQiIBIBkQiIREAkAiIREImASAREIiASAZEIiERAJAIiERCJgEgERCIgEgGRCIhEQCQCIlkU0Nx/ZvnQaM+vbxOn/tBoG6deZt0JNKuhgXFmffQD42yceo2lX2G9oeER+gYMj7Bx6gVW/wYqDcX+yjbELdw49dGeHo+X3WvgE/MWRiIgEgGRCIhEQCQCIhEQiYBIBEQiIBIBkQiIREAkAiIREImASAREIiASAZEIiERAJAIiERCJgEgERCIgEgGRCIhEQCQCIhEQiYBI/gN8gVLXgbzQagAAAABJRU5ErkJggg==">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="EVOLVE">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0A0A0B;
+  --bg-1:#131316;
+  --card:#1B1B1F;
+  --card-2:#212126;
+  --border:#2A2A2F;
+  --text:#F3F1EC;
+  --text-dim:#96969C;
+  --text-faint:#5C5C62;
+  --orange:#FF5A1F;
+  --orange-dim:#E8480A;
+  --orange-glow:rgba(255,90,31,.32);
+  --green:#4ADE80;
+  --red:#F0473A;
+  --radius:16px;
+  --radius-sm:10px;
+  --font-display:'Bricolage Grotesque',sans-serif;
+  --font-body:'Inter',sans-serif;
+  --font-mono:'IBM Plex Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+html,body{height:100%;}
+body{
+  background:var(--bg);color:var(--text);font-family:var(--font-body);
+  font-size:15px;line-height:1.5;overscroll-behavior:none;
+}
+button,input,textarea,select{font-family:inherit;color:inherit;}
+button{cursor:pointer;border:none;background:none;}
+a{color:inherit;text-decoration:none;}
+::selection{background:var(--orange-glow);}
+::-webkit-scrollbar{width:6px;height:6px;}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px;}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms !important;transition-duration:.001ms !important;}}
+
+.hidden{display:none !important;}
+
+/* ---------- APP SHELL ---------- */
+#app{display:none;min-height:100vh;}
+#app.ready{display:flex;}
+
+.sidebar{
+  display:none;width:230px;flex-shrink:0;background:var(--bg-1);
+  border-right:1px solid var(--border);padding:28px 16px;flex-direction:column;gap:4px;
+  position:sticky;top:0;height:100vh;
+}
+.sidebar .brand{
+  font-family:var(--font-display);font-weight:800;font-size:20px;letter-spacing:.5px;
+  padding:0 12px 28px;color:var(--text);
+}
+.sidebar .brand span{color:var(--orange);}
+.nav-item{
+  display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:var(--radius-sm);
+  color:var(--text-dim);font-weight:500;font-size:14px;transition:background .15s,color .15s;
+}
+.nav-item .ic{font-size:17px;width:20px;text-align:center;}
+.nav-item.active{background:var(--card);color:var(--text);}
+.nav-item.active .ic{color:var(--orange);}
+.nav-item:hover{color:var(--text);}
+.sidebar-footer{margin-top:auto;padding-top:16px;border-top:1px solid var(--border);}
+
+main{flex:1;min-width:0;padding:20px 18px 100px;max-width:640px;margin:0 auto;width:100%;}
+@media (min-width:900px){
+  .sidebar{display:flex;}
+  main{padding:36px 40px 40px;max-width:760px;}
+  .bottom-nav{display:none !important;}
+}
+
+.bottom-nav{
+  position:fixed;bottom:0;left:0;right:0;background:rgba(19,19,22,.92);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+  border-top:1px solid var(--border);display:flex;justify-content:space-around;
+  padding:8px 4px calc(8px + env(safe-area-inset-bottom));z-index:40;
+}
+.bn-item{display:flex;flex-direction:column;align-items:center;gap:3px;color:var(--text-faint);
+  font-size:10.5px;font-weight:500;padding:4px 10px;border-radius:10px;transition:color .15s;min-width:56px;}
+.bn-item .ic{font-size:19px;}
+.bn-item.active{color:var(--orange);}
+
+/* ---------- TOP BAR ---------- */
+.topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px;}
+.topbar h1{font-family:var(--font-display);font-weight:800;font-size:22px;}
+.topbar .sub{color:var(--text-dim);font-size:12.5px;margin-top:2px;}
+.icon-btn{width:38px;height:38px;border-radius:50%;background:var(--card);display:flex;
+  align-items:center;justify-content:center;font-size:16px;border:1px solid var(--border);}
+
+/* ---------- COMPONENTS ---------- */
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:18px;}
+.card + .card{margin-top:12px;}
+.section-title{font-family:var(--font-display);font-weight:700;font-size:13px;letter-spacing:.6px;
+  text-transform:uppercase;color:var(--text-dim);margin:26px 0 10px;}
+.section-title:first-child{margin-top:0;}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 20px;
+  border-radius:12px;font-weight:600;font-size:14.5px;transition:transform .12s,opacity .12s;width:100%;}
+.btn:active{transform:scale(.97);}
+.btn-primary{background:var(--orange);color:#0A0A0B;}
+.btn-primary:hover{background:#ff6b34;}
+.btn-secondary{background:var(--card-2);color:var(--text);border:1px solid var(--border);}
+.btn-ghost{background:none;color:var(--text-dim);border:1px solid var(--border);}
+.btn-danger{background:none;color:var(--red);border:1px solid rgba(240,71,58,.35);}
+.btn-sm{padding:9px 14px;font-size:13px;width:auto;}
+
+.progress-track{height:8px;border-radius:6px;background:var(--card-2);overflow:hidden;}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--orange-dim),var(--orange));
+  border-radius:6px;transition:width .5s ease;}
+
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.stat-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px;}
+.stat-card .num{font-family:var(--font-mono);font-weight:600;font-size:24px;color:var(--text);}
+.stat-card .lbl{font-size:11.5px;color:var(--text-dim);margin-top:2px;text-transform:uppercase;letter-spacing:.4px;}
+.stat-card .num.orange{color:var(--orange);}
+
+.empty-state{text-align:center;padding:40px 20px;color:var(--text-dim);}
+.empty-state .ic{font-size:30px;margin-bottom:10px;opacity:.6;}
+.empty-state p{font-size:14px;margin-bottom:16px;}
+
+.toast-wrap{position:fixed;bottom:90px;left:0;right:0;display:flex;justify-content:center;z-index:200;pointer-events:none;}
+@media(min-width:900px){.toast-wrap{bottom:24px;}}
+.toast{background:var(--card-2);border:1px solid var(--border);border-left:3px solid var(--orange);
+  padding:12px 18px;border-radius:10px;font-size:13.5px;box-shadow:0 8px 24px rgba(0,0,0,.4);
+  animation:toastIn .25s ease;max-width:88vw;}
+@keyframes toastIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+
+.modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.6);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);
+  display:flex;align-items:flex-end;justify-content:center;z-index:100;}
+@media(min-width:900px){.modal-backdrop{align-items:center;}}
+.modal{background:var(--bg-1);border:1px solid var(--border);border-radius:20px 20px 0 0;
+  padding:22px 20px calc(22px + env(safe-area-inset-bottom));width:100%;max-width:480px;max-height:88vh;overflow-y:auto;
+  -webkit-overflow-scrolling:touch;animation:modalUp .22s ease;}
+@media(min-width:900px){.modal{border-radius:20px;}}
+@keyframes modalUp{from{transform:translateY(24px);opacity:0;}to{transform:translateY(0);opacity:1;}}
+.modal h2{font-family:var(--font-display);font-size:19px;font-weight:700;margin-bottom:16px;}
+
+.field{margin-bottom:14px;}
+.field label{display:block;font-size:12.5px;color:var(--text-dim);margin-bottom:6px;font-weight:500;}
+.field input,.field textarea,.field select{
+  width:100%;background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:12px 14px;font-size:16px;color:var(--text);
+}
+.field textarea{resize:vertical;min-height:80px;}
+.field input:focus,.field textarea:focus,.field select:focus{outline:2px solid var(--orange);outline-offset:1px;}
+.field-row{display:flex;gap:10px;}
+.field-row .field{flex:1;}
+.chip-row{display:flex;flex-wrap:wrap;gap:8px;}
+.chip{padding:8px 13px;border-radius:20px;background:var(--card-2);border:1px solid var(--border);
+  font-size:12.5px;color:var(--text-dim);}
+.chip.selected{background:var(--orange-glow);border-color:var(--orange);color:var(--orange);}
+
+/* ---------- VISÃO ---------- */
+.hero-image{position:relative;border-radius:var(--radius);overflow:hidden;height:230px;
+  border:1px solid var(--border);background:var(--card);touch-action:pan-y;}
+.hero-image .slide{position:absolute;inset:0;opacity:0;transition:opacity .5s ease;}
+.hero-image .slide.active{opacity:1;}
+.hero-image img{width:100%;height:100%;object-fit:cover;display:block;}
+.hero-image .add-btn{position:absolute;top:12px;right:12px;background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.2);z-index:5;}
+.hero-dots{position:absolute;bottom:10px;left:0;right:0;display:flex;justify-content:center;gap:6px;z-index:5;}
+.hero-dots span{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.35);transition:.2s;}
+.hero-dots span.active{background:var(--orange);width:16px;border-radius:4px;}
+
+.quote-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;
+  position:relative;min-height:76px;display:flex;align-items:center;}
+.quote-card .quote-text{font-family:var(--font-display);font-weight:700;font-size:16.5px;line-height:1.4;
+  transition:opacity .3s ease;}
+.quote-card .quote-idx{position:absolute;bottom:10px;right:14px;font-family:var(--font-mono);font-size:10.5px;color:var(--text-faint);}
+
+.day-strip{display:flex;gap:8px;overflow-x:auto;padding:2px 2px 8px;margin-bottom:6px;-webkit-overflow-scrolling:touch;}
+.day-chip{flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:4px;padding:9px 12px;
+  border-radius:12px;background:var(--card);border:1px solid var(--border);min-width:52px;}
+.day-chip.active{background:var(--orange-glow);border-color:var(--orange);}
+.day-chip .dow{font-size:10px;color:var(--text-faint);text-transform:uppercase;}
+.day-chip .dd{font-family:var(--font-mono);font-weight:600;font-size:14px;}
+.day-chip .mark{width:5px;height:5px;border-radius:50%;background:var(--text-faint);}
+.day-chip .mark.has{background:var(--orange);}
+.day-chip.active .dow,.day-chip.active .dd{color:var(--orange);}
+
+.diary-nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;}
+.diary-nav .date-lbl{font-family:var(--font-display);font-weight:700;font-size:16px;}
+.diary-nav button{width:34px;height:34px;border-radius:50%;background:var(--card);border:1px solid var(--border);font-size:15px;}
+.diary-nav button:disabled{opacity:.3;}
+
+.scope-row{display:flex;gap:8px;margin:14px 0;}
+.scope-btn{flex:1;padding:10px 6px;border-radius:10px;background:var(--card);border:1px solid var(--border);
+  font-size:12.5px;color:var(--text-dim);text-align:center;font-weight:500;}
+.scope-btn.active{background:var(--orange-glow);border-color:var(--orange);color:var(--orange);}
+
+.ring-wrap{display:flex;align-items:center;gap:20px;}
+.ring-num{font-family:var(--font-mono);font-weight:600;font-size:15px;fill:var(--text);}
+.ring-label{font-size:12px;color:var(--text-dim);text-transform:uppercase;letter-spacing:.5px;margin-top:4px;}
+
+.dynamic-msg{border-left:3px solid var(--orange);padding:14px 16px;background:var(--card);
+  border-radius:0 var(--radius-sm) var(--radius-sm) 0;font-size:14px;color:var(--text);font-weight:500;}
+
+/* ---------- AGORA / TIMELINE ---------- */
+.now-hero{text-align:center;padding:22px 10px 26px;}
+.now-clock{font-family:var(--font-mono);font-size:13px;color:var(--text-dim);letter-spacing:1px;}
+.now-icon{font-size:34px;margin:10px 0 6px;}
+.now-label{font-family:var(--font-display);font-weight:800;font-size:21px;letter-spacing:.3px;}
+.now-status{font-size:12.5px;color:var(--orange);margin-top:4px;font-weight:600;}
+
+.timeline{position:relative;padding-left:26px;}
+.timeline::before{content:'';position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:var(--border);}
+.t-item{position:relative;padding-bottom:22px;}
+.t-item:last-child{padding-bottom:0;}
+.t-dot{position:absolute;left:-26px;top:2px;width:16px;height:16px;border-radius:50%;background:var(--bg-1);
+  border:2px solid var(--border);}
+.t-item.done .t-dot{background:var(--green);border-color:var(--green);}
+.t-item.now .t-dot{background:var(--orange);border-color:var(--orange);box-shadow:0 0 0 5px var(--orange-glow);
+  animation:pulse 1.8s infinite;}
+.t-item.missed .t-dot{background:var(--bg-1);border-color:var(--red);}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 4px var(--orange-glow);}50%{box-shadow:0 0 0 8px transparent;}}
+.t-time{font-family:var(--font-mono);font-size:11.5px;color:var(--text-faint);}
+.t-item.now .t-time{color:var(--orange);}
+.t-title{font-size:14.5px;font-weight:600;margin-top:2px;}
+.t-item.done .t-title{color:var(--text-dim);}
+.t-tag{font-size:10.5px;text-transform:uppercase;letter-spacing:.4px;font-weight:700;margin-top:3px;display:block;}
+.t-item.now .t-tag{color:var(--orange);}
+.t-item.done .t-tag{color:var(--green);}
+.t-item.missed .t-tag{color:var(--red);}
+
+/* ---------- ACTIVITIES ---------- */
+.activity-row{display:flex;align-items:center;gap:14px;padding:14px 4px;border-bottom:1px solid var(--border);}
+.activity-row:last-child{border-bottom:none;}
+.check-btn{width:30px;height:30px;border-radius:50%;border:2px solid var(--border);flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;font-size:14px;transition:.15s;}
+.check-btn.done{background:var(--orange);border-color:var(--orange);color:#0A0A0B;}
+.activity-info{flex:1;min-width:0;}
+.activity-info .name{font-weight:600;font-size:14.5px;}
+.activity-info .name.done{color:var(--text-dim);text-decoration:line-through;text-decoration-color:var(--text-faint);}
+.activity-info .meta{font-size:11.5px;color:var(--text-faint);margin-top:2px;}
+.weight-dots{display:flex;gap:3px;}
+.weight-dots span{width:5px;height:5px;border-radius:50%;background:var(--border);}
+.weight-dots span.on{background:var(--orange);}
+
+/* ---------- DIARY ---------- */
+.diary-block{margin-bottom:16px;}
+.diary-block label{display:block;font-family:var(--font-display);font-weight:700;font-size:13px;
+  text-transform:uppercase;letter-spacing:.5px;color:var(--text-dim);margin-bottom:8px;}
+.diary-block textarea{width:100%;min-height:100px;background:var(--card);border:1px solid var(--border);
+  border-radius:var(--radius-sm);padding:14px;font-size:16px;color:var(--text);}
+
+.analysis-block{margin-bottom:14px;}
+.analysis-block .h{font-family:var(--font-display);font-weight:700;font-size:12px;text-transform:uppercase;
+  letter-spacing:.5px;margin-bottom:6px;}
+.analysis-block.good .h{color:var(--green);}
+.analysis-block.improve .h{color:var(--red);}
+.analysis-block.pattern .h{color:var(--text-dim);}
+.analysis-block.reco .h{color:var(--orange);}
+.analysis-block p{font-size:14px;line-height:1.55;color:var(--text);}
+
+/* ---------- PROJECTS ---------- */
+.project-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:18px;margin-bottom:12px;}
+.project-card .top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;}
+.project-card .name{font-family:var(--font-display);font-weight:700;font-size:16.5px;}
+.project-card .day-tag{font-family:var(--font-mono);font-size:11.5px;color:var(--orange);background:var(--orange-glow);
+  padding:4px 9px;border-radius:8px;white-space:nowrap;}
+.project-card .obj{font-size:13px;color:var(--text-dim);margin-bottom:12px;}
+.mini-stats{display:flex;gap:14px;margin-top:12px;font-size:11.5px;color:var(--text-dim);}
+.mini-stats b{color:var(--text);font-family:var(--font-mono);}
+
+/* ---------- SETTINGS ---------- */
+.settings-item{display:flex;align-items:center;justify-content:space-between;padding:15px 4px;
+  border-bottom:1px solid var(--border);}
+.settings-item:last-child{border-bottom:none;}
+.settings-item .lbl{font-size:14.5px;font-weight:500;}
+.settings-item .val{font-size:13px;color:var(--text-dim);}
+.list-row{display:flex;align-items:center;justify-content:space-between;padding:12px 4px;border-bottom:1px solid var(--border);}
+.list-row:last-child{border-bottom:none;}
+.list-row .name{font-size:14px;font-weight:500;}
+.list-row .actions button{font-size:12px;color:var(--text-dim);margin-left:12px;}
+.img-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px;}
+.img-grid .thumb{position:relative;aspect-ratio:1;border-radius:10px;overflow:hidden;border:2px solid transparent;}
+.img-grid .thumb.main{border-color:var(--orange);}
+.img-grid .thumb img{width:100%;height:100%;object-fit:cover;}
+.img-grid .thumb button{position:absolute;top:3px;right:3px;background:rgba(0,0,0,.6);width:20px;height:20px;
+  border-radius:50%;font-size:11px;}
+.conn-status{font-size:12.5px;padding:8px 12px;border-radius:8px;margin-top:8px;display:inline-block;}
+.conn-status.ok{background:rgba(74,222,128,.12);color:var(--green);}
+.conn-status.err{background:rgba(240,71,58,.12);color:var(--red);}
+
+/* ---------- ONBOARDING ---------- */
+#onboarding{position:fixed;inset:0;background:var(--bg);z-index:300;display:flex;flex-direction:column;
+  padding:30px 22px calc(30px + env(safe-area-inset-bottom));}
+.ob-progress{display:flex;gap:6px;margin-bottom:34px;}
+.ob-progress span{flex:1;height:3px;background:var(--border);border-radius:2px;}
+.ob-progress span.done{background:var(--orange);}
+.ob-step{flex:1;display:flex;flex-direction:column;justify-content:center;}
+.ob-step h2{font-family:var(--font-display);font-weight:800;font-size:24px;line-height:1.3;margin-bottom:22px;}
+.ob-nav{display:flex;gap:10px;margin-top:20px;}
+
+.history-row{display:flex;justify-content:space-between;align-items:center;padding:14px 4px;border-bottom:1px solid var(--border);}
+.history-row .date{font-size:14px;font-weight:600;}
+.history-row .score{font-family:var(--font-mono);font-weight:600;color:var(--orange);}
+</style>
+</head>
+<body>
+
+<div id="onboarding" class="hidden"></div>
+
+<div id="app">
+  <nav class="sidebar" id="sidebar"></nav>
+  <main id="main"></main>
+  <nav class="bottom-nav" id="bottomnav"></nav>
+</div>
+
+<div class="toast-wrap" id="toastWrap"></div>
+<div id="modalRoot"></div>
+
+<script>
+/* =========================================================
+   EVOLVE — Sistema Pessoal de Evolução
+   Single-file offline-first PWA. IndexedDB persistence.
+   ========================================================= */
+
+/* ---------- IndexedDB layer ---------- */
+const DB_NAME = 'evolve_db', DB_VERSION = 2;
+let db;
+function openDB(){
+  return new Promise((resolve,reject)=>{
+    const req = indexedDB.open(DB_NAME, DB_VERSION);
+    req.onupgradeneeded = (e)=>{
+      const d = e.target.result;
+      if(!d.objectStoreNames.contains('settings')) d.createObjectStore('settings',{keyPath:'key'});
+      if(!d.objectStoreNames.contains('images')) d.createObjectStore('images',{keyPath:'id',autoIncrement:true});
+      if(!d.objectStoreNames.contains('quotes')) d.createObjectStore('quotes',{keyPath:'id',autoIncrement:true});
+      if(!d.objectStoreNames.contains('routineItems')) d.createObjectStore('routineItems',{keyPath:'id',autoIncrement:true});
+      if(!d.objectStoreNames.contains('activities')) d.createObjectStore('activities',{keyPath:'id',autoIncrement:true});
+      if(!d.objectStoreNames.contains('activityLogs')) d.createObjectStore('activityLogs',{keyPath:'id',autoIncrement:true});
+      if(!d.objectStoreNames.contains('routineLogs')) d.createObjectStore('routineLogs',{keyPath:'id',autoIncrement:true});
+      if(!d.objectStoreNames.contains('projects')) d.createObjectStore('projects',{keyPath:'id',autoIncrement:true});
+      if(!d.objectStoreNames.contains('diaryLogs')) d.createObjectStore('diaryLogs',{keyPath:'date'});
+      if(!d.objectStoreNames.contains('dailyScores')) d.createObjectStore('dailyScores',{keyPath:'date'});
+      // aiAnalyses: recreated with autoIncrement id to support multiple scopes (dia/semana/período) per date.
+      if(d.objectStoreNames.contains('aiAnalyses')) d.deleteObjectStore('aiAnalyses');
+      d.createObjectStore('aiAnalyses',{keyPath:'id',autoIncrement:true});
+    };
+    req.onsuccess = ()=>resolve(req.result);
+    req.onerror = ()=>reject(req.error);
+  });
+}
+function tx(store,mode='readonly'){ return db.transaction(store,mode).objectStore(store); }
+function dbGetAll(store){ return new Promise((res,rej)=>{ const r=tx(store).getAll(); r.onsuccess=()=>res(r.result); r.onerror=()=>rej(r.error); }); }
+function dbGet(store,key){ return new Promise((res,rej)=>{ const r=tx(store).get(key); r.onsuccess=()=>res(r.result); r.onerror=()=>rej(r.error); }); }
+function dbPut(store,val){ return new Promise((res,rej)=>{ const r=tx(store,'readwrite').put(val); r.onsuccess=()=>res(r.result); r.onerror=()=>rej(r.error); }); }
+function dbDelete(store,key){ return new Promise((res,rej)=>{ const r=tx(store,'readwrite').delete(key); r.onsuccess=()=>res(); r.onerror=()=>rej(r.error); }); }
+
+/* ---------- Date/time utils ---------- */
+function pad(n){return n.toString().padStart(2,'0');}
+function todayStr(d=new Date()){ return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`; }
+function nowHM(d=new Date()){ return `${pad(d.getHours())}:${pad(d.getMinutes())}`; }
+function dowOf(dateStr){ return new Date(dateStr+'T12:00:00').getDay(); } // 0=Sun
+function addDays(dateStr,n){ const d=new Date(dateStr+'T12:00:00'); d.setDate(d.getDate()+n); return todayStr(d); }
+function daysBetween(a,b){ return Math.round((new Date(b+'T12:00:00')-new Date(a+'T12:00:00'))/86400000); }
+function fmtDatePretty(dateStr){
+  const d=new Date(dateStr+'T12:00:00');
+  return d.toLocaleDateString('pt-BR',{day:'2-digit',month:'short'});
+}
+
+/* ---------- Global state ---------- */
+const S = {
+  profile:null, images:[], quotes:[], routineItems:[], activities:[],
+  activityLogs:[], routineLogs:[], projects:[], diaryLogs:[], aiAnalyses:[], dailyScores:[],
+  geminiApiKey:'', onboardingDone:false, view:'visao', diaryDate:null, diaryScope:'day'
+};
+
+async function loadAll(){
+  const [profileRow, geminiRow, obRow] = await Promise.all([
+    dbGet('settings','profile'), dbGet('settings','geminiApiKey'), dbGet('settings','onboardingDone')
+  ]);
+  S.profile = profileRow ? profileRow.value : null;
+  S.geminiApiKey = geminiRow ? geminiRow.value : '';
+  S.onboardingDone = obRow ? obRow.value : false;
+  [S.images,S.quotes,S.routineItems,S.activities,S.activityLogs,S.routineLogs,S.projects,S.diaryLogs,S.aiAnalyses,S.dailyScores] = await Promise.all([
+    dbGetAll('images'),dbGetAll('quotes'),dbGetAll('routineItems'),dbGetAll('activities'),
+    dbGetAll('activityLogs'),dbGetAll('routineLogs'),dbGetAll('projects'),dbGetAll('diaryLogs'),
+    dbGetAll('aiAnalyses'),dbGetAll('dailyScores')
+  ]);
+}
+
+/* ---------- Toast ---------- */
+function toast(msg){
+  const wrap = document.getElementById('toastWrap');
+  const el = document.createElement('div');
+  el.className='toast'; el.textContent=msg;
+  wrap.appendChild(el);
+  setTimeout(()=>el.remove(),2600);
+}
+
+/* ---------- Modal helper ---------- */
+function openModal(innerHTML){
+  const root = document.getElementById('modalRoot');
+  root.innerHTML = `<div class="modal-backdrop" onclick="if(event.target===this)closeModal()"><div class="modal">${innerHTML}</div></div>`;
+}
+function closeModal(){ document.getElementById('modalRoot').innerHTML=''; }
+
+/* =========================================================
+   EVOLUTION ENGINE — scheduling, completion, scoring
+   ========================================================= */
+function routineForDate(dateStr){
+  const dow = dowOf(dateStr);
+  return S.routineItems.filter(r=>r.active!==false && (!r.days || r.days.length===0 || r.days.includes(dow)))
+    .sort((a,b)=>a.time.localeCompare(b.time));
+}
+function activitiesForDate(dateStr){
+  const dow = dowOf(dateStr);
+  return S.activities.filter(a=>a.active!==false && (!a.days || a.days.length===0 || a.days.includes(dow)));
+}
+function routineLogFor(routineId,dateStr){ return S.routineLogs.find(l=>l.routineItemId===routineId && l.date===dateStr); }
+function activityLogFor(activityId,dateStr){ return S.activityLogs.find(l=>l.activityId===activityId && l.date===dateStr); }
+
+// Auto-mark routine items whose window has fully elapsed today with no log as "missed"
+async function reconcileRoutine(dateStr){
+  const items = routineForDate(dateStr);
+  const now = nowHM();
+  const isToday = dateStr===todayStr();
+  for(let i=0;i<items.length;i++){
+    const item = items[i];
+    const next = items[i+1];
+    const windowEnd = next ? next.time : '23:59';
+    const elapsed = isToday ? (now >= windowEnd) : true;
+    if(elapsed && !routineLogFor(item.id,dateStr)){
+      const log = {routineItemId:item.id,date:dateStr,status:'missed',completedAt:null};
+      const id = await dbPut('routineLogs',log); log.id=id; S.routineLogs.push(log);
+    }
+  }
+}
+
+async function toggleRoutineDone(routineId,dateStr){
+  const existing = routineLogFor(routineId,dateStr);
+  if(existing && existing.status==='done'){
+    await dbDelete('routineLogs',existing.id);
+    S.routineLogs = S.routineLogs.filter(l=>l.id!==existing.id);
+  } else {
+    if(existing){ existing.status='done'; existing.completedAt=Date.now(); await dbPut('routineLogs',existing); }
+    else { const log={routineItemId:routineId,date:dateStr,status:'done',completedAt:Date.now()}; const id=await dbPut('routineLogs',log); log.id=id; S.routineLogs.push(log); }
+    toast('Concluído.');
+  }
+  await recomputeScore(dateStr);
+}
+
+async function toggleActivityDone(activityId,dateStr){
+  const existing = activityLogFor(activityId,dateStr);
+  if(existing){
+    await dbDelete('activityLogs',existing.id);
+    S.activityLogs = S.activityLogs.filter(l=>l.id!==existing.id);
+  } else {
+    const log = {activityId,date:dateStr,completedAt:Date.now()};
+    const id = await dbPut('activityLogs',log); log.id=id; S.activityLogs.push(log);
+    toast('+ progresso');
+    updateProjectsForActivity(activityId);
+  }
+  await recomputeScore(dateStr);
+}
+
+function updateProjectsForActivity(activityId){
+  // projects auto-track via computed progress at render time; nothing to persist here.
+}
+
+function computeDayMetrics(dateStr){
+  const routine = routineForDate(dateStr);
+  const acts = activitiesForDate(dateStr);
+  const routineDone = routine.filter(r=>{const l=routineLogFor(r.id,dateStr);return l && l.status==='done';}).length;
+  const rotina = routine.length ? (routineDone/routine.length)*100 : 100;
+
+  const totalWeight = acts.reduce((s,a)=>s+(a.weight||1),0) || 1;
+  const doneWeight = acts.reduce((s,a)=> s + (activityLogFor(a.id,dateStr) ? (a.weight||1) : 0),0);
+  const habitos = acts.length ? (doneWeight/totalWeight)*100 : 100;
+
+  const execucao = Math.round(rotina*0.5 + habitos*0.5);
+
+  // consistency: last 7 days including this one
+  let goodDays=0, countedDays=0;
+  for(let i=0;i<7;i++){
+    const d = addDays(dateStr,-i);
+    if(d>todayStr()) continue;
+    countedDays++;
+    const score = S.dailyScores.find(s=>s.date===d);
+    if(score ? score.evolutionIndex>=60 : false) goodDays++;
+    else if(d===dateStr && execucao>=60) goodDays++;
+  }
+  const consistencia = countedDays ? Math.round((goodDays/countedDays)*100) : 100;
+
+  const disciplina = Math.round(execucao*0.6 + consistencia*0.4);
+  const evolutionIndex = Math.round(disciplina*0.3 + rotina*0.25 + consistencia*0.2 + execucao*0.15 + habitos*0.1);
+
+  return { evolutionIndex, disciplina, rotina:Math.round(rotina), consistencia, execucao, habitos:Math.round(habitos) };
+}
+
+async function recomputeScore(dateStr){
+  const m = computeDayMetrics(dateStr);
+  const row = {date:dateStr, ...m};
+  await dbPut('dailyScores',row);
+  const idx = S.dailyScores.findIndex(s=>s.date===dateStr);
+  if(idx>-1) S.dailyScores[idx]=row; else S.dailyScores.push(row);
+  return row;
+}
+
+function currentStreak(){
+  let streak=0, d=todayStr();
+  while(true){
+    const score = S.dailyScores.find(s=>s.date===d) || computeDayMetrics(d);
+    if(score.evolutionIndex>=60){ streak++; d=addDays(d,-1); } else break;
+    if(streak>365) break;
+  }
+  return streak;
+}
+
+function missedStreak(){
+  let streak=0, d=addDays(todayStr(),-1);
+  while(true){
+    const score = S.dailyScores.find(s=>s.date===d);
+    if(score && score.evolutionIndex<40){ streak++; d=addDays(d,-1); } else break;
+    if(streak>30) break;
+  }
+  return streak;
+}
+
+function dynamicMessage(todayMetrics){
+  const streak = currentStreak();
+  const missed = missedStreak();
+  if(missed>=3) return {tone:'strong', text:'Cada dia sem cumprir sua meta é um dia mais longe do seu objetivo.'};
+  if(missed>=1 && todayMetrics.evolutionIndex<50) return {tone:'direct', text:'Você está repetindo o mesmo padrão. Talvez esteja na hora de parar de negociar com aquilo que você mesmo decidiu fazer.'};
+  if(streak>=7) return {tone:'recognition', text:`${streak} dias seguidos. Você está construindo consistência real.`};
+  if(todayMetrics.evolutionIndex>=80) return {tone:'recognition', text:'Você fez o que precisava fazer mesmo sem depender de motivação.'};
+  if(todayMetrics.evolutionIndex<50) return {tone:'leve', text:'Hoje não saiu como planejado. Amanhã você tem uma nova oportunidade.'};
+  return {tone:'neutral', text:'Você sabe onde quer chegar. Agora precisa agir.'};
+}
+
+/* =========================================================
+   RENDER — App shell
+   ========================================================= */
+const NAV = [
+  {id:'visao', label:'Visão', icon:'◈'},
+  {id:'agora', label:'Agora', icon:'◷'},
+  {id:'execucao', label:'Execução', icon:'✓'},
+  {id:'diario', label:'Diário', icon:'✎'},
+  {id:'projetos', label:'Projetos', icon:'▲'},
+  {id:'config', label:'Ajustes', icon:'⚙'},
+];
+
+function renderShell(){
+  document.getElementById('sidebar').innerHTML = `
+    <div class="brand">EVOL<span>VE</span></div>
+    ${NAV.map(n=>`<a class="nav-item ${S.view===n.id?'active':''}" onclick="goTo('${n.id}')"><span class="ic">${n.icon}</span>${n.label}</a>`).join('')}
+    <div class="sidebar-footer"><div class="nav-item" style="color:var(--text-faint);font-size:12px;">${S.profile?S.profile.name:''}</div></div>
+  `;
+  document.getElementById('bottomnav').innerHTML = NAV.map(n=>`
+    <button class="bn-item ${S.view===n.id?'active':''}" onclick="goTo('${n.id}')">
+      <span class="ic">${n.icon}</span>${n.label}
+    </button>`).join('');
+}
+
+async function goTo(view){
+  S.view = view;
+  await reconcileRoutine(todayStr());
+  await recomputeScore(todayStr());
+  renderShell();
+  renderMain();
+}
+
+function renderMain(){
+  const main = document.getElementById('main');
+  const fns = {visao:renderVisao, agora:renderAgora, execucao:renderExecucao, diario:renderDiario, projetos:renderProjetos, config:renderConfig, historico:renderHistorico};
+  if(S.view!=='visao') clearVisaoTimers();
+  main.innerHTML = (fns[S.view]||renderVisao)();
+  if(S.view==='visao') setupVisaoInteractions();
+}
+
+/* =========================================================
+   VIEW: VISÃO
+   ========================================================= */
+let visaoImgIdx = 0, visaoQuoteIdx = 0, visaoTimers = [];
+function clearVisaoTimers(){ visaoTimers.forEach(t=>clearInterval(t)); visaoTimers=[]; }
+
+function renderVisao(){
+  const today = todayStr();
+  const metrics = S.dailyScores.find(s=>s.date===today) || computeDayMetrics(today);
+  const msg = dynamicMessage(metrics);
+  const activeProject = S.projects.find(p=>!p.archived && p.endDate>=today && p.startDate<=today);
+  const circumference = 2*Math.PI*46;
+  const dash = circumference*(metrics.evolutionIndex/100);
+  if(visaoImgIdx>=S.images.length) visaoImgIdx=0;
+  if(visaoQuoteIdx>=S.quotes.length) visaoQuoteIdx=0;
+
+  return `
+    <div class="topbar">
+      <div><h1>Olá, ${S.profile?.name||''}</h1><div class="sub">${new Date().toLocaleDateString('pt-BR',{weekday:'long',day:'numeric',month:'long'})}</div></div>
+      <button class="icon-btn" onclick="goTo('historico')">🕓</button>
+    </div>
+
+    <div class="hero-image" id="heroImage">
+      ${S.images.length ? S.images.map((img,i)=>`<div class="slide ${i===visaoImgIdx?'active':''}"><img src="${img.dataUrl}"></div>`).join('')
+        : `<div style="display:flex;align-items:center;justify-content:center;height:100%;color:var(--text-faint);padding:0 20px;text-align:center;">Adicione uma imagem que represente seu objetivo</div>`}
+      <button class="icon-btn add-btn" onclick="openImageManager()">＋</button>
+      ${S.images.length>1 ? `<div class="hero-dots">${S.images.map((_,i)=>`<span class="${i===visaoImgIdx?'active':''}"></span>`).join('')}</div>` : ''}
+    </div>
+
+    <div class="section-title">Frase</div>
+    <div class="quote-card" id="quoteCard">
+      ${S.quotes.length
+        ? `<div class="quote-text">"${escapeHtml(S.quotes[visaoQuoteIdx].text)}"</div>${S.quotes.length>1?`<div class="quote-idx">${visaoQuoteIdx+1}/${S.quotes.length}</div>`:''}`
+        : `<div class="quote-text" style="color:var(--text-faint);font-weight:500;font-size:14px;">Adicione frases de motivação nos Ajustes.</div>`}
+    </div>
+
+    <div class="card" style="margin-top:14px;">
+      <div class="section-title" style="margin-top:0;">Meu objetivo</div>
+      <div style="font-size:16px;font-weight:600;">${S.profile?.mainGoal ? escapeHtml(S.profile.mainGoal) : 'Defina seu objetivo principal nos ajustes.'}</div>
+    </div>
+
+    <div class="section-title">Evolução</div>
+    <div class="card" style="display:flex;align-items:center;gap:22px;">
+      <svg width="110" height="110" viewBox="0 0 110 110">
+        <circle cx="55" cy="55" r="46" fill="none" stroke="var(--card-2)" stroke-width="9"/>
+        <circle cx="55" cy="55" r="46" fill="none" stroke="var(--orange)" stroke-width="9" stroke-linecap="round"
+          stroke-dasharray="${circumference}" stroke-dashoffset="${circumference-dash}" transform="rotate(-90 55 55)"/>
+        <text x="55" y="60" text-anchor="middle" class="ring-num" style="font-size:24px;">${metrics.evolutionIndex}</text>
+      </svg>
+      <div style="flex:1;">
+        <div class="ring-label">Índice de evolução</div>
+        <div style="display:flex;gap:16px;margin-top:10px;font-size:12px;color:var(--text-dim);">
+          <div>🔥 <b style="color:var(--text);font-family:var(--font-mono);">${currentStreak()}</b> dias</div>
+        </div>
+      </div>
+    </div>
+
+    ${activeProject ? renderProjectMini(activeProject) : ''}
+
+    <div class="section-title">Hoje</div>
+    <div class="dynamic-msg">${msg.text}</div>
+  `;
+}
+
+function setupVisaoInteractions(){
+  clearVisaoTimers();
+  const hero = document.getElementById('heroImage');
+  if(hero && S.images.length>1){
+    visaoTimers.push(setInterval(()=>{ visaoImgIdx=(visaoImgIdx+1)%S.images.length; updateHeroSlide(); }, 5000));
+    let startX=0;
+    hero.addEventListener('touchstart', e=>{ startX = e.touches[0].clientX; }, {passive:true});
+    hero.addEventListener('touchend', e=>{
+      const dx = e.changedTouches[0].clientX - startX;
+      if(Math.abs(dx)>40){
+        visaoImgIdx = dx<0 ? (visaoImgIdx+1)%S.images.length : (visaoImgIdx-1+S.images.length)%S.images.length;
+        updateHeroSlide();
+      }
+    }, {passive:true});
+  }
+  if(S.quotes.length>1){
+    visaoTimers.push(setInterval(()=>{ visaoQuoteIdx=(visaoQuoteIdx+1)%S.quotes.length; updateQuoteCard(); }, 7000));
+  }
+}
+function updateHeroSlide(){
+  const hero = document.getElementById('heroImage'); if(!hero) return;
+  hero.querySelectorAll('.slide').forEach((el,i)=>el.classList.toggle('active', i===visaoImgIdx));
+  hero.querySelectorAll('.hero-dots span').forEach((el,i)=>el.classList.toggle('active', i===visaoImgIdx));
+}
+function updateQuoteCard(){
+  const el = document.getElementById('quoteCard'); if(!el || !S.quotes.length) return;
+  const q = S.quotes[visaoQuoteIdx];
+  el.innerHTML = `<div class="quote-text">"${escapeHtml(q.text)}"</div>${S.quotes.length>1?`<div class="quote-idx">${visaoQuoteIdx+1}/${S.quotes.length}</div>`:''}`;
+}
+function renderProjectMini(p){
+  const total = daysBetween(p.startDate,p.endDate)+1;
+  const elapsed = Math.min(total, Math.max(0,daysBetween(p.startDate,todayStr())+1));
+  const prog = projectProgress(p);
+  return `
+    <div class="section-title">Projeto atual</div>
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-family:var(--font-display);font-weight:700;">${escapeHtml(p.name)}</div>
+        <div class="day-tag" style="background:var(--orange-glow);color:var(--orange);padding:3px 9px;border-radius:8px;font-family:var(--font-mono);font-size:11.5px;">Dia ${elapsed}/${total}</div>
+      </div>
+      <div class="progress-track"><div class="progress-fill" style="width:${prog}%;"></div></div>
+      <div style="text-align:right;font-family:var(--font-mono);font-size:12px;color:var(--text-dim);margin-top:6px;">${prog}% de execução</div>
+    </div>
+  `;
+}
+function escapeHtml(s){ const d=document.createElement('div'); d.textContent=s??''; return d.innerHTML; }
+
+/* =========================================================
+   VIEW: AGORA
+   ========================================================= */
+function renderAgora(){
+  const today = todayStr();
+  const items = routineForDate(today);
+  const now = nowHM();
+
+  if(!items.length){
+    return topbarHtml('Agora') + emptyState('◷','Sua rotina começa quando você decide como seu dia deve ser.','Criar rotina','openRoutineForm()');
+  }
+
+  let currentIdx = -1;
+  for(let i=0;i<items.length;i++){ if(items[i].time<=now) currentIdx=i; }
+  const currentItem = currentIdx>-1 ? items[currentIdx] : null;
+  const nextItem = items[currentIdx+1] || null;
+  const currentLog = currentItem ? routineLogFor(currentItem.id,today) : null;
+  const currentStatus = currentLog ? currentLog.status : 'pending';
+
+  const rows = items.map((it,i)=>{
+    const log = routineLogFor(it.id,today);
+    const status = log ? log.status : (i===currentIdx ? 'now' : (i<currentIdx ? 'missed' : 'upcoming'));
+    const cls = status==='done'?'done':(i===currentIdx && status!=='done'?'now':(status==='missed'?'missed':''));
+    const tag = status==='done'?'Concluído':(cls==='now'?'Agora':(status==='missed'?'Não concluída':(i===currentIdx+1?'Próximo':'')));
+    return `
+      <div class="t-item ${cls}">
+        <div class="t-dot"></div>
+        <div class="t-time">${it.time}</div>
+        <div class="t-title">${it.icon?it.icon+' ':''}${escapeHtml(it.label)}</div>
+        ${tag?`<span class="t-tag">${tag}</span>`:''}
+        ${cls==='now' ? `<button class="btn btn-primary btn-sm" style="margin-top:8px;" onclick="toggleRoutineDone(${it.id},'${today}').then(goTo.bind(null,'agora'))">Concluir</button>` : ''}
+      </div>`;
+  }).join('');
+
+  return `
+    ${topbarHtml('Agora')}
+    <div class="card">
+      <div class="now-hero">
+        <div class="now-clock">${now}</div>
+        ${currentItem ? `<div class="now-icon">${currentItem.icon||'◷'}</div>
+          <div class="now-label">${escapeHtml(currentItem.label).toUpperCase()}</div>
+          <div class="now-status">${currentStatus==='done'?'Concluído':'Em andamento'}</div>` : `<div class="now-label" style="margin-top:10px;">Dia ainda não começou</div>`}
+        ${nextItem ? `<div style="margin-top:14px;font-size:12.5px;color:var(--text-dim);">Próximo: ${nextItem.time} — ${escapeHtml(nextItem.label)}</div>` : ''}
+      </div>
+    </div>
+    <div class="section-title">Linha do tempo</div>
+    <div class="card"><div class="timeline">${rows}</div></div>
+  `;
+}
+function topbarHtml(title,sub){
+  return `<div class="topbar"><div><h1>${title}</h1>${sub?`<div class="sub">${sub}</div>`:''}</div></div>`;
+}
+function emptyState(icon,text,btnLabel,onclick){
+  return `<div class="empty-state"><div class="ic">${icon}</div><p>${text}</p>${btnLabel?`<button class="btn btn-primary" style="width:auto;" onclick="${onclick}">${btnLabel}</button>`:''}</div>`;
+}
+
+/* =========================================================
+   VIEW: EXECUÇÃO
+   ========================================================= */
+function renderExecucao(){
+  const today = todayStr();
+  const acts = activitiesForDate(today);
+  if(!acts.length){
+    return topbarHtml('Execução') + emptyState('✓','Defina as ações que vão aproximar você do seu objetivo.','Criar atividade','openActivityForm()')
+      + `<button class="btn btn-ghost" style="margin-top:10px;" onclick="goTo('config')">Gerenciar atividades</button>`;
+  }
+  const rows = acts.sort((a,b)=>(b.weight||1)-(a.weight||1)).map(a=>{
+    const log = activityLogFor(a.id,today);
+    return `
+      <div class="activity-row">
+        <button class="check-btn ${log?'done':''}" onclick="toggleActivityDone(${a.id},'${today}').then(()=>renderMain())">${log?'✓':''}</button>
+        <div class="activity-info">
+          <div class="name ${log?'done':''}">${escapeHtml(a.name)}</div>
+          <div class="meta">${a.time?a.time+' · ':''}${a.goal?escapeHtml(a.goal):''}</div>
+        </div>
+        <div class="weight-dots">${[1,2,3].map(n=>`<span class="${n<=(a.weight||1)?'on':''}"></span>`).join('')}</div>
+      </div>`;
+  }).join('');
+  return `
+    ${topbarHtml('Execução',`${acts.filter(a=>activityLogFor(a.id,today)).length}/${acts.length} concluídas hoje`)}
+    <div class="card">${rows}</div>
+    <button class="btn btn-secondary" style="margin-top:14px;" onclick="openActivityForm()">+ Nova atividade</button>
+  `;
+}
+
+/* =========================================================
+   VIEW: DIÁRIO — biblioteca navegável de dias
+   ========================================================= */
+function renderDiario(){
+  const date = S.diaryDate || todayStr();
+  const scope = S.diaryScope || 'day';
+  const log = S.diaryLogs.find(d=>d.date===date) || {manha:'',tarde:'',noite:''};
+  const analysis = findAnalysis(date, scope);
+  const isToday = date===todayStr();
+
+  const stripDates = []; for(let i=13;i>=0;i--) stripDates.push(addDays(todayStr(),-i));
+  const strip = stripDates.map(d=>{
+    const has = S.diaryLogs.some(x=>x.date===d && (x.manha||x.tarde||x.noite));
+    const dow = new Date(d+'T12:00:00').toLocaleDateString('pt-BR',{weekday:'short'}).replace('.','');
+    return `<button class="day-chip ${d===date?'active':''}" onclick="openDiaryDate('${d}')">
+      <span class="dow">${dow}</span><span class="dd">${d.slice(8,10)}</span><span class="mark ${has?'has':''}"></span>
+    </button>`;
+  }).join('');
+
+  return `
+    ${topbarHtml('Diário')}
+    <div class="day-strip">${strip}</div>
+
+    <div class="diary-nav">
+      <button onclick="shiftDiaryDate(-1)">‹</button>
+      <div class="date-lbl">${date===todayStr()?'Hoje':(date===addDays(todayStr(),-1)?'Ontem':(date===addDays(todayStr(),-2)?'Anteontem':fmtDatePretty(date)))}</div>
+      <button onclick="shiftDiaryDate(1)" ${isToday?'disabled':''}>›</button>
+    </div>
+
+    <div class="diary-block">
+      <label>Como foi ${date===todayStr()?'minha manhã':'a manhã'}?</label>
+      <textarea id="d-manha" onblur="saveDiary('${date}')">${escapeHtml(log.manha)}</textarea>
+    </div>
+    <div class="diary-block">
+      <label>Como foi ${date===todayStr()?'minha tarde':'a tarde'}?</label>
+      <textarea id="d-tarde" onblur="saveDiary('${date}')">${escapeHtml(log.tarde)}</textarea>
+    </div>
+    <div class="diary-block">
+      <label>Como foi ${date===todayStr()?'minha noite':'a noite'}?</label>
+      <textarea id="d-noite" onblur="saveDiary('${date}')">${escapeHtml(log.noite)}</textarea>
+    </div>
+
+    <div class="section-title" style="margin-top:20px;">Análise com IA</div>
+    <div class="scope-row">
+      <button class="scope-btn ${scope==='day'?'active':''}" onclick="setDiaryScope('day')">Este dia</button>
+      <button class="scope-btn ${scope==='week'?'active':''}" onclick="setDiaryScope('week')">Últimos 7 dias</button>
+      <button class="scope-btn ${scope==='all'?'active':''}" onclick="setDiaryScope('all')">Todo o período</button>
+    </div>
+    <button class="btn btn-primary" onclick="runAnalysis('${date}','${scope}')" id="analyzeBtn">Analisar com IA</button>
+    ${!S.geminiApiKey ? `<div class="sub" style="margin-top:8px;">Configure sua chave do Gemini em Ajustes para usar a análise.</div>` : ''}
+    <div id="analysisResult" style="margin-top:20px;">${analysis ? renderAnalysisBlock(analysis) : ''}</div>
+  `;
+}
+function openDiaryDate(d){ S.diaryDate=d; renderMain(); }
+function shiftDiaryDate(n){
+  const date = S.diaryDate || todayStr();
+  const nd = addDays(date,n);
+  if(nd>todayStr()) return;
+  S.diaryDate = nd; renderMain();
+}
+function setDiaryScope(scope){ S.diaryScope = scope; renderMain(); }
+function findAnalysis(date, scope){
+  const matches = S.aiAnalyses.filter(a=>a.date===date && a.scope===scope);
+  return matches.length ? matches.sort((a,b)=>b.createdAt-a.createdAt)[0] : null;
+}
+function renderAnalysisBlock(a){
+  return `
+    <div class="card">
+      <div class="analysis-block good"><div class="h">O que você fez bem</div><p>${escapeHtml(a.whatWentWell)}</p></div>
+      <div class="analysis-block improve"><div class="h">O que precisa melhorar</div><p>${escapeHtml(a.whatToImprove)}</p></div>
+      <div class="analysis-block pattern"><div class="h">Padrão identificado</div><p>${escapeHtml(a.pattern)}</p></div>
+      <div class="analysis-block reco" style="margin-bottom:0;"><div class="h">Recomendação</div><p>${escapeHtml(a.recommendation)}</p></div>
+    </div>`;
+}
+async function saveDiary(date){
+  const val = {date, manha:document.getElementById('d-manha').value, tarde:document.getElementById('d-tarde').value,
+    noite:document.getElementById('d-noite').value, updatedAt:Date.now()};
+  await dbPut('diaryLogs',val);
+  const idx = S.diaryLogs.findIndex(d=>d.date===date);
+  if(idx>-1) S.diaryLogs[idx]=val; else S.diaryLogs.push(val);
+}
+function diaryRangeFor(date, scope){
+  if(scope==='day') return [date];
+  if(scope==='week'){ const arr=[]; for(let i=6;i>=0;i--) arr.push(addDays(date,-i)); return arr; }
+  // all: from earliest recorded diary/score entry up to date
+  const allDates = [...S.diaryLogs.map(d=>d.date), ...S.dailyScores.map(s=>s.date)].filter(d=>d<=date);
+  const earliest = allDates.length ? allDates.sort()[0] : date;
+  const arr=[]; for(let d=earliest; d<=date; d=addDays(d,1)){ arr.push(d); if(arr.length>120) break; }
+  return arr;
+}
+async function runAnalysis(date, scope){
+  if(!S.geminiApiKey){ toast('Configure sua chave do Gemini nos Ajustes.'); return; }
+  const btn = document.getElementById('analyzeBtn'); btn.textContent='Analisando...'; btn.disabled=true;
+  try{
+    const range = diaryRangeFor(date, scope);
+    const entries = range.map(d=>({date:d, log:S.diaryLogs.find(x=>x.date===d)}))
+      .filter(e=>e.log && (e.log.manha||e.log.tarde||e.log.noite));
+    const metricsRange = range.map(d=> S.dailyScores.find(s=>s.date===d) || computeDayMetrics(d));
+    const prompt = buildAnalysisPrompt(date, scope, entries, metricsRange);
+    const result = await callGemini(prompt, ANALYSIS_SYSTEM_INSTRUCTION);
+    const parsed = parseAnalysisJSON(result);
+    const row = {date, scope, whatWentWell:parsed.bemFeito, whatToImprove:parsed.melhorar, pattern:parsed.padrao,
+      recommendation:parsed.recomendacao, raw:result, createdAt:Date.now()};
+    const id = await dbPut('aiAnalyses',row); row.id=id;
+    S.aiAnalyses = S.aiAnalyses.filter(a=>!(a.date===date && a.scope===scope));
+    S.aiAnalyses.push(row);
+    document.getElementById('analysisResult').innerHTML = renderAnalysisBlock(row);
+    toast('Análise concluída.');
+  }catch(e){
+    toast('Erro ao conectar com o Gemini: '+(e.message||''));
+  }
+  btn.textContent='Analisar com IA'; btn.disabled=false;
+}
+const ANALYSIS_SYSTEM_INSTRUCTION = `Você é um analista pessoal de evolução, disciplina e comportamento — não um coach genérico e não um chatbot de bem-estar.
+
+Regra mais importante: seus conselhos precisam ser PRÁTICOS e ESPECÍFICOS, nunca vagos. Sempre que a pessoa mencionar um evento concreto no diário (ex.: comeu um doce específico e quebrou a dieta, faltou a um treino específico, procrastinou uma tarefa específica, teve um pensamento ou gatilho específico), sua recomendação deve tratar DIRETAMENTE desse evento com uma ação concreta e aplicável — por exemplo, identificar o gatilho e sugerir removê-lo do ambiente, propor um substituto específico, sugerir um horário ou contexto alternativo, ou uma regra simples e mensurável para a próxima vez. NUNCA responda com frases genéricas como "tenha mais força de vontade", "seja mais disciplinado" ou "continue se esforçando" — isso é uma falha grave.
+
+Separe sempre dados observados (o que está literalmente escrito ou registrado) de interpretações (o que você concluiu a partir disso). Nunca invente informações que não estão nos dados fornecidos. Se não houver dados suficientes para identificar um padrão real, diga isso explicitamente em vez de inventar um.
+
+Responda SEMPRE apenas com um JSON válido, sem markdown, sem texto fora do JSON, no formato exato:
+{"bemFeito":"...","melhorar":"...","padrao":"...","recomendacao":"..."}`;
+
+function buildAnalysisPrompt(date, scope, entries, metricsRange){
+  const scopeLabel = scope==='day' ? 'um único dia' : scope==='week' ? 'os últimos 7 dias' : 'todo o período registrado';
+  const diaryText = entries.length
+    ? entries.map(e=>`--- ${e.date} ---\nManhã: ${e.log.manha||'(vazio)'}\nTarde: ${e.log.tarde||'(vazio)'}\nNoite: ${e.log.noite||'(vazio)'}`).join('\n\n')
+    : '(nenhum registro de diário no período)';
+  const metricsText = metricsRange.map(m=>`${m.date}: índice ${m.evolutionIndex} (rotina ${m.rotina}, hábitos ${m.habitos}, execução ${m.execucao})`).join('\n');
+
+  return `Analise o período abaixo, que corresponde a ${scopeLabel} (referência: ${date}).
+
+DIÁRIO DO PERÍODO:
+${diaryText}
+
+MÉTRICAS DIÁRIAS DO PERÍODO:
+${metricsText}
+
+${scope==='day'
+  ? 'Como é apenas um dia, procure padrões só se houver métricas históricas suficientes acima; caso contrário, diga que ainda não há histórico suficiente.'
+  : 'Como é um período de vários dias, procure ativamente padrões recorrentes entre os dias (por exemplo: mesmo gatilho se repetindo, queda de desempenho em dias específicos, melhora ou piora ao longo do período).'}
+
+Lembre-se: se algum evento específico foi mencionado no diário, sua recomendação deve ser uma ação concreta ligada a esse evento específico, não um conselho genérico.`;
+}
+function parseAnalysisJSON(text){
+  let clean = text.trim().replace(/^```json/i,'').replace(/^```/,'').replace(/```$/,'').trim();
+  try{ return JSON.parse(clean); }
+  catch(e){ return {bemFeito:clean.slice(0,300),melhorar:'',padrao:'',recomendacao:''}; }
+}
+const GEMINI_FALLBACK_MODELS = ['gemini-2.5-flash','gemini-3.5-flash-lite','gemini-3.6-flash','gemini-2.0-flash','gemini-1.5-flash'];
+let _resolvedGeminiModel = null;
+
+async function resolveGeminiModel(){
+  if(_resolvedGeminiModel) return _resolvedGeminiModel;
+  const cached = await dbGet('settings','geminiModel');
+  if(cached && cached.value){ _resolvedGeminiModel = cached.value; return _resolvedGeminiModel; }
+  try{
+    const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models?key=${S.geminiApiKey}`);
+    if(res.ok){
+      const data = await res.json();
+      const names = (data.models||[])
+        .filter(m => (m.supportedGenerationMethods||[]).includes('generateContent'))
+        .map(m => m.name.replace('models/',''));
+      // Prefer a "flash" model (fast + cheap), avoid vision/embedding/tts/image-only variants.
+      const pick = names.find(n => /flash/i.test(n) && !/vision|embed|tts|image|audio/i.test(n))
+                 || names.find(n => /pro/i.test(n) && !/vision|embed|tts|image|audio/i.test(n))
+                 || names[0];
+      if(pick){ _resolvedGeminiModel = pick; await dbPut('settings',{key:'geminiModel',value:pick}); return pick; }
+    }
+  }catch(e){ /* fall through to hardcoded fallback list */ }
+  _resolvedGeminiModel = GEMINI_FALLBACK_MODELS[0];
+  return _resolvedGeminiModel;
+}
+
+async function callGemini(prompt, systemInstruction){
+  const tried = [];
+  let candidates = [await resolveGeminiModel(), ...GEMINI_FALLBACK_MODELS];
+  candidates = [...new Set(candidates)];
+  let lastError = null;
+  const body = {contents:[{parts:[{text:prompt}]}]};
+  if(systemInstruction) body.system_instruction = {parts:[{text:systemInstruction}]};
+  for(const model of candidates){
+    if(tried.includes(model)) continue;
+    tried.push(model);
+    try{
+      const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${S.geminiApiKey}`,{
+        method:'POST', headers:{'Content-Type':'application/json'},
+        body:JSON.stringify(body)
+      });
+      if(res.status===404){ lastError=new Error('model not found: '+model); continue; } // model retired — try next
+      if(!res.ok){ lastError=new Error('Gemini request failed ('+res.status+')'); continue; }
+      const data = await res.json();
+      const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
+      if(text===undefined) { lastError=new Error('empty response'); continue; }
+      // Success — remember this model so future calls skip straight to it.
+      if(model!==_resolvedGeminiModel){ _resolvedGeminiModel=model; await dbPut('settings',{key:'geminiModel',value:model}); }
+      return text;
+    }catch(e){ lastError=e; }
+  }
+  throw lastError || new Error('Nenhum modelo Gemini disponível respondeu.');
+}
+
+/* =========================================================
+   VIEW: PROJETOS
+   ========================================================= */
+function projectProgress(p){
+  const total = daysBetween(p.startDate,p.endDate)+1;
+  if(total<=0) return 0;
+  let sum=0,count=0;
+  for(let d=p.startDate; d<=Math.min(p.endDate,todayStr()); d=addDays(d,1)){
+    const score = S.dailyScores.find(s=>s.date===d) || computeDayMetrics(d);
+    sum += score.evolutionIndex; count++;
+    if(count>400) break;
+  }
+  return count ? Math.round(sum/count) : 0;
+}
+function renderProjetos(){
+  if(!S.projects.length){
+    return topbarHtml('Projetos') + emptyState('▲','Você ainda não criou seu próximo desafio.','Criar projeto','openProjectForm()');
+  }
+  const active = S.projects.filter(p=>!p.archived);
+  const cards = active.map(p=>{
+    const total = daysBetween(p.startDate,p.endDate)+1;
+    const elapsed = Math.min(total,Math.max(0,daysBetween(p.startDate,todayStr())+1));
+    const prog = projectProgress(p);
+    let done=0,incomplete=0,lost=0;
+    for(let d=p.startDate; d<=Math.min(p.endDate,todayStr()); d=addDays(d,1)){
+      const s = S.dailyScores.find(x=>x.date===d) || computeDayMetrics(d);
+      if(s.evolutionIndex>=75) done++; else if(s.evolutionIndex>=40) incomplete++; else lost++;
+    }
+    return `
+      <div class="project-card">
+        <div class="top"><div class="name">${escapeHtml(p.name)}</div><div class="day-tag">Dia ${Math.max(1,elapsed)}/${total}</div></div>
+        <div class="obj">${escapeHtml(p.objective||'')}</div>
+        <div class="progress-track"><div class="progress-fill" style="width:${prog}%;"></div></div>
+        <div class="mini-stats">
+          <div>Progresso <b>${prog}%</b></div>
+          <div>Concluídos <b>${done}</b></div>
+          <div>Incompletos <b>${incomplete}</b></div>
+          <div>Perdidos <b>${lost}</b></div>
+        </div>
+        <button class="btn btn-ghost btn-sm" style="margin-top:12px;" onclick="archiveProject(${p.id})">Arquivar</button>
+      </div>`;
+  }).join('');
+  return `${topbarHtml('Projetos')}${cards}<button class="btn btn-secondary" onclick="openProjectForm()">+ Novo projeto</button>`;
+}
+async function archiveProject(id){
+  const p = S.projects.find(x=>x.id===id); p.archived=true;
+  await dbPut('projects',p); renderMain();
+}
+
+/* =========================================================
+   VIEW: HISTÓRICO
+   ========================================================= */
+function renderHistorico(){
+  const dates = [...new Set([...S.dailyScores.map(s=>s.date), todayStr()])].sort().reverse().slice(0,30);
+  const rows = dates.map(d=>{
+    const s = S.dailyScores.find(x=>x.date===d) || computeDayMetrics(d);
+    return `<div class="history-row" onclick="viewHistoryDay('${d}')" style="cursor:pointer;">
+      <div class="date">${fmtDatePretty(d)}</div><div class="score">${s.evolutionIndex}</div>
+    </div>`;
+  }).join('');
+  return `${topbarHtml('Histórico')}<div class="card">${rows}</div>`;
+}
+function viewHistoryDay(date){ S.diaryDate=date; S.diaryScope='day'; S.view='diario'; renderShell(); renderMain(); }
+
+/* =========================================================
+   VIEW: CONFIGURAÇÕES
+   ========================================================= */
+function renderConfig(){
+  return `
+    ${topbarHtml('Ajustes')}
+
+    <div class="section-title" style="margin-top:0;">Perfil</div>
+    <div class="card">
+      <div class="settings-item"><span class="lbl">Nome</span><span class="val">${S.profile?.name||'—'}</span></div>
+      <div class="settings-item"><span class="lbl">Objetivo principal</span><span class="val">${S.profile?.mainGoal?'Definido':'—'}</span></div>
+      <div class="settings-item"><span class="lbl">Início</span><span class="val">${S.profile?.startDate||'—'}</span></div>
+      <button class="btn btn-ghost btn-sm" style="margin-top:10px;" onclick="openProfileForm()">Editar perfil</button>
+    </div>
+
+    <div class="section-title">Motivação</div>
+    <div class="card">
+      <button class="btn btn-secondary btn-sm" onclick="openImageManager()">Gerenciar imagens (${S.images.length})</button>
+      <button class="btn btn-secondary btn-sm" style="margin-top:8px;" onclick="openQuoteManager()">Gerenciar frases (${S.quotes.length})</button>
+    </div>
+
+    <div class="section-title">Rotina</div>
+    <div class="card">
+      ${S.routineItems.length ? S.routineItems.sort((a,b)=>a.time.localeCompare(b.time)).map(r=>`
+        <div class="list-row"><div class="name">${r.time} — ${escapeHtml(r.label)}</div>
+          <div class="actions"><button onclick="openRoutineForm(${r.id})">editar</button><button onclick="deleteRoutine(${r.id})">excluir</button></div>
+        </div>`).join('') : `<div class="sub">Nenhum horário cadastrado.</div>`}
+      <button class="btn btn-secondary btn-sm" style="margin-top:10px;" onclick="openRoutineForm()">+ Adicionar horário</button>
+    </div>
+
+    <div class="section-title">Atividades</div>
+    <div class="card">
+      ${S.activities.length ? S.activities.map(a=>`
+        <div class="list-row"><div class="name">${escapeHtml(a.name)} · peso ${a.weight||1}</div>
+          <div class="actions"><button onclick="openActivityForm(${a.id})">editar</button><button onclick="deleteActivity(${a.id})">excluir</button></div>
+        </div>`).join('') : `<div class="sub">Nenhuma atividade cadastrada.</div>`}
+      <button class="btn btn-secondary btn-sm" style="margin-top:10px;" onclick="openActivityForm()">+ Adicionar atividade</button>
+    </div>
+
+    <div class="section-title">Projetos</div>
+    <div class="card">
+      ${S.projects.length ? S.projects.map(p=>`
+        <div class="list-row"><div class="name">${escapeHtml(p.name)} ${p.archived?'(arquivado)':''}</div>
+          <div class="actions"><button onclick="openProjectForm(${p.id})">editar</button><button onclick="deleteProject(${p.id})">excluir</button></div>
+        </div>`).join('') : `<div class="sub">Nenhum projeto cadastrado.</div>`}
+    </div>
+
+    <div class="section-title">Inteligência artificial</div>
+    <div class="card">
+      <div class="field"><label>Google Gemini — API Key</label><input type="password" id="geminiKeyInput" value="${S.geminiApiKey||''}" placeholder="Cole sua chave aqui"></div>
+      <div class="sub">A chave é sua e fica armazenada apenas neste dispositivo. Nunca é enviada para nenhum servidor além da API do Google.</div>
+      <div style="display:flex;gap:8px;margin-top:12px;">
+        <button class="btn btn-primary btn-sm" onclick="saveGeminiKey()">Salvar</button>
+        <button class="btn btn-secondary btn-sm" onclick="testGemini()">Testar conexão</button>
+      </div>
+      <div id="geminiStatus"></div>
+    </div>
+
+    <div class="section-title">Notificações</div>
+    <div class="card">
+      <button class="btn btn-secondary btn-sm" onclick="requestNotifications()">Ativar notificações locais</button>
+      <div class="sub" style="margin-top:8px;">Funcionam enquanto o app estiver aberto. No iPhone, para receber notificações, adicione o EVOLVE à Tela de Início (compartilhar → "Adicionar à Tela de Início") — o Safari não permite notificações fora disso. Mesmo instalado, iOS e Android limitam notificações em segundo plano sem um servidor próprio; isso é uma restrição da plataforma, não do app.</div>
+    </div>
+  `;
+}
+async function saveGeminiKey(){
+  const key = document.getElementById('geminiKeyInput').value.trim();
+  await dbPut('settings',{key:'geminiApiKey',value:key});
+  S.geminiApiKey = key;
+  _resolvedGeminiModel = null;
+  await dbDelete('settings','geminiModel');
+  toast('Chave salva.');
+}
+async function testGemini(){
+  const el = document.getElementById('geminiStatus');
+  el.innerHTML = `<div class="sub">Testando...</div>`;
+  try{
+    await callGemini('Responda apenas com a palavra: ok');
+    el.innerHTML = `<div class="conn-status ok">🟢 Conectado (modelo: ${_resolvedGeminiModel})</div>`;
+  }catch(e){ el.innerHTML = `<div class="conn-status err">🔴 Erro de conexão — ${escapeHtml(e.message||'')}</div>`; }
+}
+async function requestNotifications(){
+  if(!('Notification' in window)){ toast('Notificações não suportadas neste navegador.'); return; }
+  const perm = await Notification.requestPermission();
+  if(perm==='granted'){ toast('Notificações ativadas.'); await dbPut('settings',{key:'notificationsEnabled',value:true}); startNotificationLoop(); }
+  else toast('Permissão negada.');
+}
+function startNotificationLoop(){
+  let lastFired = {};
+  setInterval(async ()=>{
+    if(Notification.permission!=='granted') return;
+    const now = nowHM(), today=todayStr();
+    const due = routineForDate(today).filter(r=>{
+      const key = r.id+today;
+      if(r.time===now && !lastFired[key]){ lastFired[key]=true; return true; }
+      return false;
+    });
+    if(!due.length) return;
+    try{
+      const reg = await navigator.serviceWorker.ready;
+      due.forEach(r=> reg.showNotification('EVOLVE', {body:`Hora de: ${r.label}`, icon:'icon-192.png', badge:'icon-192.png'}));
+    }catch(e){ /* service worker unavailable — skip silently */ }
+  }, 20000);
+}
+
+/* =========================================================
+   FORMS (modals) — Profile / Images / Quotes / Routine / Activity / Project
+   ========================================================= */
+function openProfileForm(){
+  openModal(`
+    <h2>Editar perfil</h2>
+    <div class="field"><label>Nome</label><input id="f-name" value="${S.profile?.name||''}"></div>
+    <div class="field"><label>Objetivo principal</label><textarea id="f-goal">${S.profile?.mainGoal||''}</textarea></div>
+    <button class="btn btn-primary" onclick="saveProfile()">Salvar</button>
+  `);
+}
+async function saveProfile(){
+  const name = document.getElementById('f-name').value.trim();
+  const mainGoal = document.getElementById('f-goal').value.trim();
+  S.profile = {...(S.profile||{startDate:todayStr()}), name, mainGoal};
+  await dbPut('settings',{key:'profile',value:S.profile});
+  closeModal(); goTo(S.view);
+}
+
+function openImageManager(){
+  openModal(`
+    <h2>Imagens de motivação</h2>
+    <input type="file" id="imgInput" accept="image/*" style="display:none" onchange="addImage(event)">
+    <button class="btn btn-secondary" onclick="document.getElementById('imgInput').click()">+ Adicionar imagem</button>
+    <div class="img-grid" id="imgGrid">${renderImgGrid()}</div>
+  `);
+}
+function renderImgGrid(){
+  return S.images.map(i=>`
+    <div class="thumb ${i.isMain?'main':''}" onclick="setMainImage(${i.id})">
+      <img src="${i.dataUrl}"><button onclick="event.stopPropagation();deleteImage(${i.id})">✕</button>
+    </div>`).join('');
+}
+function addImage(ev){
+  const file = ev.target.files[0]; if(!file) return;
+  const reader = new FileReader();
+  reader.onload = async ()=>{
+    const rec = {dataUrl:reader.result, isMain:S.images.length===0};
+    const id = await dbPut('images',rec); rec.id=id; S.images.push(rec);
+    document.getElementById('imgGrid').innerHTML = renderImgGrid();
+    renderMain();
+  };
+  reader.readAsDataURL(file);
+}
+async function setMainImage(id){
+  S.images.forEach(i=>i.isMain=(i.id===id));
+  await Promise.all(S.images.map(i=>dbPut('images',i)));
+  document.getElementById('imgGrid').innerHTML = renderImgGrid(); renderMain();
+}
+async function deleteImage(id){
+  await dbDelete('images',id); S.images=S.images.filter(i=>i.id!==id);
+  if(S.images.length && !S.images.some(i=>i.isMain)){ S.images[0].isMain=true; await dbPut('images',S.images[0]); }
+  document.getElementById('imgGrid').innerHTML = renderImgGrid(); renderMain();
+}
+
+function openQuoteManager(){
+  openModal(`
+    <h2>Frases</h2>
+    <div class="field-row"><div class="field" style="flex:3;"><input id="quoteInput" placeholder="Nova frase"></div>
+      <button class="btn btn-primary" style="width:auto;flex:1;" onclick="addQuote()">+</button></div>
+    <div id="quoteList">${renderQuoteList()}</div>
+  `);
+}
+function renderQuoteList(){
+  return S.quotes.map(q=>`
+    <div class="list-row"><div class="name">${q.isFavorite?'★ ':''}${escapeHtml(q.text)}</div>
+      <div class="actions"><button onclick="favQuote(${q.id})">favoritar</button><button onclick="delQuote(${q.id})">excluir</button></div>
+    </div>`).join('');
+}
+async function addQuote(){
+  const text = document.getElementById('quoteInput').value.trim(); if(!text) return;
+  const rec = {text, isFavorite:S.quotes.length===0};
+  const id = await dbPut('quotes',rec); rec.id=id; S.quotes.push(rec);
+  document.getElementById('quoteInput').value='';
+  document.getElementById('quoteList').innerHTML = renderQuoteList(); renderMain();
+}
+async function favQuote(id){
+  S.quotes.forEach(q=>q.isFavorite=(q.id===id));
+  await Promise.all(S.quotes.map(q=>dbPut('quotes',q)));
+  document.getElementById('quoteList').innerHTML = renderQuoteList(); renderMain();
+}
+async function delQuote(id){
+  await dbDelete('quotes',id); S.quotes=S.quotes.filter(q=>q.id!==id);
+  document.getElementById('quoteList').innerHTML = renderQuoteList(); renderMain();
+}
+
+const WEEKDAYS = ['D','S','T','Q','Q','S','S'];
+function daySelector(fieldId, selected){
+  selected = selected||[];
+  return `<div class="chip-row" id="${fieldId}">${WEEKDAYS.map((d,i)=>`<button type="button" class="chip ${selected.includes(i)?'selected':''}" onclick="this.classList.toggle('selected')" data-day="${i}">${d}</button>`).join('')}</div>`;
+}
+function readDaySelector(fieldId){
+  return [...document.querySelectorAll(`#${fieldId} .chip.selected`)].map(c=>+c.dataset.day);
+}
+
+function openRoutineForm(id){
+  const r = id ? S.routineItems.find(x=>x.id===id) : null;
+  openModal(`
+    <h2>${r?'Editar horário':'Novo horário'}</h2>
+    <div class="field-row">
+      <div class="field"><label>Horário</label><input type="time" id="r-time" value="${r?r.time:'07:00'}"></div>
+      <div class="field" style="flex:2;"><label>Ícone (emoji, opcional)</label><input id="r-icon" value="${r?r.icon||'':''}" placeholder="🚿"></div>
+    </div>
+    <div class="field"><label>Atividade</label><input id="r-label" value="${r?r.label:''}" placeholder="Ex: Banho e preparação"></div>
+    <div class="field"><label>Dias da semana</label>${daySelector('r-days', r?r.days:[0,1,2,3,4,5,6])}</div>
+    <button class="btn btn-primary" onclick="saveRoutine(${id||'null'})">Salvar</button>
+  `);
+}
+async function saveRoutine(id){
+  const rec = { time:document.getElementById('r-time').value, icon:document.getElementById('r-icon').value.trim(),
+    label:document.getElementById('r-label').value.trim(), days:readDaySelector('r-days'), active:true };
+  if(id){ rec.id=id; }
+  const newId = await dbPut('routineItems',rec); rec.id=id||newId;
+  const idx = S.routineItems.findIndex(r=>r.id===rec.id);
+  if(idx>-1) S.routineItems[idx]=rec; else S.routineItems.push(rec);
+  closeModal(); goTo(S.view);
+}
+async function deleteRoutine(id){
+  await dbDelete('routineItems',id); S.routineItems=S.routineItems.filter(r=>r.id!==id);
+  goTo(S.view);
+}
+
+function openActivityForm(id){
+  const a = id ? S.activities.find(x=>x.id===id) : null;
+  openModal(`
+    <h2>${a?'Editar atividade':'Nova atividade'}</h2>
+    <div class="field"><label>Nome</label><input id="a-name" value="${a?a.name:''}" placeholder="Ex: Musculação"></div>
+    <div class="field"><label>Meta / descrição</label><input id="a-goal" value="${a?a.goal||'':''}" placeholder="Ex: 5x na semana"></div>
+    <div class="field-row">
+      <div class="field"><label>Horário (opcional)</label><input type="time" id="a-time" value="${a?a.time||'':''}"></div>
+      <div class="field"><label>Peso (1-3)</label><select id="a-weight">${[1,2,3].map(w=>`<option value="${w}" ${a&&a.weight===w?'selected':''}>${w}</option>`).join('')}</select></div>
+    </div>
+    <div class="field"><label>Dias da semana</label>${daySelector('a-days', a?a.days:[0,1,2,3,4,5,6])}</div>
+    <button class="btn btn-primary" onclick="saveActivity(${id||'null'})">Salvar</button>
+  `);
+}
+async function saveActivity(id){
+  const rec = { name:document.getElementById('a-name').value.trim(), goal:document.getElementById('a-goal').value.trim(),
+    time:document.getElementById('a-time').value, weight:+document.getElementById('a-weight').value,
+    days:readDaySelector('a-days'), active:true };
+  if(id) rec.id=id;
+  const newId = await dbPut('activities',rec); rec.id=id||newId;
+  const idx = S.activities.findIndex(x=>x.id===rec.id);
+  if(idx>-1) S.activities[idx]=rec; else S.activities.push(rec);
+  closeModal(); goTo(S.view);
+}
+async function deleteActivity(id){
+  await dbDelete('activities',id); S.activities=S.activities.filter(a=>a.id!==id);
+  goTo(S.view);
+}
+
+function openProjectForm(id){
+  const p = id ? S.projects.find(x=>x.id===id) : null;
+  openModal(`
+    <h2>${p?'Editar projeto':'Novo projeto'}</h2>
+    <div class="field"><label>Nome</label><input id="p-name" value="${p?p.name:''}" placeholder="Ex: Projeto 30 dias"></div>
+    <div class="field"><label>Objetivo</label><input id="p-obj" value="${p?p.objective||'':''}"></div>
+    <div class="field"><label>Descrição</label><textarea id="p-desc">${p?p.description||'':''}</textarea></div>
+    <div class="field-row">
+      <div class="field"><label>Início</label><input type="date" id="p-start" value="${p?p.startDate:todayStr()}"></div>
+      <div class="field"><label>Fim</label><input type="date" id="p-end" value="${p?p.endDate:addDays(todayStr(),29)}"></div>
+    </div>
+    <button class="btn btn-primary" onclick="saveProject(${id||'null'})">Salvar</button>
+  `);
+}
+async function saveProject(id){
+  const rec = { name:document.getElementById('p-name').value.trim(), objective:document.getElementById('p-obj').value.trim(),
+    description:document.getElementById('p-desc').value.trim(), startDate:document.getElementById('p-start').value,
+    endDate:document.getElementById('p-end').value, archived:false };
+  if(id) rec.id=id;
+  const newId = await dbPut('projects',rec); rec.id=id||newId;
+  const idx = S.projects.findIndex(x=>x.id===rec.id);
+  if(idx>-1) S.projects[idx]=rec; else S.projects.push(rec);
+  closeModal(); goTo(S.view);
+}
+async function deleteProject(id){
+  await dbDelete('projects',id); S.projects=S.projects.filter(p=>p.id!==id);
+  goTo(S.view);
+}
+
+/* =========================================================
+   ONBOARDING
+   ========================================================= */
+const OB_STEPS = [
+  {key:'name', q:'Como devemos chamar você?', type:'text', ph:'Seu nome'},
+  {key:'conquer', q:'O que você quer conquistar?', type:'text', ph:'Ex: Construir uma vida da qual eu tenha orgulho'},
+  {key:'mainGoal', q:'Qual é seu principal objetivo neste momento?', type:'text', ph:'Descreva em uma frase'},
+  {key:'habit', q:'Qual hábito você quer desenvolver?', type:'text', ph:'Ex: Treinar todos os dias'},
+  {key:'project30', q:'Deseja criar um projeto de 30 dias para começar agora?', type:'choice'}
+];
+let obIdx=0, obAnswers={};
+function renderOnboardingStep(){
+  const step = OB_STEPS[obIdx];
+  const el = document.getElementById('onboarding');
+  const progress = OB_STEPS.map((_,i)=>`<span class="${i<=obIdx?'done':''}"></span>`).join('');
+  let body;
+  if(step.type==='choice'){
+    body = `<div style="display:flex;gap:10px;"><button class="btn btn-primary" onclick="obAnswers['${step.key}']=true;obNext()">Sim, criar</button>
+      <button class="btn btn-secondary" onclick="obAnswers['${step.key}']=false;obNext()">Agora não</button></div>`;
+  } else {
+    body = `<div class="field"><input id="ob-input" placeholder="${step.ph}" value="${obAnswers[step.key]||''}"></div>
+      <button class="btn btn-primary" onclick="obTextNext()">Continuar</button>`;
+  }
+  el.innerHTML = `<div class="ob-progress">${progress}</div><div class="ob-step"><h2>${step.q}</h2>${body}</div>`;
+  setTimeout(()=>{const i=document.getElementById('ob-input'); if(i) i.focus();},50);
+}
+function obTextNext(){
+  const step = OB_STEPS[obIdx];
+  obAnswers[step.key] = document.getElementById('ob-input').value.trim();
+  obNext();
+}
+async function obNext(){
+  obIdx++;
+  if(obIdx>=OB_STEPS.length){ await finishOnboarding(); return; }
+  renderOnboardingStep();
+}
+async function finishOnboarding(){
+  S.profile = {name:obAnswers.name||'', mainGoal:obAnswers.mainGoal||obAnswers.conquer||'', startDate:todayStr()};
+  await dbPut('settings',{key:'profile',value:S.profile});
+  if(obAnswers.habit){
+    const act = {name:obAnswers.habit, goal:'', time:'', weight:2, days:[0,1,2,3,4,5,6], active:true};
+    const id = await dbPut('activities',act); act.id=id; S.activities.push(act);
+  }
+  if(obAnswers.conquer){
+    const q = {text:obAnswers.conquer, isFavorite:true};
+    const id = await dbPut('quotes',q); q.id=id; S.quotes.push(q);
+  }
+  if(obAnswers.project30){
+    const p = {name:'Projeto 30 dias', objective:obAnswers.mainGoal||'', description:'', startDate:todayStr(), endDate:addDays(todayStr(),29), archived:false};
+    const id = await dbPut('projects',p); p.id=id; S.projects.push(p);
+  }
+  await dbPut('settings',{key:'onboardingDone',value:true});
+  S.onboardingDone = true;
+  document.getElementById('onboarding').classList.add('hidden');
+  startApp();
+}
+
+/* =========================================================
+   BOOTSTRAP
+   ========================================================= */
+async function startApp(){
+  document.getElementById('app').classList.add('ready');
+  await reconcileRoutine(todayStr());
+  await recomputeScore(todayStr());
+  S.view='visao';
+  renderShell();
+  renderMain();
+}
+
+const SW_SOURCE = `
+const CACHE_NAME = 'evolve-cache-v1';
+self.addEventListener('install', (event) => { self.skipWaiting(); });
+self.addEventListener('activate', (event) => {
+  event.waitUntil(
+    caches.keys().then((keys) => Promise.all(keys.filter((k) => k !== CACHE_NAME).map((k) => caches.delete(k))))
+      .then(() => self.clients.claim())
+  );
+});
+self.addEventListener('fetch', (event) => {
+  const url = event.request.url;
+  if (url.includes('generativelanguage.googleapis.com')) return;
+  if (event.request.method !== 'GET') return;
+  event.respondWith(
+    caches.open(CACHE_NAME).then((cache) =>
+      fetch(event.request).then((res) => { cache.put(event.request, res.clone()); return res; })
+        .catch(() => cache.match(event.request))
+    )
+  );
+});
+`;
+function registerServiceWorker(){
+  if(!('serviceWorker' in navigator)) return;
+  try{
+    const blob = new Blob([SW_SOURCE], {type:'application/javascript'});
+    const swUrl = URL.createObjectURL(blob);
+    navigator.serviceWorker.register(swUrl).catch(()=>{ /* SW registration unsupported here — app still works via IndexedDB */ });
+  }catch(e){ /* Blob-based SW not supported in this browser — safe to ignore, app is fully functional without it */ }
+}
+
+(async function init(){
+  db = await openDB();
+  await loadAll();
+  registerServiceWorker();
+  if(!S.onboardingDone){
+    document.getElementById('onboarding').classList.remove('hidden');
+    obIdx=0; obAnswers={};
+    renderOnboardingStep();
+  } else {
+    startApp();
+  }
+})();
+</script>
+</body>
+</html>
